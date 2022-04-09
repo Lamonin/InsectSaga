@@ -62,6 +62,15 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=1)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Using"",
+                    ""type"": ""Button"",
+                    ""id"": ""de2e30c1-a8e4-4d0d-977d-8a76b9bc92db"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -317,6 +326,28 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""324b4e01-a7fa-493f-8e23-988dc537e1ba"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Using"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d8e09ee-b844-4629-b002-62ed1b840b02"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Using"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -327,13 +358,18 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
             ""bindingGroup"": ""Mouse and Keyboard"",
             ""devices"": [
                 {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
                     ""devicePath"": ""<Mouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 },
                 {
-                    ""devicePath"": ""<Keyboard>"",
-                    ""isOptional"": false,
+                    ""devicePath"": ""<VirtualMouse>"",
+                    ""isOptional"": true,
                     ""isOR"": false
                 }
             ]
@@ -357,6 +393,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_RunModeOn = m_Player.FindAction("RunModeOn", throwIfNotFound: true);
         m_Player_RunModeOff = m_Player.FindAction("RunModeOff", throwIfNotFound: true);
+        m_Player_Using = m_Player.FindAction("Using", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -420,6 +457,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_RunModeOn;
     private readonly InputAction m_Player_RunModeOff;
+    private readonly InputAction m_Player_Using;
     public struct PlayerActions
     {
         private @InputScheme m_Wrapper;
@@ -428,6 +466,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @RunModeOn => m_Wrapper.m_Player_RunModeOn;
         public InputAction @RunModeOff => m_Wrapper.m_Player_RunModeOff;
+        public InputAction @Using => m_Wrapper.m_Player_Using;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -449,6 +488,9 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 @RunModeOff.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRunModeOff;
                 @RunModeOff.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRunModeOff;
                 @RunModeOff.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRunModeOff;
+                @Using.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUsing;
+                @Using.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUsing;
+                @Using.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUsing;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -465,6 +507,9 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 @RunModeOff.started += instance.OnRunModeOff;
                 @RunModeOff.performed += instance.OnRunModeOff;
                 @RunModeOff.canceled += instance.OnRunModeOff;
+                @Using.started += instance.OnUsing;
+                @Using.performed += instance.OnUsing;
+                @Using.canceled += instance.OnUsing;
             }
         }
     }
@@ -493,5 +538,6 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnRunModeOn(InputAction.CallbackContext context);
         void OnRunModeOff(InputAction.CallbackContext context);
+        void OnUsing(InputAction.CallbackContext context);
     }
 }

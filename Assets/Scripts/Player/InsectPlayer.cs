@@ -4,6 +4,9 @@ public class InsectPlayer : PlatformerCharacter
 {
     private InputScheme _input;
 
+    public delegate void Interaction();
+    public Interaction interactAction = null;
+    
     private void Awake()
     {
         _input = new InputScheme();
@@ -11,6 +14,7 @@ public class InsectPlayer : PlatformerCharacter
         _input.Player.Jump.performed += context => { Jump(); };
         _input.Player.RunModeOn.performed += context => { TryToRun = true; };
         _input.Player.RunModeOff.performed += context => { ToNormalState(); };
+        _input.Player.Using.performed += context => { if (interactAction != null) interactAction(); };
     }
     
     private void OnEnable() { _input.Enable(); }
@@ -26,7 +30,6 @@ public class InsectPlayer : PlatformerCharacter
     {
         Vector2 inputDirection = _input.Player.Movement.ReadValue<Vector2>();
         MoveDir = inputDirection.x;
-        animator.SetFloat("move_dir", Mathf.Abs(MoveDir));
         base.Update();
     }
 }
