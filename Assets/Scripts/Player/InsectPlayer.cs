@@ -38,7 +38,6 @@ public class InsectPlayer : PlatformerCharacter
         {
             MoveDir = inputDirection.x;
         }*/
-        Debug.Log("Rotation is  "+ transform.rotation.eulerAngles.z);
         base.Update();
     }
 }
