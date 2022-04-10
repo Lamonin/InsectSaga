@@ -30,6 +30,15 @@ public class InsectPlayer : PlatformerCharacter
     {
         Vector2 inputDirection = _input.Player.Movement.ReadValue<Vector2>();
         MoveDir = inputDirection.x;
+        /*if (Mathf.Abs(Mathf.Abs(180 - transform.rotation.eulerAngles.z) - 90) < 10)
+        {
+            MoveDir = inputDirection.y;
+        }
+        else
+        {
+            MoveDir = inputDirection.x;
+        }*/
+        Debug.Log("Rotation is  "+ transform.rotation.eulerAngles.z);
         base.Update();
     }
 }

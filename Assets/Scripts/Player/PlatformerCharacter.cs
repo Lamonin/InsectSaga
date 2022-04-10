@@ -18,6 +18,7 @@ public class PlatformerCharacter : MonoBehaviour
     [Tooltip("Скорость поворота на углах")] public float rotationSpeed;
     [Tooltip("Дистанция прицепления к стене")] public float grabWallDistance;
     [Tooltip("Дистанция прицепления к полу")] public float grabGroundDistance;
+    [Tooltip("Сила прыжка")] public float jumpCrawlPower;
 
     [Header("Другие параметры")]
     public LayerMask groundLayer;
@@ -54,20 +55,16 @@ public class PlatformerCharacter : MonoBehaviour
         if (state == CharacterStates.Crawl || _isJumpInCrawl) return;
         bool isOnWall = CheckRunWall();
         bool isOnWallSecond = CheckRunWallSecond();
-        Debug.Log("WTFX222!  " + isOnWall + " === " + isOnWallSecond);
         if (!CheckRunGround() && !isOnWall && !isOnWallSecond) return;
 
         var angleRot = isOnWall || isOnWallSecond ? Quaternion.Euler(0, 0, 90 * _crawlDir) : Quaternion.Euler(0, 0, 0);
 
-        collTransform.localRotation = Quaternion.Euler(0, 0, -90);
-        transform.rotation = angleRot;
-
-        Debug.Log("WTF!");
-        
-        if (state != CharacterStates.JumpCrawl || !(isOnWall || isOnWallSecond))
+        if (state != CharacterStates.JumpCrawl || !isOnWallSecond)
         {
-            
+            collTransform.localRotation = Quaternion.Euler(0, 0, -90);
+            transform.rotation = angleRot;
         }
+        
         _rb2d.constraints = RigidbodyConstraints2D.None;
         _rb2d.gravityScale = 0;
         state = CharacterStates.Crawl;
@@ -83,7 +80,7 @@ public class PlatformerCharacter : MonoBehaviour
         _rb2d.velocity = Vector2.zero;
         if (Mathf.Abs(Mathf.Abs(180-transform.rotation.eulerAngles.z)-90)<45) //OnWall
         {
-            _rb2d.AddForce((transform.up * 1.2f+transform.right*_crawlDir*0.5f) * 8, ForceMode2D.Impulse);
+            _rb2d.AddForce((transform.up * 1.2f+transform.right*_crawlDir*0.5f) * jumpCrawlPower, ForceMode2D.Impulse);
             yield return new WaitForFixedUpdate();
             var rotAngle = transform.rotation.eulerAngles.z > 180 ? 90 : -90;
             transform.rotation = Quaternion.Euler(0,0,0);
@@ -96,7 +93,7 @@ public class PlatformerCharacter : MonoBehaviour
         }
         else
             _rb2d.AddForce((transform.up*1.2f+transform.right*_crawlDir)*10, ForceMode2D.Impulse);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
         _isJumpInCrawl = false;
     }
     
