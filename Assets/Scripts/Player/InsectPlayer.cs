@@ -14,7 +14,7 @@ public class InsectPlayer : PlatformerCharacter
         _input.Player.Jump.performed += context => { Jump(); };
         _input.Player.RunModeOn.performed += context => { TryToRun = true; };
         _input.Player.RunModeOff.performed += context => { ToNormalState(); };
-        _input.Player.Using.performed += context => { if (interactAction != null) interactAction(); };
+        _input.Player.Using.performed += context => { if (interactAction != null && state != CharacterStates.Crawl) interactAction(); };
     }
     
     private void OnEnable() { _input.Enable(); }

@@ -330,7 +330,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""324b4e01-a7fa-493f-8e23-988dc537e1ba"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
