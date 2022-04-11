@@ -101,6 +101,8 @@ public class PlatformerCharacter : MonoBehaviour
         }
 
         collTransform.localRotation = Quaternion.Euler(0, 0, -90);
+        angleRot = Quaternion.Euler(0, 0, angleRot.eulerAngles.z);
+            
         if (state == CharacterStates.Normal)
             transform.rotation = angleRot;
         else
@@ -110,7 +112,7 @@ public class PlatformerCharacter : MonoBehaviour
 
         _rb2d.constraints = RigidbodyConstraints2D.None;
         _rb2d.gravityScale = 0;
-        
+
         state = CharacterStates.Crawl;
     }
 
@@ -123,6 +125,7 @@ public class PlatformerCharacter : MonoBehaviour
         _rb2d.gravityScale = 4;
         _rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         _rb2d.velocity = Vector2.zero;
+        transform.DOKill();
 
         if (CurrentSide == GroundSide.LWall || CurrentSide == GroundSide.RWall) //InsectOnWall
         {
@@ -136,7 +139,7 @@ public class PlatformerCharacter : MonoBehaviour
                 rotAngle = -90;
             }
 
-            _rb2d.AddForce(force* jumpCrawlFromWallPower, ForceMode2D.Impulse);
+            _rb2d.AddForce(force * jumpCrawlFromWallPower, ForceMode2D.Impulse);
             transform.rotation = Quaternion.Euler(0,0,rotAngle);
             _flip = _crawlDir == 1;
             _crawlDir = _flip ? -1 : 1;
@@ -172,7 +175,7 @@ public class PlatformerCharacter : MonoBehaviour
         state = CharacterStates.Normal;
     }
     
-    protected void TryJump()
+    protected void Jump()
     {
         if (state == CharacterStates.Normal)
         {
@@ -267,8 +270,12 @@ public class PlatformerCharacter : MonoBehaviour
         {
             return tUp.x > 0 ? GroundSide.LWall : GroundSide.RWall;
         }
+        if (Mathf.Abs(tUp.x) < 0.1f)
+        {
+            return tUp.y > 0 ? GroundSide.Floor : GroundSide.Ceil;
+        }
 
-        return tUp.y > 0 ? GroundSide.Floor : GroundSide.Ceil;
+        return CurrentSide;
     }
 
     private void UpdatePlayerDirection()
@@ -335,6 +342,7 @@ public class PlatformerCharacter : MonoBehaviour
         
         _distanceToWall  = 0.2f + 1 / Mathf.Sqrt(2);
         state = CharacterStates.Normal;
+        CurrentSide = GroundSide.Floor;
     }
     
     protected virtual void Update()
@@ -345,7 +353,7 @@ public class PlatformerCharacter : MonoBehaviour
         //MANAGE JUMP BUFFER TIMER
         if (_isGround && _jumpCounter > 0)
         {
-            TryJump();
+            Jump();
         }
         else
         {

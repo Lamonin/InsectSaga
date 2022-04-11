@@ -185,6 +185,7 @@ MonoBehaviour:
   runSpeed: 5
   jumpPower: 12
   hangTime: 0.05
+  jumpBufferTime: 0.1
   stickOffsetBeforeRun: 0.5
   crawlSpeed: 6
   rotationSpeed: 20
@@ -203,6 +204,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1067320515035843401}
   state: 0
   CurrentSide: 0
+  inpDir: {x: 0, y: 0}
 --- !u!95 &1067320516746289370
 Animator:
   serializedVersion: 3
