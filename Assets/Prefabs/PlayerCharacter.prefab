@@ -162,7 +162,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0.1
-  m_AngularDrag: 99
+  m_AngularDrag: 30
   m_GravityScale: 4
   m_Material: {fileID: 0}
   m_Interpolate: 1
@@ -187,9 +187,10 @@ MonoBehaviour:
   hangTime: 0.05
   stickOffsetBeforeRun: 0.5
   crawlSpeed: 6
-  rotationSpeed: 30
+  rotationSpeed: 20
   grabWallDistance: 0.3
   grabGroundDistance: 0.5
+  jumpCrawlFromWallPower: 8
   jumpCrawlPower: 8
   groundLayer:
     serializedVersion: 2
@@ -201,6 +202,7 @@ MonoBehaviour:
   groundChecker: {fileID: 1067320515317181893}
   spriteRenderer: {fileID: 1067320515035843401}
   state: 0
+  CurrentSide: 0
 --- !u!95 &1067320516746289370
 Animator:
   serializedVersion: 3

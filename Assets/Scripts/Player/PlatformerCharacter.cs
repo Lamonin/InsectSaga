@@ -18,6 +18,9 @@ public class PlatformerCharacter : MonoBehaviour
     [Tooltip("Время для прыжка Койота")] 
     public float hangTime;
     
+    [Tooltip("Время для буфера прыжка")] 
+    public float jumpBufferTime;
+    
     [Tooltip("Насколько отклонить стик для перехода в режим бега")] 
     [Range(0.01f, 1)] public float stickOffsetBeforeRun;
     
@@ -60,6 +63,7 @@ public class PlatformerCharacter : MonoBehaviour
     //VARIABLES
     protected bool TryToRun;
     protected float MoveDir;
+    [SerializeField] protected GroundSide CurrentSide;
     
     private int _crawlDir = 1;
     private bool _flip;
@@ -67,6 +71,7 @@ public class PlatformerCharacter : MonoBehaviour
     private bool _isJumpInCrawl;
     private float _moveSpeed;
     private float _hangCounter;
+    private float _jumpCounter;
     private float _distanceToWall;
 
     private Rigidbody2D _rb2d;
@@ -118,19 +123,29 @@ public class PlatformerCharacter : MonoBehaviour
         _rb2d.gravityScale = 4;
         _rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         _rb2d.velocity = Vector2.zero;
-        
-        if (Mathf.Abs(Mathf.Abs(180-transform.rotation.eulerAngles.z)-90)<45) //OnWall
+
+        if (CurrentSide == GroundSide.LWall || CurrentSide == GroundSide.RWall) //InsectOnWall
         {
-            _rb2d.AddForce((transform.up * 1.2f+transform.right*_crawlDir*0.5f) * jumpCrawlFromWallPower, ForceMode2D.Impulse);
-            var rotAngle = transform.rotation.eulerAngles.z > 180 ? 90 : -90;
+            //By default values set for LWall
+            Vector2 force = new Vector2(1, 0.5f);
+            float rotAngle = 90;
+
+            if (CurrentSide == GroundSide.RWall)
+            {
+                force = new Vector2(-1, 0.5f);
+                rotAngle = -90;
+            }
+
+            _rb2d.AddForce(force* jumpCrawlFromWallPower, ForceMode2D.Impulse);
             transform.rotation = Quaternion.Euler(0,0,rotAngle);
             _flip = _crawlDir == 1;
             _crawlDir = _flip ? -1 : 1;
             spriteRenderer.flipX = _flip;
         }
-        else
+        else //JUMP FROM FLOOR or CEIL
         {
-            _rb2d.AddForce((transform.up * 1.2f + transform.right * _crawlDir) * jumpCrawlPower, ForceMode2D.Impulse);
+            var ceil = CurrentSide == GroundSide.Ceil ? -1 : 1;
+            _rb2d.AddForce(new Vector2(_crawlDir*1.2f , 1.2f) * ceil * jumpCrawlPower, ForceMode2D.Impulse);
         }
         
         yield return new WaitForSeconds(0.1f);
@@ -141,7 +156,7 @@ public class PlatformerCharacter : MonoBehaviour
     {
         TryToRun = false;
         if (state == CharacterStates.Normal) return;
-        
+        transform.DOKill();
         StopCoroutine(ToCrawlJumpState());
         
         collTransform.localRotation = Quaternion.Euler(0, 0, 0);
@@ -157,11 +172,13 @@ public class PlatformerCharacter : MonoBehaviour
         state = CharacterStates.Normal;
     }
     
-    protected void Jump()
+    protected void TryJump()
     {
         if (state == CharacterStates.Normal)
         {
+            _jumpCounter = jumpBufferTime;
             if (!_isGround && _hangCounter <= 0) return;
+            _hangCounter = -1;
             _rb2d.velocity = new Vector2(_rb2d.velocity.x, jumpPower);
         }
         else if (state != CharacterStates.JumpCrawl)
@@ -215,9 +232,9 @@ public class PlatformerCharacter : MonoBehaviour
         }
         else if (state == CharacterStates.Crawl)
         {
+            var tRight = transform.right * _crawlDir;
             var tPos = transform.position;
             var tUp = transform.up;
-            var tRight = transform.right * _crawlDir;
             
             if (MoveDir != 0)
             {
@@ -241,17 +258,17 @@ public class PlatformerCharacter : MonoBehaviour
         }
     }
 
-    protected enum PlayerPosition { Floor, Ceil, LWall, RWall }
-    protected PlayerPosition GetPlayerDirection()
+    protected enum GroundSide { Floor, Ceil, LWall, RWall }
+    protected GroundSide GetPlayerGroundSide()
     {
         var tUp = transform.up;
 
-        if (Mathf.Abs(tUp.x) > Mathf.Abs(tUp.y))
+        if (Mathf.Abs(tUp.x) > Mathf.Abs(tUp.y) && Mathf.Abs(tUp.y) < 0.1f)
         {
-            return tUp.x > 0 ? PlayerPosition.LWall : PlayerPosition.RWall;
+            return tUp.x > 0 ? GroundSide.LWall : GroundSide.RWall;
         }
 
-        return tUp.y > 0 ? PlayerPosition.Floor : PlayerPosition.Ceil;
+        return tUp.y > 0 ? GroundSide.Floor : GroundSide.Ceil;
     }
 
     private void UpdatePlayerDirection()
@@ -315,15 +332,27 @@ public class PlatformerCharacter : MonoBehaviour
     {
         _rb2d = GetComponent<Rigidbody2D>();
         _frameAnimator = new FrameBasedAnimator(animator);
-        state = CharacterStates.Normal;
+        
         _distanceToWall  = 0.2f + 1 / Mathf.Sqrt(2);
+        state = CharacterStates.Normal;
     }
     
     protected virtual void Update()
     {
+        CurrentSide = GetPlayerGroundSide();
         _isGround = CheckGround();
+
+        //MANAGE JUMP BUFFER TIMER
+        if (_isGround && _jumpCounter > 0)
+        {
+            TryJump();
+        }
+        else
+        {
+            _jumpCounter -= Time.deltaTime;
+        }
         
-        //HANG TIMER
+        //MANAGE HANG TIMER
         if (_isGround)
             _hangCounter = hangTime;
         else
