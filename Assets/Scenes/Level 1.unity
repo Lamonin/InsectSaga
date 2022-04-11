@@ -8523,7 +8523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
       propertyPath: crawlSpeed
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
       propertyPath: jumpCrawlPower
