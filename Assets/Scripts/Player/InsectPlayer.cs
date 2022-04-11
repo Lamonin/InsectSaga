@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class InsectPlayer : PlatformerCharacter
 {
-    private InputScheme _input;
-
+    [SerializeField] protected PlayerPosition plPos;
     public delegate void Interaction();
     public Interaction interactAction = null;
     
+    private InputScheme _input;
     private void Awake()
     {
         _input = new InputScheme();
@@ -28,16 +28,22 @@ public class InsectPlayer : PlatformerCharacter
 
     protected override void Update()
     {
-        Vector2 inputDirection = _input.Player.Movement.ReadValue<Vector2>();
-        MoveDir = inputDirection.x;
-        /*if (Mathf.Abs(Mathf.Abs(180 - transform.rotation.eulerAngles.z) - 90) < 10)
+        plPos = GetPlayerDirection();
+        Vector2 inputDir = _input.Player.Movement.ReadValue<Vector2>();
+        if (Mathf.Abs(inputDir.x) > Mathf.Abs(inputDir.y))
+            inputDir.y = 0;
+        else 
+            inputDir.x = 0;
+
+        MoveDir = plPos switch
         {
-            MoveDir = inputDirection.y;
-        }
-        else
-        {
-            MoveDir = inputDirection.x;
-        }*/
+            PlayerPosition.Floor => inputDir.x,
+            PlayerPosition.Ceil => -inputDir.x,
+            PlayerPosition.LWall => -inputDir.y,
+            PlayerPosition.RWall => inputDir.y,
+            _ => MoveDir
+        };
+
         base.Update();
     }
 }
