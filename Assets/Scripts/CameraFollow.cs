@@ -30,23 +30,22 @@ public class CameraFollow : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (cameraTransform is null || bounds == Vector4.zero) return;
-        Vector2 pos = cameraTransform.position;
-        
+
         //Draw green rect
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(pos+new Vector2(bounds.x, bounds.y), pos+new Vector2(bounds.z, bounds.y));
-        Gizmos.DrawLine(pos+new Vector2(bounds.x, bounds.w), pos+new Vector2(bounds.x, bounds.y));
-        Gizmos.DrawLine(pos+new Vector2(bounds.z, bounds.y), pos+new Vector2(bounds.z, bounds.w));
-        Gizmos.DrawLine(pos+new Vector2(bounds.x, bounds.w), pos+new Vector2(bounds.z, bounds.w));
+        Gizmos.DrawLine(new Vector2(bounds.x, bounds.y), new Vector2(bounds.z, bounds.y));
+        Gizmos.DrawLine(new Vector2(bounds.x, bounds.w), new Vector2(bounds.x, bounds.y));
+        Gizmos.DrawLine(new Vector2(bounds.z, bounds.y), new Vector2(bounds.z, bounds.w));
+        Gizmos.DrawLine(new Vector2(bounds.x, bounds.w), new Vector2(bounds.z, bounds.w));
         
         //Draw yellow rect
         Gizmos.color = Color.yellow;
         var camComponent = cameraTransform.GetComponent<Camera>();
         var vHSeen = camComponent.orthographicSize;
         var vWSeen = vHSeen * camComponent.aspect;
-        Gizmos.DrawLine(pos+new Vector2(bounds.x-vWSeen, bounds.y+vHSeen), pos+new Vector2(bounds.z+vWSeen, bounds.y+vHSeen));
-        Gizmos.DrawLine(pos+new Vector2(bounds.x-vWSeen, bounds.w-vHSeen), pos+new Vector2(bounds.x-vWSeen, bounds.y+vHSeen));
-        Gizmos.DrawLine(pos+new Vector2(bounds.z+vWSeen, bounds.y+vHSeen), pos+new Vector2(bounds.z+vWSeen, bounds.w-vHSeen));
-        Gizmos.DrawLine(pos+new Vector2(bounds.x-vWSeen, bounds.w-vHSeen), pos+new Vector2(bounds.z+vWSeen, bounds.w-vHSeen));
+        Gizmos.DrawLine(new Vector2(bounds.x-vWSeen, bounds.y+vHSeen), new Vector2(bounds.z+vWSeen, bounds.y+vHSeen));
+        Gizmos.DrawLine(new Vector2(bounds.x-vWSeen, bounds.w-vHSeen), new Vector2(bounds.x-vWSeen, bounds.y+vHSeen));
+        Gizmos.DrawLine(new Vector2(bounds.z+vWSeen, bounds.y+vHSeen), new Vector2(bounds.z+vWSeen, bounds.w-vHSeen));
+        Gizmos.DrawLine(new Vector2(bounds.x-vWSeen, bounds.w-vHSeen), new Vector2(bounds.z+vWSeen, bounds.w-vHSeen));
     }
 }
