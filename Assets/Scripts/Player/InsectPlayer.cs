@@ -1,8 +1,5 @@
-using System;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Scene = UnityEditor.SearchService.Scene;
 
 public class InsectPlayer : PlatformerCharacter
 {
@@ -10,7 +7,6 @@ public class InsectPlayer : PlatformerCharacter
     public Interaction interactAction = null;
     
     private InputScheme _input;
-    [SerializeField] private Vector2 inpDir;
 
     private bool _ceilRay, _floorRay, _leftWallRay, _rightWallRay;
 
@@ -41,12 +37,7 @@ public class InsectPlayer : PlatformerCharacter
     protected override void Update()
     {
         Vector2 inputDir = _input.Player.Movement.ReadValue<Vector2>();
-        
-        Debug.DrawRay(transform.position, new Vector2(1,0)*0.5f, Color.green);
-        Debug.DrawRay(transform.position, new Vector2(0,-1)*0.5f, Color.green);
 
-        inpDir = inputDir;
-        
         MoveDir = CurrentSide switch
         {
             GroundSide.Floor => inputDir.x,
