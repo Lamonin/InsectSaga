@@ -38,7 +38,9 @@ public class InsectPlayer : PlatformerCharacter
     {
         Vector2 inputDir = _input.Player.Movement.ReadValue<Vector2>();
 
-        MoveDir = CurrentSide switch
+        #region CorrectPlayerInputDirection
+
+        MoveDir = ChSide switch
         {
             GroundSide.Floor => inputDir.x,
             GroundSide.Ceil => -inputDir.x,
@@ -63,7 +65,7 @@ public class InsectPlayer : PlatformerCharacter
         _ceilRay = CastRay(Vector2.up, 0.5f);
         _floorRay = CastRay(Vector2.down, 0.5f);
 
-        switch (CurrentSide)
+        switch (ChSide)
         {
             case GroundSide.Floor:
                 if (_rightWallRay && inputDir.x > 0 && inputDir.y < 0 || _leftWallRay && inputDir.x < 0 && inputDir.y < 0)
@@ -85,6 +87,8 @@ public class InsectPlayer : PlatformerCharacter
                     MoveDir = 0;
                 break;
         }
+        
+        #endregion
 
         base.Update();
     }

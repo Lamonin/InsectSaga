@@ -63,7 +63,7 @@ public class PlatformerCharacter : MonoBehaviour
     //VARIABLES
     protected bool TryToRun;
     protected float MoveDir;
-    [SerializeField] protected GroundSide CurrentSide;
+    [SerializeField] protected GroundSide ChSide;
     
     private int _crawlDir = 1;
     private bool _flip;
@@ -112,10 +112,19 @@ public class PlatformerCharacter : MonoBehaviour
 
         _rb2d.constraints = RigidbodyConstraints2D.None;
         _rb2d.gravityScale = 0;
+        _rb2d.velocity = Vector2.zero; //Reset velocity, otherwise it accumulates
 
         state = CharacterStates.Crawl;
     }
 
+    private void FlipAndRotateCharacter(float rotAngle)
+    {
+        transform.rotation = Quaternion.Euler(0,0,rotAngle);
+        _flip = _crawlDir == 1;
+        _crawlDir = _flip ? -1 : 1;
+        spriteRenderer.flipX = _flip;
+    }
+    
     private IEnumerator ToCrawlJumpState()
     {
         if (state == CharacterStates.JumpCrawl) yield break;
@@ -127,28 +136,34 @@ public class PlatformerCharacter : MonoBehaviour
         _rb2d.velocity = Vector2.zero;
         transform.DOKill();
 
-        if (CurrentSide == GroundSide.LWall || CurrentSide == GroundSide.RWall) //InsectOnWall
+        if (ChSide == GroundSide.LWall || ChSide == GroundSide.RWall || ChSide == GroundSide.Ceil && MoveDir == 0)
         {
             //By default values set for LWall
             Vector2 force = new Vector2(1, 0.5f);
             float rotAngle = 90;
 
-            if (CurrentSide == GroundSide.RWall)
+            if (ChSide == GroundSide.RWall)
             {
                 force = new Vector2(-1, 0.5f);
                 rotAngle = -90;
             }
+            else if (ChSide == GroundSide.Ceil)
+            {
+                force = Vector2.down;
+                rotAngle = 0;
+            }
 
             _rb2d.AddForce(force * jumpCrawlFromWallPower, ForceMode2D.Impulse);
-            transform.rotation = Quaternion.Euler(0,0,rotAngle);
-            _flip = _crawlDir == 1;
-            _crawlDir = _flip ? -1 : 1;
-            spriteRenderer.flipX = _flip;
+            FlipAndRotateCharacter(rotAngle);
         }
         else //JUMP FROM FLOOR or CEIL
         {
-            var ceil = CurrentSide == GroundSide.Ceil ? -1 : 1;
+            var ceil = ChSide == GroundSide.Ceil ? -1 : 1;
             _rb2d.AddForce(new Vector2(_crawlDir*1.2f , 1.2f) * ceil * jumpCrawlPower, ForceMode2D.Impulse);
+            if (ceil == -1) //Flips character if he jumps from the ceiling
+                FlipAndRotateCharacter(0);
+            else //RESET ROTATION ANGLE FOR BEST LOOK
+                transform.rotation = Quaternion.Euler(0,0,0);
         }
         
         yield return new WaitForSeconds(0.1f);
@@ -164,8 +179,7 @@ public class PlatformerCharacter : MonoBehaviour
         
         collTransform.localRotation = Quaternion.Euler(0, 0, 0);
         transform.rotation = Quaternion.Euler(0, 0, 0);
-        
-        _rb2d.velocity = Vector2.zero; //Reset velocity, otherwise it accumulates
+
         _rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
         _rb2d.gravityScale = 4;
         
@@ -181,6 +195,7 @@ public class PlatformerCharacter : MonoBehaviour
         {
             _jumpCounter = jumpBufferTime;
             if (!_isGround && _hangCounter <= 0) return;
+            
             _hangCounter = -1;
             _rb2d.velocity = new Vector2(_rb2d.velocity.x, jumpPower);
         }
@@ -223,7 +238,7 @@ public class PlatformerCharacter : MonoBehaviour
             _moveSpeed = 0;
     }
     
-    private RaycastHit2D rayGround, rayWall;
+    private RaycastHit2D _rayGround, _rayWall;
     private void Move()
     {
         if (state == CharacterStates.JumpCrawl) { return; }
@@ -231,7 +246,12 @@ public class PlatformerCharacter : MonoBehaviour
         if (state == CharacterStates.Normal)
         {
             UpdateMoveSpeed();
-            _rb2d.velocity = new Vector2(_moveSpeed, _rb2d.velocity.y);
+            _rb2d.position += new Vector2(_moveSpeed*Time.fixedDeltaTime, 0);
+            
+            //SLOW DOWN CHARACTER
+            var v2 = _rb2d.velocity;
+            v2.x *= 0.9f;
+            _rb2d.velocity = v2;
         }
         else if (state == CharacterStates.Crawl)
         {
@@ -241,14 +261,14 @@ public class PlatformerCharacter : MonoBehaviour
             
             if (MoveDir != 0)
             {
-                rayGround = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
-                rayWall = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
+                _rayGround = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
+                _rayWall = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
 
-                if (!rayWall)
+                if (!_rayWall)
                 {
                     _rb2d.MoveRotation(_rb2d.rotation + (_flip ? rotationSpeed : -rotationSpeed));
                 }
-                else if (rayGround)
+                else if (_rayGround)
                 {
                     _rb2d.MoveRotation(_rb2d.rotation + (_flip ? -rotationSpeed : rotationSpeed));
                 }
@@ -267,15 +287,12 @@ public class PlatformerCharacter : MonoBehaviour
         var tUp = transform.up;
 
         if (Mathf.Abs(tUp.x) > Mathf.Abs(tUp.y) && Mathf.Abs(tUp.y) < 0.1f)
-        {
             return tUp.x > 0 ? GroundSide.LWall : GroundSide.RWall;
-        }
+        
         if (Mathf.Abs(tUp.x) < 0.1f)
-        {
             return tUp.y > 0 ? GroundSide.Floor : GroundSide.Ceil;
-        }
 
-        return CurrentSide;
+        return ChSide;
     }
 
     private void UpdatePlayerDirection()
@@ -342,23 +359,19 @@ public class PlatformerCharacter : MonoBehaviour
         
         _distanceToWall  = 0.2f + 1 / Mathf.Sqrt(2);
         state = CharacterStates.Normal;
-        CurrentSide = GroundSide.Floor;
+        ChSide = GroundSide.Floor;
     }
     
     protected virtual void Update()
     {
-        CurrentSide = GetPlayerGroundSide();
+        ChSide = GetPlayerGroundSide();
         _isGround = CheckGround();
 
         //MANAGE JUMP BUFFER TIMER
         if (_isGround && _jumpCounter > 0)
-        {
             Jump();
-        }
         else
-        {
             _jumpCounter -= Time.deltaTime;
-        }
         
         //MANAGE HANG TIMER
         if (_isGround)
