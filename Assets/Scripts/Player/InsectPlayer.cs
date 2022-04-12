@@ -12,7 +12,7 @@ public class InsectPlayer : PlatformerCharacter
     private InputScheme _input;
     [SerializeField] private Vector2 inpDir;
 
-    private bool _tl, _bl, _ll, _rl;
+    private bool _ceilRay, _floorRay, _leftWallRay, _rightWallRay;
 
     private void Awake()
     {
@@ -55,39 +55,42 @@ public class InsectPlayer : PlatformerCharacter
             GroundSide.RWall => inputDir.y,
             _ => MoveDir
         };
-        
-        _rl = CastRay(Vector2.right, 0.5f);
-        _ll = CastRay(Vector2.left, 0.5f);
-        _tl = CastRay(Vector2.up, 0.5f);
-        _bl = CastRay(Vector2.down, 0.5f);
+
+        float rot = transform.rotation.eulerAngles.z;
+
+        if (rot > 5 && rot < 85 && inputDir.x < 0 && inputDir.y > 0)
+            MoveDir = 0;
+        else if (rot > 95 && rot < 175 && inputDir.x < 0 && inputDir.y < 0)
+            MoveDir = 0;
+        else if (rot > 185 && rot < 265 && inputDir.x > 0 && inputDir.y < 0)
+            MoveDir = 0;
+        else if (rot > 275 && rot < 355 && inputDir.x > 0 && inputDir.y > 0)
+            MoveDir = 0;
+
+        _rightWallRay = CastRay(Vector2.right, 0.5f);
+        _leftWallRay = CastRay(Vector2.left, 0.5f);
+        _ceilRay = CastRay(Vector2.up, 0.5f);
+        _floorRay = CastRay(Vector2.down, 0.5f);
 
         switch (CurrentSide)
         {
             case GroundSide.Floor:
-                if (_rl && inputDir.x > 0 && inputDir.y < 0)
-                    MoveDir = 0;
-                else if (_ll && inputDir.x < 0 && inputDir.y < 0)
+                if (_rightWallRay && inputDir.x > 0 && inputDir.y < 0 || _leftWallRay && inputDir.x < 0 && inputDir.y < 0)
                     MoveDir = 0;
                 break;
             
             case GroundSide.Ceil:
-                if (_rl && inputDir.x > 0 && inputDir.y > 0)
-                    MoveDir = 0;
-                else if (_ll && inputDir.x < 0 && inputDir.y > 0)
+                if (_rightWallRay && inputDir.x > 0 && inputDir.y > 0 || _leftWallRay && inputDir.x < 0 && inputDir.y > 0)
                     MoveDir = 0;
                 break;
             
             case GroundSide.LWall:
-                if (_bl && inputDir.x < 0 && inputDir.y < 0)
-                    MoveDir = 0;
-                else if (_tl && inputDir.x < 0 && inputDir.y > 0)
+                if (_floorRay && inputDir.x < 0 && inputDir.y < 0 || _ceilRay && inputDir.x < 0 && inputDir.y > 0)
                     MoveDir = 0;
                 break;
             
             case GroundSide.RWall:
-                if (_bl && inputDir.x > 0 && inputDir.y < 0)
-                    MoveDir = 0;
-                else if (_tl && inputDir.x > 0 && inputDir.y > 0)
+                if (_floorRay && inputDir.x > 0 && inputDir.y < 0 || _ceilRay && inputDir.x > 0 && inputDir.y > 0)
                     MoveDir = 0;
                 break;
         }
@@ -97,10 +100,9 @@ public class InsectPlayer : PlatformerCharacter
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Enemy"))
-        {
-            Debug.Log("COCKROACH IS DEAD INSIDE ((((((((");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        if (!col.CompareTag("Enemy")) return;
+        
+        Debug.Log("COCKROACH IS DEAD INSIDE ((((((((");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
