@@ -4,27 +4,36 @@ using UnityEngine.SceneManagement;
 
 namespace Player
 {
-    public class MainPlayerHandler : MonoBehaviour
+    public class MainPlayerHandler : PlayerInputHandler
     {
         public InsectController chController;
-    
-        private InputScheme _input;
 
         private bool _ceilRay, _floorRay, _leftWallRay, _rightWallRay;
 
-        private void Awake()
+        protected override void Awake()
         {
-            _input = new InputScheme();
+            base.Awake();
 
-            _input.Player.Jump.performed += context => { chController.Jump(); };
-            _input.Player.RunModeOn.performed += context => { chController.tryToCrawl = true; };
-            _input.Player.RunModeOff.performed += context => { chController.ToNormalState(); };
+            _input.Player.Jump.performed += context =>
+            {
+                if (isCharacterStopped) return;
+                chController.Jump();
+            };
+            
+            _input.Player.RunModeOn.performed += context =>
+            {
+                if (isCharacterStopped) return;
+                chController.tryToCrawl = true;
+            };
+            
+            _input.Player.RunModeOff.performed += context =>
+            {
+                if (isCharacterStopped) return;
+                chController.ToNormalState();
+            };
+            
             _input.Player.Using.performed += context => { InteractWithUsableObject(); };
         }
-
-        private void OnEnable() { _input.Enable(); }
-    
-        private void OnDisable() { _input.Disable(); }
 
         private void Start()
         {
@@ -39,8 +48,9 @@ namespace Player
         private float GetPlayerInputDirection()
         {
             Vector2 inputDir = _input.Player.Movement.ReadValue<Vector2>();
-            
+
             #region CorrectPlayerInputDirection
+
             float moveDir = chController.chSide switch
             {
                 InsectController.GroundSide.Floor => inputDir.x,
@@ -69,25 +79,28 @@ namespace Player
             switch (chController.chSide)
             {
                 case InsectController.GroundSide.Floor:
-                    if (_rightWallRay && inputDir.x > 0 && inputDir.y < 0 || _leftWallRay && inputDir.x < 0 && inputDir.y < 0)
+                    if (_rightWallRay && inputDir.x > 0 && inputDir.y < 0 ||
+                        _leftWallRay && inputDir.x < 0 && inputDir.y < 0)
                         moveDir = 0;
                     break;
-            
+
                 case InsectController.GroundSide.Ceil:
-                    if (_rightWallRay && inputDir.x > 0 && inputDir.y > 0 || _leftWallRay && inputDir.x < 0 && inputDir.y > 0)
+                    if (_rightWallRay && inputDir.x > 0 && inputDir.y > 0 ||
+                        _leftWallRay && inputDir.x < 0 && inputDir.y > 0)
                         moveDir = 0;
                     break;
-            
+
                 case InsectController.GroundSide.LWall:
                     if (_floorRay && inputDir.x < 0 && inputDir.y < 0 || _ceilRay && inputDir.x < 0 && inputDir.y > 0)
                         moveDir = 0;
                     break;
-            
+
                 case InsectController.GroundSide.RWall:
                     if (_floorRay && inputDir.x > 0 && inputDir.y < 0 || _ceilRay && inputDir.x > 0 && inputDir.y > 0)
                         moveDir = 0;
                     break;
             }
+
             #endregion
 
             return moveDir;
@@ -95,15 +108,14 @@ namespace Player
 
         private void Update()
         {
+            if (isCharacterStopped) return;
             chController.moveDir = GetPlayerInputDirection();
         }
 
-        private UsableObject _usableObject;
-
-        private void InteractWithUsableObject()
+        protected override void InteractWithUsableObject()
         {
-            if (_usableObject != null) 
-                _usableObject.Interact();
+            if (chController.State != InsectController.CharacterStates.Normal) return;
+            base.InteractWithUsableObject();
         }
 
         private void UpdateUseIcon()
@@ -119,25 +131,25 @@ namespace Player
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D col)
+        protected override void OnTriggerEnter2D(Collider2D other)
         {
-            if (col.CompareTag("Enemy"))
+            if (other.CompareTag("Enemy"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-            else if (col.CompareTag("Usable"))
+            else if (other.CompareTag("Usable"))
             {
-                _usableObject = col.GetComponent<UsableObject>();
+                _usableObject = other.GetComponent<UsableObject>();
                 if (chController.State == InsectController.CharacterStates.Normal)
                 {
                     GameUI.ShowUseIcon(_usableObject.useIconPosition);
                 }
             }
         }
-        
-        private void OnTriggerExit2D(Collider2D col)
+
+        protected override void OnTriggerExit2D(Collider2D other)
         {
-            if (col.CompareTag("Usable"))
+            if (other.CompareTag("Usable"))
             {
                 _usableObject.Deactivate();
                 _usableObject = null;

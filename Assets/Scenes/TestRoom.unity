@@ -12131,7 +12131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 1.2}
   canSkipDialogs: 1
-  stopPlayerInDialog: 0
+  stopPlayerInDialog: 1
   delayToTypeSymbol: 0.02
   delayBeforeStartDialogAgain: 0.5
   dialogMessages:

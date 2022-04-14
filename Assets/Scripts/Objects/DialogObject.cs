@@ -6,10 +6,13 @@ namespace Objects
 {
     public class DialogObject : UsableObject
     {
+        [Space]
         public bool canSkipDialogs;
         public bool stopPlayerInDialog;
         public float delayToTypeSymbol = 0.05f;
         public float delayBeforeStartDialogAgain = 0.1f;
+
+        [Space]
         [TextArea] public string[] dialogMessages;
 
         //VARIABLES
@@ -31,18 +34,19 @@ namespace Objects
         {
             if (_isTyping && !canSkipDialogs || _isDelayed) return;
             
-            if (_currentMessageNumber == 0)
+            if (_currentMessageNumber == 0) //START DIALOG
             {
                 GameUI.Handler.dialogText.gameObject.SetActive(true);
+                playerHandler.isCharacterStopped = stopPlayerInDialog;
             }
 
-            if (_isTyping)
+            if (_isTyping) //SKIP MESSAGE
             {
                 StopCoroutine(_messageTypeRoutine);
                 _isTyping = false;
                 GameUI.Handler.dialogText.text = _message;
             }
-            else if (_currentMessageNumber < dialogMessages.Length)
+            else if (_currentMessageNumber < dialogMessages.Length) //NEXT MESSAGE
             {
                 _message = dialogMessages[_currentMessageNumber];
                 GameUI.Handler.dialogText.text = String.Empty;
@@ -52,6 +56,7 @@ namespace Objects
             else //END DIALOG
             {
                 GameUI.Handler.dialogText.gameObject.SetActive(false);
+                playerHandler.isCharacterStopped = false;
                 _currentMessageNumber = 0;
                 _delayBeforeNextMessage = StartCoroutine(DelayBeforeNextDialog());
             }
