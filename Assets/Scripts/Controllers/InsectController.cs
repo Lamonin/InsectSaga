@@ -6,32 +6,21 @@ namespace Controllers
 {
     public class InsectController : PlatformerController
     {
-        [Header("Ползанье параметры")] [Tooltip("Скорость ползанья")]
         public float crawlSpeed;
-
-        [Tooltip("Скорость поворота на углах")]
         public float rotationSpeed;
-
-        [Tooltip("Дистанция прицепления к стене")]
         public float grabWallDistance;
-
-        [Tooltip("Дистанция прицепления к полу")]
         public float grabGroundDistance;
-
-        [Tooltip("Сила прыжка от стены")] public float jumpCrawlFromWallPower;
-        [Tooltip("Сила прыжка")] public float jumpCrawlPower;
+        public float jumpCrawlPower;
+        public float jumpCrawlFromWallPower;
         public float rayGroundLength;
 
-        [Header("Компоненты")]
         public Animator animator;
         public Transform collTransform;
-
         //ENUMS
         public enum CharacterStates { Normal, Crawl, JumpCrawl }
 
         public enum GroundSide { Floor, Ceil, LWall, RWall }
-
-        [Header("Вспомогательное")] public CharacterStates state;
+        
         public GroundSide chSide;
 
         //VARIABLES
@@ -43,9 +32,24 @@ namespace Controllers
         private float _distanceToWall;
         private int _crawlDir;
 
+        public delegate void StateChanged();
+        public event StateChanged OnStateChanged;
+        
+        //Properties
+        private CharacterStates _state;
+        public CharacterStates State
+        {
+            get => _state;
+            set
+            {
+                _state = value;
+                OnStateChanged?.Invoke();
+            }
+        }
+
         private void ToCrawlState()
         {
-            if (state == CharacterStates.Crawl || _isJumpInCrawl) return;
+            if (State == CharacterStates.Crawl || _isJumpInCrawl) return;
             var isOnWall = CheckRunWall();
             var isOnWallSecond = CheckRunWallSecond();
             var isOnGround = CheckRunGround();
@@ -66,7 +70,7 @@ namespace Controllers
             angleRot = Quaternion.Euler(0, 0, angleRot.eulerAngles.z);
 
             
-            if (state == CharacterStates.Normal)
+            if (State == CharacterStates.Normal)
             {
                 transform.rotation = angleRot;
             }
@@ -77,7 +81,7 @@ namespace Controllers
                 .OnComplete(() => _isNowRotated = false);
             }
 
-            state = CharacterStates.Crawl;
+            State = CharacterStates.Crawl;
             rb2d.constraints = RigidbodyConstraints2D.None;
             rb2d.gravityScale = 0;
             rb2d.velocity = Vector2.zero; //Reset velocity, otherwise it accumulates
@@ -93,9 +97,9 @@ namespace Controllers
 
         private IEnumerator ToCrawlJumpState()
         {
-            if (state == CharacterStates.JumpCrawl || _isJumpInCrawl) yield break;
+            if (State == CharacterStates.JumpCrawl || _isJumpInCrawl) yield break;
 
-            state = CharacterStates.JumpCrawl;
+            State = CharacterStates.JumpCrawl;
             _isJumpInCrawl = true;
             rb2d.gravityScale = 4;
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -139,7 +143,7 @@ namespace Controllers
         public void ToNormalState()
         {
             tryToCrawl = false;
-            if (state == CharacterStates.Normal) return;
+            if (State == CharacterStates.Normal) return;
 
             transform.DOKill();
             StopCoroutine(ToCrawlJumpState());
@@ -154,16 +158,16 @@ namespace Controllers
             _isJumpInCrawl = false;
             _frameAnimator.ChangeAnimation(PLAYER_IDLE);
 
-            state = CharacterStates.Normal;
+            State = CharacterStates.Normal;
         }
 
         public override void Jump()
         {
-            if (state == CharacterStates.Normal)
+            if (State == CharacterStates.Normal)
             {
                 base.Jump();
             }
-            else if (state != CharacterStates.JumpCrawl && !_isNowRotated)
+            else if (State != CharacterStates.JumpCrawl && !_isNowRotated)
             {
                 StopCoroutine(ToCrawlJumpState());
                 StartCoroutine(ToCrawlJumpState());
@@ -179,7 +183,7 @@ namespace Controllers
 
         private RaycastHit2D CheckRunWall()
         {
-            float mult = state != CharacterStates.Normal ? 1.5f : 1;
+            float mult = State != CharacterStates.Normal ? 1.5f : 1;
             return Physics2D.Raycast(transform.position, transform.right * _crawlDir, grabWallDistance * mult,
                 groundLayer);
         }
@@ -195,13 +199,13 @@ namespace Controllers
 
         public override void Move()
         {
-            if (state == CharacterStates.JumpCrawl) return;
+            if (State == CharacterStates.JumpCrawl) return;
 
-            if (state == CharacterStates.Normal)
+            if (State == CharacterStates.Normal)
             {
                 base.Move();
             }
-            else if (state == CharacterStates.Crawl)
+            else if (State == CharacterStates.Crawl)
             {
                 var tRight = transform.right * _crawlDir;
                 var tPos = transform.position;
@@ -251,11 +255,11 @@ namespace Controllers
 
         private void UpdateAnimations()
         {
-            if (state != CharacterStates.Normal)
+            if (State != CharacterStates.Normal)
             {
                 _frameAnimator.ChangeAnimation(PLAYER_CRAWL);
             }
-            else if (IsGround && state == CharacterStates.Normal)
+            else if (IsGround && State == CharacterStates.Normal)
             {
                 if (moveDir != 0)
                 {
@@ -272,7 +276,7 @@ namespace Controllers
 
         private void UpdatePlayerDirection()
         {
-            if (state == CharacterStates.JumpCrawl) return;
+            if (State == CharacterStates.JumpCrawl) return;
             if (moveDir < 0)
             {
                 _flip = true;
@@ -291,7 +295,7 @@ namespace Controllers
             _frameAnimator = new FrameBasedAnimator(animator);
 
             _distanceToWall = 0.2f + 1 / Mathf.Sqrt(2);
-            state = CharacterStates.Normal;
+            State = CharacterStates.Normal;
             chSide = GroundSide.Floor;
         }
 

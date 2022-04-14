@@ -6,9 +6,6 @@ namespace Player
 {
     public class MainPlayerHandler : MonoBehaviour
     {
-        public delegate void Interaction();
-        public Interaction interactAction = null;
-
         public InsectController chController;
     
         private InputScheme _input;
@@ -22,15 +19,16 @@ namespace Player
             _input.Player.Jump.performed += context => { chController.Jump(); };
             _input.Player.RunModeOn.performed += context => { chController.tryToCrawl = true; };
             _input.Player.RunModeOff.performed += context => { chController.ToNormalState(); };
-            _input.Player.Using.performed += context => { if (interactAction != null && chController.state != InsectController.CharacterStates.Crawl) interactAction(); };
+            _input.Player.Using.performed += context => { InteractWithUsableObject(); };
         }
-    
+
         private void OnEnable() { _input.Enable(); }
     
         private void OnDisable() { _input.Disable(); }
 
         private void Start()
         {
+            chController.OnStateChanged += UpdateUseIcon;
         }
 
         private bool CastRay(Vector2 dir, float distance)
@@ -38,12 +36,11 @@ namespace Player
             return Physics2D.Raycast(transform.position, dir, distance, chController.groundLayer);
         }
 
-        private void Update()
+        private float GetPlayerInputDirection()
         {
             Vector2 inputDir = _input.Player.Movement.ReadValue<Vector2>();
-
+            
             #region CorrectPlayerInputDirection
-
             float moveDir = chController.chSide switch
             {
                 InsectController.GroundSide.Floor => inputDir.x,
@@ -91,17 +88,60 @@ namespace Player
                         moveDir = 0;
                     break;
             }
-
-
             #endregion
-        
-            chController.moveDir = moveDir;
+
+            return moveDir;
+        }
+
+        private void Update()
+        {
+            chController.moveDir = GetPlayerInputDirection();
+        }
+
+        private UsableObject _usableObject;
+
+        private void InteractWithUsableObject()
+        {
+            if (_usableObject != null) 
+                _usableObject.Interact();
+        }
+
+        private void UpdateUseIcon()
+        {
+            if (_usableObject is null) return;
+            if (chController.State == InsectController.CharacterStates.Normal)
+            {
+                GameUI.ShowUseIcon(_usableObject.useIconPosition);
+            }
+            else
+            {
+                GameUI.HideUseIcon();
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (!col.CompareTag("Enemy")) return;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            if (col.CompareTag("Enemy"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else if (col.CompareTag("Usable"))
+            {
+                _usableObject = col.GetComponent<UsableObject>();
+                if (chController.State == InsectController.CharacterStates.Normal)
+                {
+                    GameUI.ShowUseIcon(_usableObject.useIconPosition);
+                }
+            }
+        }
+        
+        private void OnTriggerExit2D(Collider2D col)
+        {
+            if (col.CompareTag("Usable"))
+            {
+                _usableObject.Deactivate();
+                _usableObject = null;
+            }
         }
     }
 }
