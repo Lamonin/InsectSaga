@@ -22,7 +22,7 @@ public class PlayerSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var p = FindObjectOfType<InsectPlayer>(true);
+        /*var p = FindObjectOfType<InsectPlayer>(true);
         if (p == null)
         {
             Instantiate(playerPrefab, transform.position, Quaternion.identity);
@@ -30,7 +30,7 @@ public class PlayerSpawn : MonoBehaviour
         else
         {
             p.transform.position = transform.position;
-        }
+        }*/
     }
 
     // Update is called once per frame

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UsableObject : MonoBehaviour
 {
-    private static InsectPlayer _player;
+   // private static InsectPlayer _player;
     public Sprite useIcon;
     public Vector2 offsetUseIcon;
 
@@ -19,7 +19,7 @@ public class UsableObject : MonoBehaviour
     
     private void Awake()
     {
-        _player ??= FindObjectOfType<InsectPlayer>(true);
+        //_player ??= FindObjectOfType<InsectPlayer>(true);
         CreateUseIconObject();
     }
 
@@ -46,14 +46,14 @@ public class UsableObject : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player") && _player.state == PlatformerCharacter.CharacterStates.Normal)
+        /*if (col.CompareTag("Player") && _player.state == PlatformerCharacter.CharacterStates.Normal)
         {
             _player.interactAction = Interact;
             useGO.SetActive(true);
-        }
+        }*/
     }
 
-    private void OnTriggerExit2D(Collider2D col)
+    /*private void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Player"))
         {
@@ -63,5 +63,5 @@ public class UsableObject : MonoBehaviour
             }
             useGO.SetActive(false);
         }
-    }
+    }*/
 }
