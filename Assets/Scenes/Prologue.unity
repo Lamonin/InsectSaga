@@ -504,6 +504,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
+      propertyPath: runSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
+      propertyPath: jumpPower
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
+      propertyPath: walkSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
+      propertyPath: crawlSpeed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
 --- !u!1 &857008075

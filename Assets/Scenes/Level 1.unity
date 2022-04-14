@@ -8515,11 +8515,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
       propertyPath: runSpeed
-      value: 4
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
       propertyPath: jumpPower
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
+      propertyPath: walkSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1067320516746289319, guid: 2669b7f9fb7856b4cab755c5939e4bb0, type: 3}
       propertyPath: crawlSpeed
