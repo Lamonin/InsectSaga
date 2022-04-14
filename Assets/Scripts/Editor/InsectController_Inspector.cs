@@ -5,11 +5,52 @@ using Controllers;
 [CustomEditor(typeof(InsectController))]
 public class InsectController_Inspector : Editor
 {
-    private InsectController _drawTarget;
+    private SerializedProperty m_WalkSpeed;
+    private SerializedProperty m_RunSpeed;
+    private SerializedProperty m_StickOffsetBeforeRun;
+    private SerializedProperty m_IsCanJump;
+    private SerializedProperty m_JumpPower;
+    private SerializedProperty m_HangTime;
+    private SerializedProperty m_JumpBufferTime;
+    private SerializedProperty m_CrawlSpeed;
+    private SerializedProperty m_RotationSpeed;
+    private SerializedProperty m_JumpCrawlPower;
+    private SerializedProperty m_JumpCrawlFromWallPower;
+    private SerializedProperty m_GroundLayerName;
+    private SerializedProperty m_GroundCheckPos;
+    private SerializedProperty m_GroundCheckRadius;
+    private SerializedProperty m_GrabWallDistance;
+    private SerializedProperty m_GrabGroundDistance;
+    private SerializedProperty m_RayGroundLength;
+    private SerializedProperty m_Sprite;
+    private SerializedProperty m_Animator;
+    private SerializedProperty m_CollTransform;
 
     private void OnEnable()
     {
-        _drawTarget = (InsectController) target;
+        m_WalkSpeed = serializedObject.FindProperty("walkSpeed");
+        m_RunSpeed = serializedObject.FindProperty("runSpeed");
+        m_StickOffsetBeforeRun = serializedObject.FindProperty("stickOffsetBeforeRun");
+        m_IsCanJump = serializedObject.FindProperty("isCanJump");
+        m_JumpPower = serializedObject.FindProperty("jumpPower");
+        m_HangTime = serializedObject.FindProperty("hangTime");
+        m_JumpBufferTime = serializedObject.FindProperty("jumpBufferTime");
+       
+        m_CrawlSpeed = serializedObject.FindProperty("crawlSpeed");
+        m_RotationSpeed = serializedObject.FindProperty("rotationSpeed");
+        m_JumpCrawlPower = serializedObject.FindProperty("jumpCrawlPower");
+        m_JumpCrawlFromWallPower = serializedObject.FindProperty("jumpCrawlFromWallPower");
+       
+        m_GroundLayerName = serializedObject.FindProperty("groundLayerName");
+        m_GroundCheckPos = serializedObject.FindProperty("groundCheckPos");
+        m_GroundCheckRadius = serializedObject.FindProperty("groundCheckRadius");
+        m_GrabWallDistance = serializedObject.FindProperty("grabWallDistance");
+        m_GrabGroundDistance = serializedObject.FindProperty("grabGroundDistance");
+        m_RayGroundLength = serializedObject.FindProperty("rayGroundLength");
+        
+        m_Sprite = serializedObject.FindProperty("sprite");
+        m_Animator = serializedObject.FindProperty("animator");
+        m_CollTransform = serializedObject.FindProperty("collTransform");
     }
 
     private void AddHeader(string label, bool space = true)
@@ -20,44 +61,38 @@ public class InsectController_Inspector : Editor
 
     public override void OnInspectorGUI()
     {
-        AddHeader("Режим ходьбы", false);
+        AddHeader("Режим ходьбы", false); 
+        EditorGUILayout.PropertyField(m_WalkSpeed, new GUIContent("Скорость ходьбы"));
+        EditorGUILayout.PropertyField(m_RunSpeed, new GUIContent("Скорость бега"));
+        EditorGUILayout.PropertyField(m_StickOffsetBeforeRun, new GUIContent("Мин. отклон. стика"));
         
-        _drawTarget.walkSpeed = EditorGUILayout.FloatField("Скорость ходьбы", _drawTarget.walkSpeed);
-        _drawTarget.runSpeed = EditorGUILayout.FloatField("Скорость бега", _drawTarget.runSpeed);
-        _drawTarget.stickOffsetBeforeRun = EditorGUILayout.Slider("Отклон стика",_drawTarget.stickOffsetBeforeRun, 0.01f, 1f);
         EditorGUILayout.Space();
-
-        _drawTarget.isCanJump = EditorGUILayout.Toggle("Может ли прыгать?", _drawTarget.isCanJump);
-        _drawTarget.jumpPower = EditorGUILayout.FloatField("Сила прыжка", _drawTarget.jumpPower);
-        _drawTarget.hangTime = EditorGUILayout.FloatField("Прыжок Койота", _drawTarget.hangTime);
-        _drawTarget.jumpBufferTime = EditorGUILayout.FloatField("Буфер прыжка", _drawTarget.jumpBufferTime);
+        
+        EditorGUILayout.PropertyField(m_IsCanJump, new GUIContent("Может ли прыгать?"));
+        EditorGUILayout.PropertyField(m_JumpPower, new GUIContent("Сила прыжка"));
+        EditorGUILayout.PropertyField(m_HangTime, new GUIContent("Прыжок Койота"));
+        EditorGUILayout.PropertyField(m_JumpBufferTime, new GUIContent("Буфер прыжка"));
         
         AddHeader("Режим ползанья");
-        _drawTarget.crawlSpeed = EditorGUILayout.FloatField("Скорость ползанья", _drawTarget.crawlSpeed);
-        _drawTarget.rotationSpeed = EditorGUILayout.FloatField("Скорость поворота", _drawTarget.rotationSpeed);
-        _drawTarget.jumpCrawlPower = EditorGUILayout.FloatField("Сила прыжка", _drawTarget.jumpCrawlPower);
-        _drawTarget.jumpCrawlFromWallPower = EditorGUILayout.FloatField("Сила прыжка от стены", _drawTarget.jumpCrawlFromWallPower);
-
-        AddHeader("Другое");
-        _drawTarget.groundLayerName = EditorGUILayout.TextField("Слой поверхности", _drawTarget.groundLayerName);
-        _drawTarget.groundCheckPos = EditorGUILayout.Vector2Field("Позиция проверки поверхности", _drawTarget.groundCheckPos);
-        _drawTarget.groundCheckRadius = EditorGUILayout.FloatField("Радиус проверки поверхности", _drawTarget.groundCheckRadius);
-        _drawTarget.grabWallDistance = EditorGUILayout.FloatField("Расстояние прицепления к стене", _drawTarget.grabWallDistance);
-        _drawTarget.grabGroundDistance = EditorGUILayout.FloatField("Расстояние прицепления к земле", _drawTarget.grabGroundDistance);
-        _drawTarget.rayGroundLength = EditorGUILayout.FloatField("Длина луча к земле (поворот)",_drawTarget.rayGroundLength);
-
-
-        AddHeader("Компоненты");
-        _drawTarget.animator = (Animator) EditorGUILayout.ObjectField("Animator", _drawTarget.animator, typeof(Animator));
-        _drawTarget.sprite = (SpriteRenderer) EditorGUILayout.ObjectField("Sprite", _drawTarget.sprite, typeof(SpriteRenderer));
-        _drawTarget.collTransform = (Transform) EditorGUILayout.ObjectField("Collider Transform", _drawTarget.collTransform, typeof(Transform));
+        EditorGUILayout.PropertyField(m_CrawlSpeed, new GUIContent("Скорость ползанья"));
+        EditorGUILayout.PropertyField(m_RotationSpeed, new GUIContent("Скорость поворота"));
+        EditorGUILayout.PropertyField(m_JumpCrawlPower, new GUIContent("Сила прыжка"));
+        EditorGUILayout.PropertyField(m_JumpCrawlFromWallPower, new GUIContent("Сила прыжка от стены"));
         
-        AddHeader("DEBUG");
-        EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.EnumPopup(_drawTarget.state);
-        EditorGUILayout.EnumPopup(_drawTarget.chSide);
-        EditorGUILayout.EndHorizontal();
-
+        AddHeader("Другое");
+        EditorGUILayout.PropertyField(m_GroundLayerName, new GUIContent("Название слоя поверхности"));
+        EditorGUILayout.PropertyField(m_GroundCheckPos, new GUIContent("Позиция проверки поверхности"));
+        EditorGUILayout.PropertyField(m_GroundCheckRadius, new GUIContent("Радиус проверки поверхности"));
+        EditorGUILayout.PropertyField(m_GrabWallDistance, new GUIContent("Расстояние прицепления к стен"));
+        EditorGUILayout.PropertyField(m_GrabGroundDistance, new GUIContent("Расстояние прицепления к земле"));
+        EditorGUILayout.PropertyField(m_RayGroundLength, new GUIContent("Длина луча к земле (поворот)"));
+        
+        AddHeader("Компоненты");
+        EditorGUILayout.PropertyField(m_Sprite);
+        EditorGUILayout.PropertyField(m_Animator);
+        EditorGUILayout.PropertyField(m_CollTransform);
+        
+        serializedObject.ApplyModifiedProperties();
         //base.OnInspectorGUI();
     }
 }

@@ -31,9 +31,10 @@ namespace Controllers
         private float _moveSpeed;
         private float _hangCounter;
         private float _jumpCounter;
-        
+
         //COMPONENTS
         protected Rigidbody2D rb2d;
+        public static bool IsStopped;
         
         //PROPERTIES
         public bool IsGround => Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, groundLayer);
@@ -66,18 +67,9 @@ namespace Controllers
             _jumpCounter = -1;
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpPower);
         }
-        
-        protected virtual void Start()
+
+        private void ManageHangAndJumpBufferTimer()
         {
-            rb2d = GetComponent<Rigidbody2D>();
-            groundLayer = 1 << LayerMask.NameToLayer(groundLayerName);
-        }
-        
-        protected virtual void Update()
-        {
-            if (moveDir != 0) sprite.flipX = moveDir < 0;
-            
-            //MANAGE HANG AND JUMP BUFFER TIMER
             if (IsGround)
             {
                 _hangCounter = hangTime;
@@ -88,6 +80,18 @@ namespace Controllers
                 _hangCounter -= Time.deltaTime;
                 _jumpCounter -= Time.deltaTime;
             }
+        }
+        
+        protected virtual void Start()
+        {
+            rb2d = GetComponent<Rigidbody2D>();
+            groundLayer = 1 << LayerMask.NameToLayer(groundLayerName);
+        }
+        
+        protected virtual void Update()
+        {
+            if (moveDir != 0) sprite.flipX = moveDir < 0;
+            ManageHangAndJumpBufferTimer();
         }
 
         protected virtual void OnDrawGizmosSelected()
