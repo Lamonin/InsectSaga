@@ -53,10 +53,10 @@ namespace Player
 
             float moveDir = chController.chSide switch
             {
-                InsectController.GroundSide.Floor => inputDir.x,
-                InsectController.GroundSide.Ceil => -inputDir.x,
-                InsectController.GroundSide.LWall => -inputDir.y,
-                InsectController.GroundSide.RWall => inputDir.y,
+                GroundSide.Floor => inputDir.x,
+                GroundSide.Ceil => -inputDir.x,
+                GroundSide.LWall => -inputDir.y,
+                GroundSide.RWall => inputDir.y,
                 _ => chController.moveDir
             };
 
@@ -78,24 +78,24 @@ namespace Player
 
             switch (chController.chSide)
             {
-                case InsectController.GroundSide.Floor:
+                case GroundSide.Floor:
                     if (_rightWallRay && inputDir.x > 0 && inputDir.y < 0 ||
                         _leftWallRay && inputDir.x < 0 && inputDir.y < 0)
                         moveDir = 0;
                     break;
 
-                case InsectController.GroundSide.Ceil:
+                case GroundSide.Ceil:
                     if (_rightWallRay && inputDir.x > 0 && inputDir.y > 0 ||
                         _leftWallRay && inputDir.x < 0 && inputDir.y > 0)
                         moveDir = 0;
                     break;
 
-                case InsectController.GroundSide.LWall:
+                case GroundSide.LWall:
                     if (_floorRay && inputDir.x < 0 && inputDir.y < 0 || _ceilRay && inputDir.x < 0 && inputDir.y > 0)
                         moveDir = 0;
                     break;
 
-                case InsectController.GroundSide.RWall:
+                case GroundSide.RWall:
                     if (_floorRay && inputDir.x > 0 && inputDir.y < 0 || _ceilRay && inputDir.x > 0 && inputDir.y > 0)
                         moveDir = 0;
                     break;
@@ -114,14 +114,14 @@ namespace Player
 
         protected override void InteractWithUsableObject()
         {
-            if (chController.State != InsectController.CharacterStates.Normal) return;
+            if (chController.State != CharacterStates.Normal) return;
             base.InteractWithUsableObject();
         }
 
         private void UpdateUseIcon()
         {
             if (_usableObject is null) return;
-            if (chController.State == InsectController.CharacterStates.Normal)
+            if (chController.State == CharacterStates.Normal)
             {
                 GameUI.ShowUseIcon(_usableObject.useIconPosition);
             }
@@ -140,7 +140,7 @@ namespace Player
             else if (other.CompareTag("Usable"))
             {
                 _usableObject = other.GetComponent<UsableObject>();
-                if (chController.State == InsectController.CharacterStates.Normal)
+                if (chController.State == CharacterStates.Normal)
                 {
                     GameUI.ShowUseIcon(_usableObject.useIconPosition);
                 }

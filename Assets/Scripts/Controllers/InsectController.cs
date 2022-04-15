@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
 namespace Controllers
 {
+    //ENUMS
+    public enum CharacterStates { Normal, Crawl, JumpCrawl }
+    public enum GroundSide { Floor, Ceil, LWall, RWall }
+    
     public class InsectController : PlatformerController
     {
         public float crawlSpeed;
@@ -16,25 +21,22 @@ namespace Controllers
 
         public Animator animator;
         public Transform collTransform;
-        //ENUMS
-        public enum CharacterStates { Normal, Crawl, JumpCrawl }
 
-        public enum GroundSide { Floor, Ceil, LWall, RWall }
-        
-        public GroundSide chSide;
 
         //VARIABLES
-        [HideInInspector] public bool tryToCrawl;
+        public bool tryToCrawl;
         private bool _flip;
         private bool _isJumpInCrawl;
         private bool _isNowRotated;
         private FrameBasedAnimator _frameAnimator;
         private float _distanceToWall;
         private int _crawlDir;
+        private Coroutine _groundRoutine;
 
         public delegate void StateChanged();
         public event StateChanged OnStateChanged;
         
+        public GroundSide chSide;
         //Properties
         private CharacterStates _state;
         public CharacterStates State
@@ -42,6 +44,11 @@ namespace Controllers
             get => _state;
             set
             {
+                if (_groundRoutine != null)
+                {
+                    StopCoroutine(_groundRoutine);
+                    _frameAnimator.Unfreeze();
+                }
                 _state = value;
                 OnStateChanged?.Invoke();
             }
@@ -146,7 +153,6 @@ namespace Controllers
             if (State == CharacterStates.Normal) return;
 
             transform.DOKill();
-            StopCoroutine(ToCrawlJumpState());
 
             collTransform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -169,7 +175,6 @@ namespace Controllers
             }
             else if (State != CharacterStates.JumpCrawl && !_isNowRotated)
             {
-                StopCoroutine(ToCrawlJumpState());
                 StartCoroutine(ToCrawlJumpState());
             }
         }
@@ -252,23 +257,49 @@ namespace Controllers
         private const string PLAYER_WALK = "walk";
         private const string PLAYER_RUN = "run";
         private const string PLAYER_CRAWL = "crawl";
+        private const string PLAYER_IDLE_CRAWL = "idle_crawl";
+        private const string PLAYER_JUMP = "jump";
+        private const string PLAYER_GROUND = "ground";
 
         private void UpdateAnimations()
         {
-            if (State != CharacterStates.Normal)
+            switch (State)
             {
-                _frameAnimator.ChangeAnimation(PLAYER_CRAWL);
-            }
-            else if (IsGround && State == CharacterStates.Normal)
-            {
-                if (moveDir != 0)
-                {
-                    _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) < stickOffsetBeforeRun ? PLAYER_WALK : PLAYER_RUN);
-                }
-                else
-                {
-                    _frameAnimator.ChangeAnimation(PLAYER_IDLE);
-                }
+                case CharacterStates.Normal:
+                    
+                    if (IsGround)
+                    {
+                        if (_frameAnimator.CurrentState == PLAYER_JUMP)
+                        {
+                            _groundRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(PLAYER_GROUND));
+                            return;
+                        }
+                        if (moveDir != 0)
+                        {
+                            _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) < stickOffsetBeforeRun ? PLAYER_WALK : PLAYER_RUN);
+                        }
+                        else
+                        {
+                            _frameAnimator.ChangeAnimation(PLAYER_IDLE);
+                        }
+                    }
+                    else
+                    {
+                        _frameAnimator.ChangeAnimation(PLAYER_JUMP);
+                    }
+                    
+                    break;
+                
+                case CharacterStates.Crawl:
+                    _frameAnimator.ChangeAnimation(moveDir != 0 ? PLAYER_CRAWL : PLAYER_IDLE_CRAWL);
+                    break;
+                
+                case CharacterStates.JumpCrawl:
+                    _frameAnimator.ChangeAnimation(PLAYER_IDLE_CRAWL);
+                    break;
+                
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
