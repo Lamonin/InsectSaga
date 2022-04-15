@@ -64,34 +64,26 @@ namespace Objects
         }
 
         private bool _isTyping;
-        private string tag;
+        private string _tag;
         private IEnumerator StartMessageSymbolTyping()
         {
             if (String.IsNullOrEmpty(_message)) yield break;
             
             _isTyping = true;
-            tag = String.Empty;
+            _tag = String.Empty;
             foreach (var ch in _message)
             {
                 if (richText)
                 {
-                    if (ch == '<')
-                    {
-                        tag = ch.ToString();
-                        continue;
-                    }
-                    
                     if (ch == '>')
                     {
-                        tag += ch;
-                        GameUI.Handler.dialogText.text += tag;
-                        tag = String.Empty;
-                        continue;
+                        GameUI.Handler.dialogText.text += _tag;
+                        _tag = String.Empty;
                     }
                     
-                    if (tag.Length>0)
+                    if (_tag.Length>0 || ch == '<')
                     {
-                        tag += ch;
+                        _tag += ch;
                         continue;
                     }
                 }
