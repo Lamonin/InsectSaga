@@ -9,6 +9,7 @@ namespace Objects
         [Space]
         public bool canSkipDialogs;
         public bool stopPlayerInDialog;
+        [Tooltip("Возможность использовать теги")] public bool richText;
         public float delayToTypeSymbol = 0.05f;
         public float delayBeforeStartDialogAgain = 0.1f;
 
@@ -63,17 +64,42 @@ namespace Objects
         }
 
         private bool _isTyping;
+        private string tag;
         private IEnumerator StartMessageSymbolTyping()
         {
             if (String.IsNullOrEmpty(_message)) yield break;
             
             _isTyping = true;
+            tag = String.Empty;
             foreach (var ch in _message)
             {
+                if (richText)
+                {
+                    if (ch == '<')
+                    {
+                        tag = ch.ToString();
+                        continue;
+                    }
+                    
+                    if (ch == '>')
+                    {
+                        tag += ch;
+                        GameUI.Handler.dialogText.text += tag;
+                        tag = String.Empty;
+                        continue;
+                    }
+                    
+                    if (tag.Length>0)
+                    {
+                        tag += ch;
+                        continue;
+                    }
+                }
+                
+ 
                 GameUI.Handler.dialogText.text += ch;
                 yield return new WaitForSeconds(delayToTypeSymbol);
             }
-
             _isTyping = false;
         }
 
