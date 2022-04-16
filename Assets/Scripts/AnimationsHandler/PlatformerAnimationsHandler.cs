@@ -11,6 +11,7 @@ namespace AnimationsHandler
 
         private const string IDLE = "idle";
         private const string WALK = "walk";
+        private const string JUMP = "jump";
     
         void Start()
         {
@@ -19,13 +20,20 @@ namespace AnimationsHandler
 
         private void UpdateAnimations()
         {
-            if (chController.moveDir != 0)
+            if (chController.IsGround)
             {
-                _frameAnimator.ChangeAnimation(WALK);
+                if (chController.moveDir != 0)
+                {
+                    _frameAnimator.ChangeAnimation(WALK);
+                }
+                else
+                {
+                    _frameAnimator.ChangeAnimation(IDLE);
+                }
             }
             else
             {
-                _frameAnimator.ChangeAnimation(IDLE);
+                _frameAnimator.ChangeAnimation(JUMP);
             }
         }
 

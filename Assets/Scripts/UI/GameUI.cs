@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Objects;
 using TMPro;
 
 public class GameUI : MonoBehaviour
@@ -18,10 +19,10 @@ public class GameUI : MonoBehaviour
     //VARIABLES
     private Vector3 _useIconPos = Vector3.zero;
 
-    public static void ShowUseIcon(Vector2 pos)
+    public static void ShowUseIcon(UsableObject useObject)
     {
-        
-        Handler._useIconPos = pos;
+        if (!useObject.interactable) return;
+        Handler._useIconPos = useObject.useIconOffset;
         Handler.useIcon.rectTransform.position = Handler.mainCamera.WorldToScreenPoint(Handler._useIconPos);
         Handler.useIcon.gameObject.SetActive(true);
         Handler.useIcon.DOKill();
@@ -49,6 +50,28 @@ public class GameUI : MonoBehaviour
         {
             useIcon.rectTransform.position = mainCamera.WorldToScreenPoint(_useIconPos);
         }
+    }
+
+    private void DialogueStart(bool b)
+    {
+        dialogText.gameObject.SetActive(true);
+    }
+
+    private void DialogueEnd()
+    {
+        dialogText.gameObject.SetActive(false);
+    }
+
+    private void OnEnable()
+    {
+        EventBus.OnDialogueStart += DialogueStart;
+        EventBus.OnDialogueEnd += DialogueEnd;
+    }
+
+    private void OnDisable()
+    {
+        EventBus.OnDialogueStart -= DialogueStart;
+        EventBus.OnDialogueEnd -= DialogueEnd;
     }
 
     private void Start()

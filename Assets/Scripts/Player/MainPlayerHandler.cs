@@ -1,4 +1,5 @@
 ﻿using Controllers;
+using Objects;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,19 +17,19 @@ namespace Player
 
             _input.Player.Jump.performed += context =>
             {
-                if (IsCharacterStopped) return;
+                if (isCharacterStopped) return;
                 chController.Jump();
             };
             
             _input.Player.RunModeOn.performed += context =>
             {
-                if (IsCharacterStopped) return;
+                if (isCharacterStopped) return;
                 chController.tryToCrawl = true;
             };
             
             _input.Player.RunModeOff.performed += context =>
             {
-                if (IsCharacterStopped) return;
+                if (isCharacterStopped) return;
                 chController.ToNormalState();
             };
             
@@ -119,7 +120,11 @@ namespace Player
 
         private void Update()
         {
-            if (IsCharacterStopped) return;
+            if (isCharacterStopped)
+            {
+                chController.moveDir = 0;
+                return;
+            }
             chController.moveDir = GetPlayerInputDirection();
         }
 
@@ -131,10 +136,10 @@ namespace Player
 
         private void UpdateUseIcon(CharacterStates newState)
         {
-            if (_usableObject is null) return;
+            if (UsableObject is null) return;
             if (newState == CharacterStates.Normal)
             {
-                GameUI.ShowUseIcon(_usableObject.useIconPosition);
+                GameUI.ShowUseIcon(UsableObject);
             }
             else
             {
@@ -150,10 +155,10 @@ namespace Player
             }
             else if (other.CompareTag("Usable"))
             {
-                _usableObject = other.GetComponent<UsableObject>();
+                UsableObject = other.GetComponent<UsableObject>();
                 if (chController.State == CharacterStates.Normal)
                 {
-                    GameUI.ShowUseIcon(_usableObject.useIconPosition);
+                    GameUI.ShowUseIcon(UsableObject);
                 }
             }
         }
@@ -162,8 +167,9 @@ namespace Player
         {
             if (other.CompareTag("Usable"))
             {
-                _usableObject.Deactivate();
-                _usableObject = null;
+                if (UsableObject is null) return;
+                UsableObject.Deactivate();
+                UsableObject = null;
             }
         }
     }
