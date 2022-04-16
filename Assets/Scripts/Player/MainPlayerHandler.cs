@@ -9,35 +9,46 @@ namespace Player
         public InsectController chController;
 
         private bool _ceilRay, _floorRay, _leftWallRay, _rightWallRay;
-
+        
         protected override void Awake()
         {
             base.Awake();
 
             _input.Player.Jump.performed += context =>
             {
-                if (isCharacterStopped) return;
+                if (IsCharacterStopped) return;
                 chController.Jump();
             };
             
             _input.Player.RunModeOn.performed += context =>
             {
-                if (isCharacterStopped) return;
+                if (IsCharacterStopped) return;
                 chController.tryToCrawl = true;
             };
             
             _input.Player.RunModeOff.performed += context =>
             {
-                if (isCharacterStopped) return;
+                if (IsCharacterStopped) return;
                 chController.ToNormalState();
             };
             
             _input.Player.Using.performed += context => { InteractWithUsableObject(); };
         }
 
-        private void Start()
+        protected override void OnEnable()
         {
             chController.OnStateChanged += UpdateUseIcon;
+            base.OnEnable();
+        }
+
+        protected override void OnDisable()
+        {
+            chController.OnStateChanged -= UpdateUseIcon;
+            base.OnDisable();
+        }
+
+        private void Start()
+        {
         }
 
         private bool CastRay(Vector2 dir, float distance)
@@ -108,7 +119,7 @@ namespace Player
 
         private void Update()
         {
-            if (isCharacterStopped) return;
+            if (IsCharacterStopped) return;
             chController.moveDir = GetPlayerInputDirection();
         }
 
@@ -118,10 +129,10 @@ namespace Player
             base.InteractWithUsableObject();
         }
 
-        private void UpdateUseIcon()
+        private void UpdateUseIcon(CharacterStates newState)
         {
             if (_usableObject is null) return;
-            if (chController.State == CharacterStates.Normal)
+            if (newState == CharacterStates.Normal)
             {
                 GameUI.ShowUseIcon(_usableObject.useIconPosition);
             }

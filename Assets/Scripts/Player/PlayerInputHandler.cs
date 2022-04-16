@@ -4,16 +4,37 @@ namespace Player
 {
     public class PlayerInputHandler : MonoBehaviour
     {
-        public bool isCharacterStopped;
+        protected bool IsCharacterStopped;
         protected InputScheme _input;
+        
+        private void DialogueStart(bool stopped)
+        {
+            IsCharacterStopped = stopped;
+        }
+
+        private void DialogueEnd()
+        {
+            IsCharacterStopped = false;
+        }
 
         protected virtual void Awake()
         {
             _input = new InputScheme();
         }
-        
-        protected virtual void OnEnable() { _input.Enable(); }
-        protected virtual void OnDisable() { _input.Disable(); }
+
+        protected virtual void OnEnable()
+        {
+            _input.Enable();
+            EventBus.OnDialogueStart += DialogueStart;
+            EventBus.OnDialogueEnd += DialogueEnd;
+        }
+
+        protected virtual void OnDisable()
+        {
+            _input.Disable();
+            EventBus.OnDialogueStart -= DialogueStart;
+            EventBus.OnDialogueEnd -= DialogueEnd;
+        }
         
         protected UsableObject _usableObject;
 

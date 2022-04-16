@@ -32,9 +32,7 @@ namespace Controllers
         private float _distanceToWall;
         private int _crawlDir;
         private Coroutine _groundRoutine;
-
-        public delegate void StateChanged();
-        public event StateChanged OnStateChanged;
+        public event Action<CharacterStates> OnStateChanged;
         
         public GroundSide chSide;
         //Properties
@@ -50,7 +48,7 @@ namespace Controllers
                     _frameAnimator.Unfreeze();
                 }
                 _state = value;
-                OnStateChanged?.Invoke();
+                OnStateChanged?.Invoke(_state);
             }
         }
 
