@@ -16,6 +16,6 @@ public class MainMenuHandler : MonoBehaviour
 
     public void LoadTestScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

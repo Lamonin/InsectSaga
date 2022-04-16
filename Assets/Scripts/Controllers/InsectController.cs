@@ -160,7 +160,7 @@ namespace Controllers
 
             _isNowRotated = false;
             _isJumpInCrawl = false;
-            _frameAnimator.ChangeAnimation(PLAYER_IDLE);
+            _frameAnimator.ChangeAnimation(IDLE);
 
             State = CharacterStates.Normal;
         }
@@ -251,49 +251,49 @@ namespace Controllers
 
         #region ANIMATIONS
 
-        private const string PLAYER_IDLE = "idle";
-        private const string PLAYER_WALK = "walk";
-        private const string PLAYER_RUN = "run";
-        private const string PLAYER_CRAWL = "crawl";
-        private const string PLAYER_IDLE_CRAWL = "idle_crawl";
-        private const string PLAYER_JUMP = "jump";
-        private const string PLAYER_GROUND = "ground";
+        private readonly int IDLE = Animator.StringToHash("idle");
+        private readonly int WALK = Animator.StringToHash("walk");
+        private readonly int RUN = Animator.StringToHash("run");
+        private readonly int CRAWL = Animator.StringToHash("crawl");
+        private readonly int IDLE_CRAWL = Animator.StringToHash("idle_crawl");
+        private readonly int JUMP = Animator.StringToHash("jump");
+        private readonly int FALL = Animator.StringToHash("fall");
+        private readonly int GROUND = Animator.StringToHash("ground");
 
         private void UpdateAnimations()
         {
             switch (State)
             {
-                case CharacterStates.Normal:
                     
+                case CharacterStates.Normal:
                     if (IsGround)
                     {
-                        if (_frameAnimator.CurrentState == PLAYER_JUMP)
+                        if (_frameAnimator.CurrentState == JUMP || _frameAnimator.CurrentState == FALL)
                         {
-                            _groundRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(PLAYER_GROUND));
+                            _groundRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
                             return;
                         }
                         if (moveDir != 0)
                         {
-                            _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) < stickOffsetBeforeRun ? PLAYER_WALK : PLAYER_RUN);
+                            _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) < stickOffsetBeforeRun ? WALK : RUN);
                         }
                         else
                         {
-                            _frameAnimator.ChangeAnimation(PLAYER_IDLE);
+                            _frameAnimator.ChangeAnimation(IDLE);
                         }
                     }
                     else
                     {
-                        _frameAnimator.ChangeAnimation(PLAYER_JUMP);
+                        _frameAnimator.ChangeAnimation(rb2d.velocity.y > 0 ? JUMP : FALL);
                     }
-                    
                     break;
                 
                 case CharacterStates.Crawl:
-                    _frameAnimator.ChangeAnimation(moveDir != 0 ? PLAYER_CRAWL : PLAYER_IDLE_CRAWL);
+                    _frameAnimator.ChangeAnimation(moveDir != 0 ? CRAWL : IDLE_CRAWL);
                     break;
                 
                 case CharacterStates.JumpCrawl:
-                    _frameAnimator.ChangeAnimation(PLAYER_IDLE_CRAWL);
+                    _frameAnimator.ChangeAnimation(IDLE_CRAWL);
                     break;
                 
                 default:

@@ -9,10 +9,10 @@ namespace AnimationsHandler
         public Animator animator;
         private FrameBasedAnimator _frameAnimator;
 
-        private const string IDLE = "idle";
-        private const string WALK = "walk";
-        private const string JUMP = "jump";
-    
+        private readonly int IDLE = Animator.StringToHash("idle");
+        private readonly int WALK = Animator.StringToHash("walk");
+        private readonly int JUMP = Animator.StringToHash("jump");
+
         void Start()
         {
             _frameAnimator = new FrameBasedAnimator(animator);

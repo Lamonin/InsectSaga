@@ -4,7 +4,7 @@ namespace Objects
 {
     public class MultipleDialogs : UsableObject
     {
-        private int _currentDialog;
+        public int currentDialog;
         private DialogObject[] _dialogObjects;
 
         protected override void Start()
@@ -15,15 +15,15 @@ namespace Objects
 
         public override void Interact()
         {
-            _dialogObjects[_currentDialog].Interact();
+            _dialogObjects[currentDialog].Interact();
         }
 
         public override void Deactivate()
         {
-            _dialogObjects[_currentDialog].Deactivate();
+            _dialogObjects[currentDialog].Deactivate();
             base.Deactivate();
         }
 
-        public void SetCurrentDialog(int curDialog) => _currentDialog = curDialog;
+        public void SetCurrentDialog(int curDialog) => currentDialog = curDialog;
     }
 }

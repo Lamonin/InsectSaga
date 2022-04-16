@@ -1,4 +1,3 @@
-using Player;
 using UnityEngine;
 
 namespace Objects
@@ -9,22 +8,15 @@ namespace Objects
         [HideInInspector] public Vector2 useIconOffset;
 
         public bool interactable = true;
-        
-        public static PlayerInputHandler playerHandler;
-        private static int _usableObjectsCount;
-    
+
         protected virtual void Start()
         {
-            _usableObjectsCount++;
 
-            playerHandler ??= FindObjectOfType<PlayerInputHandler>(true);
         }
 
         protected virtual void OnDestroy()
         {
-            _usableObjectsCount--;
-            if (_usableObjectsCount == 0)
-                playerHandler = null;
+
         }
 
         public virtual void Interact()
@@ -39,7 +31,7 @@ namespace Objects
         
         public void SetInteractable(bool b) => interactable = b;
 
-        public void LateUpdate()
+        public void Update()
         {
             useIconOffset = (Vector2) transform.position + useIconPosition;
         }
