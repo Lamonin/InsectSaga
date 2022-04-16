@@ -869,7 +869,7 @@ GameObject:
   m_Component:
   - component: {fileID: 321085175}
   - component: {fileID: 321085176}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: RWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1513,7 +1513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976474168}
   - component: {fileID: 976474169}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: LWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13823,7 +13823,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   groundCheckPos: {x: 0, y: -0.3}
-  groundCheckRadius: 0.1
+  groundCheckRadius: 0.07
   sprite: {fileID: 5127986471229277076}
   moveDir: 0
 --- !u!114 &5127986471666821245
