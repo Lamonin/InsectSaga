@@ -9,25 +9,25 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c6f02191b172d392d68252320092a
       flags: 0
     RecentlyUsedScenePath-1:
-      value: 22424703114646680e0b0227036c72111f1957072d21281d2827087df7ee3d2cfb
-      flags: 0
-    RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c6b1505032b2929262323621d1820f6d23b37efa923e7ee2e26
       flags: 0
-    RecentlyUsedScenePath-3:
+    RecentlyUsedScenePath-2:
       value: 22424703114646680e0b0227036c781f1a180e2520272b3b2c644c7df7ee3d2cfb
       flags: 0
-    RecentlyUsedScenePath-4:
+    RecentlyUsedScenePath-3:
       value: 22424703114646680e0b0227036c73150012146a7d66333e243d04
       flags: 0
-    RecentlyUsedScenePath-5:
+    RecentlyUsedScenePath-4:
       value: 22424703114646680e0b0227036c73150012146a7e66333e243d04
       flags: 0
-    RecentlyUsedScenePath-6:
+    RecentlyUsedScenePath-5:
       value: 22424703114646680e0b0227036c653c13011d266c7a68252320092a
       flags: 0
-    RecentlyUsedScenePath-7:
+    RecentlyUsedScenePath-6:
       value: 22424703114646680e0b0227036c653c13011d266c7968252320092a
+      flags: 0
+    RecentlyUsedScenePath-7:
+      value: 22424703114646680e0b0227036c72111f1957072d21281d2827087df7ee3d2cfb
       flags: 0
     RecentlyUsedScenePath-8:
       value: 22424703114646680e0b0227036c72111f19571a3e272a3f2a3c1861acf53a31f6fe
@@ -46,6 +46,6 @@ EditorUserSettings:
   m_VCShowFailedCheckout: 1
   m_VCOverwriteFailedCheckoutAssets: 1
   m_VCProjectOverlayIcons: 1
-  m_VCHierarchyOverlayIcons: 1
+  m_VCHierarchyOverlayIcons: 0
   m_VCOtherOverlayIcons: 1
   m_VCAllowAsyncUpdate: 1
