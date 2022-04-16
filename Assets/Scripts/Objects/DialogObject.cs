@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Objects
 {
@@ -15,6 +16,8 @@ namespace Objects
 
         [Space]
         [TextArea] public string[] dialogMessages;
+
+        public UnityEvent onDialogueEnd;
 
         //VARIABLES
         private int _currentMessageNumber;
@@ -38,7 +41,7 @@ namespace Objects
             if (_currentMessageNumber == 0) //START DIALOG
             {
                 GameUI.Handler.dialogText.gameObject.SetActive(true);
-                playerHandler.isCharacterStopped = stopPlayerInDialog;
+                EventBus.OnDialogueStart?.Invoke(stopPlayerInDialog);
             }
 
             if (_isTyping) //SKIP MESSAGE
@@ -49,15 +52,16 @@ namespace Objects
             }
             else if (_currentMessageNumber < dialogMessages.Length) //NEXT MESSAGE
             {
-                _message = dialogMessages[_currentMessageNumber];
                 GameUI.Handler.dialogText.text = String.Empty;
-                _messageTypeRoutine = StartCoroutine(StartMessageSymbolTyping());
+                _message = dialogMessages[_currentMessageNumber];
+                _messageTypeRoutine = StartCoroutine(MessageSymbolTyping());
                 _currentMessageNumber++;
             }
             else //END DIALOG
             {
                 GameUI.Handler.dialogText.gameObject.SetActive(false);
-                playerHandler.isCharacterStopped = false;
+                EventBus.OnDialogueEnd?.Invoke();
+                onDialogueEnd?.Invoke();
                 _currentMessageNumber = 0;
                 _delayBeforeNextMessage = StartCoroutine(DelayBeforeNextDialog());
             }
@@ -65,7 +69,7 @@ namespace Objects
 
         private bool _isTyping;
         private string _tag;
-        private IEnumerator StartMessageSymbolTyping()
+        private IEnumerator MessageSymbolTyping()
         {
             if (String.IsNullOrEmpty(_message)) yield break;
             

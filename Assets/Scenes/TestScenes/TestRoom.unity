@@ -732,6 +732,9 @@ MonoBehaviour:
   delayToTypeSymbol: 0.02
   delayBeforeStartDialogAgain: 0.5
   dialogMessages: []
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &701430437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1974,6 +1977,61 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &929655387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929655388}
+  - component: {fileID: 929655389}
+  m_Layer: 0
+  m_Name: Dialog1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &929655388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929655387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1962607745}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &929655389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929655387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334b8b7041b948e6b3dc8d6937c92f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useIconPosition: {x: 0, y: 0}
+  canSkipDialogs: 1
+  stopPlayerInDialog: 1
+  richText: 1
+  delayToTypeSymbol: 0.05
+  delayBeforeStartDialogAgain: 0.1
+  dialogMessages:
+  - Hello!
+  - I'm <color="red">Mario</color> from France!
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1198909382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,7 +2564,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.472, y: 0.019, z: 0.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 929655388}
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2535,6 +2594,9 @@ MonoBehaviour:
     2"
   - "<i>\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435
     3"
+  onDialogueEnd:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &1962607747
 BoxCollider2D:
   m_ObjectHideFlags: 0
