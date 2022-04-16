@@ -11,8 +11,8 @@ namespace Objects
         public bool canSkipDialogs;
         public bool stopPlayerInDialog;
         [Tooltip("Возможность использовать теги")] public bool richText;
-        public float delayToTypeSymbol = 0.05f;
-        public float delayBeforeStartDialogAgain = 0.1f;
+        public float delayToTypeSymbol = 0.02f;
+        public float delayBeforeStartDialogAgain = 0.5f;
 
         [Space]
         [TextArea] public string[] dialogMessages;
@@ -24,6 +24,11 @@ namespace Objects
         private string _message;
         private Coroutine _messageTypeRoutine;
         private Coroutine _delayBeforeNextMessage;
+        
+        protected override void Start()
+        {
+            base.Start();
+        }
 
         protected override void OnDestroy()
         {
@@ -40,7 +45,7 @@ namespace Objects
             
             if (_currentMessageNumber == 0) //START DIALOG
             {
-                GameUI.Handler.dialogText.gameObject.SetActive(true);
+                //GameUI.Handler.dialogText.gameObject.SetActive(true);
                 EventBus.OnDialogueStart?.Invoke(stopPlayerInDialog);
             }
 
@@ -59,7 +64,7 @@ namespace Objects
             }
             else //END DIALOG
             {
-                GameUI.Handler.dialogText.gameObject.SetActive(false);
+                //GameUI.Handler.dialogText.gameObject.SetActive(false);
                 EventBus.OnDialogueEnd?.Invoke();
                 onDialogueEnd?.Invoke();
                 _currentMessageNumber = 0;

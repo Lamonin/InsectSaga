@@ -1,20 +1,21 @@
-﻿using UnityEngine;
+﻿using Objects;
+using UnityEngine;
 
 namespace Player
 {
     public class PlayerInputHandler : MonoBehaviour
     {
-        protected bool IsCharacterStopped;
+        public bool isCharacterStopped;
         protected InputScheme _input;
         
         private void DialogueStart(bool stopped)
         {
-            IsCharacterStopped = stopped;
+            isCharacterStopped = stopped;
         }
 
         private void DialogueEnd()
         {
-            IsCharacterStopped = false;
+            isCharacterStopped = false;
         }
 
         protected virtual void Awake()
@@ -36,20 +37,20 @@ namespace Player
             EventBus.OnDialogueEnd -= DialogueEnd;
         }
         
-        protected UsableObject _usableObject;
+        protected UsableObject UsableObject;
 
         protected virtual void InteractWithUsableObject()
         {
-            if (_usableObject != null) 
-                _usableObject.Interact();
+            if (UsableObject != null) 
+                UsableObject.Interact();
         }
 
         protected virtual void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Usable"))
             {
-                _usableObject = other.GetComponent<UsableObject>();
-                GameUI.ShowUseIcon(_usableObject.useIconPosition);
+                UsableObject = other.GetComponent<UsableObject>();
+                GameUI.ShowUseIcon(UsableObject);
             }
         }
         
@@ -57,8 +58,9 @@ namespace Player
         {
             if (other.CompareTag("Usable"))
             {
-                _usableObject.Deactivate();
-                _usableObject = null;
+                if (UsableObject is null) return;
+                UsableObject.Deactivate();
+                UsableObject = null;
             }
         }
     }

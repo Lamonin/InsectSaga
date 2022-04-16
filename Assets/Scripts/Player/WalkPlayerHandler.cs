@@ -13,7 +13,7 @@ namespace Player
             
             _input.Player.Jump.performed += context =>
             {
-                if (IsCharacterStopped) return;
+                if (isCharacterStopped) return;
                 chController.Jump();
             };
             
@@ -26,7 +26,11 @@ namespace Player
 
         private void Update()
         {
-            if (IsCharacterStopped) return;
+            if (isCharacterStopped)
+            {
+                chController.moveDir = 0;    
+                return;
+            }
             chController.moveDir = _input.Player.Movement.ReadValue<Vector2>().x;
         }
     }
