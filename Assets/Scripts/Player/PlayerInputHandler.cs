@@ -26,6 +26,7 @@ namespace Player
         protected virtual void OnEnable()
         {
             _input.Enable();
+            
             EventBus.OnDialogueStart += DialogueStart;
             EventBus.OnDialogueEnd += DialogueEnd;
         }
@@ -33,6 +34,7 @@ namespace Player
         protected virtual void OnDisable()
         {
             _input.Disable();
+            
             EventBus.OnDialogueStart -= DialogueStart;
             EventBus.OnDialogueEnd -= DialogueEnd;
         }

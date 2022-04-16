@@ -38,14 +38,14 @@ namespace Player
 
         protected override void OnEnable()
         {
-            chController.OnStateChanged += UpdateUseIcon;
             base.OnEnable();
+            chController.OnStateChanged += UpdateUseIcon;
         }
 
         protected override void OnDisable()
         {
-            chController.OnStateChanged -= UpdateUseIcon;
             base.OnDisable();
+            chController.OnStateChanged -= UpdateUseIcon;
         }
 
         private void Start()

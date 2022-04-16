@@ -257,6 +257,7 @@ namespace Controllers
         private const string PLAYER_CRAWL = "crawl";
         private const string PLAYER_IDLE_CRAWL = "idle_crawl";
         private const string PLAYER_JUMP = "jump";
+        private const string PLAYER_FALL = "fall";
         private const string PLAYER_GROUND = "ground";
 
         private void UpdateAnimations()
@@ -267,7 +268,7 @@ namespace Controllers
                     
                     if (IsGround)
                     {
-                        if (_frameAnimator.CurrentState == PLAYER_JUMP)
+                        if (_frameAnimator.CurrentState == PLAYER_JUMP || _frameAnimator.CurrentState == PLAYER_FALL)
                         {
                             _groundRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(PLAYER_GROUND));
                             return;
@@ -283,7 +284,7 @@ namespace Controllers
                     }
                     else
                     {
-                        _frameAnimator.ChangeAnimation(PLAYER_JUMP);
+                        _frameAnimator.ChangeAnimation(rb2d.velocity.y > 0 ? PLAYER_JUMP : PLAYER_FALL);
                     }
                     
                     break;
