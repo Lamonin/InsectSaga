@@ -368,7 +368,7 @@ MonoBehaviour:
   useIconPosition: {x: -0.09, y: 0.6}
   useIconOffset: {x: 0, y: 0}
   interactable: 1
-  currentDialog: 1
+  currentDialog: 0
 --- !u!61 &100114908
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1428,7 +1428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639579865522934513, guid: 52d74c236b49af143acd32e95af8a91a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.33
+      value: -11.021
       objectReference: {fileID: 0}
     - target: {fileID: 8639579865522934513, guid: 52d74c236b49af143acd32e95af8a91a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7055,7 +7055,7 @@ MonoBehaviour:
   useIconPosition: {x: 0, y: 0.51}
   useIconOffset: {x: 0, y: 0}
   interactable: 1
-  currentDialog: 2
+  currentDialog: 0
 --- !u!61 &1237525474
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7201,7 +7201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263063737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.33, y: -0.48000002, z: -10.1}
+  m_LocalPosition: {x: -8.933334, y: -0.48000002, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14603,7 +14603,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5127986471666821243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.33, y: -1.868, z: -0.1}
+  m_LocalPosition: {x: -11.021, y: -1.868, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
