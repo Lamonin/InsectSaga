@@ -34,27 +34,33 @@ namespace Controllers
 
         //COMPONENTS
         protected Rigidbody2D rb2d;
-        public static bool IsStopped;
         
+        public Rigidbody2D GetRigidBody2D => rb2d;
+
         //PROPERTIES
         public bool IsGround => Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, groundLayer);
 
         private void UpdateMoveSpeed()
         {
-            _moveSpeed = 0;
             if (moveDir != 0)
                 _moveSpeed = Mathf.Sign(moveDir) * (Mathf.Abs(moveDir) < stickOffsetBeforeRun ? walkSpeed : runSpeed);
+            else
+                _moveSpeed = 0;
         }
 
-        public virtual void Move()
+        protected virtual void Move()
         {
             UpdateMoveSpeed();
-            rb2d.position += Vector2.right * _moveSpeed*Time.fixedDeltaTime;
-            
-            //SLOW DOWN CHARACTER IMPULSE
-            var v2 = rb2d.velocity;
-            v2.x *= 0.9f;
-            rb2d.velocity = v2;
+            if (_moveSpeed != 0)
+            {
+                rb2d.velocity = new Vector2(_moveSpeed, rb2d.velocity.y);
+            }
+            else
+            {
+                var v2 = rb2d.velocity;
+                v2.x *= 0.95f;
+                rb2d.velocity = v2;
+            }
         }
 
         public virtual void Jump()

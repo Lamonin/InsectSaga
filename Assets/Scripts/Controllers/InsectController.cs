@@ -21,6 +21,7 @@ namespace Controllers
 
         public Animator animator;
         public Transform collTransform;
+        public GameObject platformerColl;
 
 
         //VARIABLES
@@ -63,7 +64,10 @@ namespace Controllers
             /*if (isOnWall) Debug.Log("isOnWall");
             if (isOnWallSecond) Debug.Log("isOnWallSecond");
             if (isOnGround) Debug.Log("isOnGround");*/
-
+            
+            platformerColl.SetActive(false);
+            collTransform.gameObject.SetActive(true);
+            
             Quaternion angleRot = Quaternion.Euler(0, 0, 0);
 
             if (isOnWall)
@@ -149,6 +153,8 @@ namespace Controllers
         {
             tryToCrawl = false;
             if (State == CharacterStates.Normal) return;
+            
+            platformerColl.SetActive(true);
 
             transform.DOKill();
 
@@ -158,6 +164,7 @@ namespace Controllers
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb2d.gravityScale = 4;
 
+            collTransform.gameObject.SetActive(false);
             _isNowRotated = false;
             _isJumpInCrawl = false;
             _frameAnimator.ChangeAnimation(IDLE);
@@ -200,7 +207,7 @@ namespace Controllers
 
         private RaycastHit2D _rayGround, _rayWall;
 
-        public override void Move()
+        protected override void Move()
         {
             if (State == CharacterStates.JumpCrawl) return;
 
@@ -273,7 +280,8 @@ namespace Controllers
                             _groundRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
                             return;
                         }
-                        if (moveDir != 0)
+                        
+                        if (moveDir != 0 && Mathf.Abs(rb2d.velocity.x) > 0.02f)
                         {
                             _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) < stickOffsetBeforeRun ? WALK : RUN);
                         }

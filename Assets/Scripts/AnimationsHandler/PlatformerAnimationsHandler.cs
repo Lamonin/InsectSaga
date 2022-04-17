@@ -22,7 +22,7 @@ namespace AnimationsHandler
         {
             if (chController.IsGround)
             {
-                if (chController.moveDir != 0)
+                if (chController.moveDir != 0 && Mathf.Abs(chController.GetRigidBody2D.velocity.x) > 0.02f)
                 {
                     _frameAnimator.ChangeAnimation(WALK);
                 }

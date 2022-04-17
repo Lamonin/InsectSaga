@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: a5c6ef694cf9377408fa2edf64a8f74b, type: 3}
+    - {fileID: 2800000, guid: e659609fcfa483446aa1e5b60306fd82, type: 3}
+    - {fileID: 2800000, guid: c211ff8f350754a4e8758e227e7d2758, type: 3}
+    - {fileID: 2800000, guid: fbbc438ffc844a94282b20b85592fef8, type: 3}
+    - {fileID: 2800000, guid: 38e7f10dacff8804ab012d97dcb6c241, type: 3}
+    - {fileID: 2800000, guid: e3b5ba1e3b1031f488546993899bb615, type: 3}
+    - {fileID: 2800000, guid: a4933937e9183d047bbb54ec3c12b4d1, type: 3}
+    - {fileID: 2800000, guid: 090b4edd7dd6814428bb2f26b63af8a1, type: 3}
+    - {fileID: 2800000, guid: 693e99a3594110a4985f4f14694e757d, type: 3}
+    - {fileID: 2800000, guid: 9a339b1df1267e64eaef5faf420f6634, type: 3}
+    - {fileID: 2800000, guid: e38777eb410710444bccc61db9da62c9, type: 3}
+    - {fileID: 2800000, guid: 7608529826b68ff4f87773debcba74ac, type: 3}
+    - {fileID: 2800000, guid: 32f368b648e0d954082bcdb5439dfe0d, type: 3}
+    - {fileID: 2800000, guid: 5e3d79ba0261a7440aafdfa699abc161, type: 3}
+    - {fileID: 2800000, guid: a507817c1e0c82e4dbe2f73baf0baadc, type: 3}
+    - {fileID: 2800000, guid: f9c32f48fa222044d97692742d35ec33, type: 3}
+    - {fileID: 2800000, guid: c02751c83288388469913c3980dfa3e0, type: 3}
+    - {fileID: 2800000, guid: d40cc960203186f41889c15cd1b7b0ed, type: 3}
+    - {fileID: 2800000, guid: 8b81b3cd85b032c449c1b07936b5c7f0, type: 3}
+    - {fileID: 2800000, guid: 08869189b8a9ef34eafb6e88c5480ae8, type: 3}
+    - {fileID: 2800000, guid: bb79bec9ea7b26545b582ac130be2854, type: 3}
+    - {fileID: 2800000, guid: 4ef03e39fe2975b47afe1ef3516e6269, type: 3}
+    - {fileID: 2800000, guid: be214339785656044b565cd96c3a993c, type: 3}
+    - {fileID: 2800000, guid: cbdb3abfbf8ff054ea104559ed5fe5b0, type: 3}
+    - {fileID: 2800000, guid: caa083e22107d4646824771e113162c4, type: 3}
+    - {fileID: 2800000, guid: 679618c698a9b58418e97b7f29119d06, type: 3}
+    - {fileID: 2800000, guid: f8b4127fa38556e49b09f539f7af0582, type: 3}
+    - {fileID: 2800000, guid: 4907caf731db6a44b9fd8253b732ded9, type: 3}
+    - {fileID: 2800000, guid: 3b93f4c6246a28b498e440f99ae38a23, type: 3}
+    - {fileID: 2800000, guid: 71730f9a38acfb0429fc0f370cf0c638, type: 3}
+    - {fileID: 2800000, guid: a24e00ca207d7c540b56b834f9f79977, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: d40cc960203186f41889c15cd1b7b0ed, type: 3}
+  - {fileID: 21300000, guid: caa083e22107d4646824771e113162c4, type: 3}
+  - {fileID: 21300000, guid: 693e99a3594110a4985f4f14694e757d, type: 3}
+  - {fileID: 21300000, guid: 32f368b648e0d954082bcdb5439dfe0d, type: 3}
+  - {fileID: 21300000, guid: 3b93f4c6246a28b498e440f99ae38a23, type: 3}
+  - {fileID: 21300000, guid: 679618c698a9b58418e97b7f29119d06, type: 3}
+  - {fileID: 21300000, guid: a4933937e9183d047bbb54ec3c12b4d1, type: 3}
+  - {fileID: 21300000, guid: 4907caf731db6a44b9fd8253b732ded9, type: 3}
+  - {fileID: 21300000, guid: f9c32f48fa222044d97692742d35ec33, type: 3}
+  - {fileID: 21300000, guid: 7608529826b68ff4f87773debcba74ac, type: 3}
+  - {fileID: 21300000, guid: c02751c83288388469913c3980dfa3e0, type: 3}
+  - {fileID: 21300000, guid: be214339785656044b565cd96c3a993c, type: 3}
+  - {fileID: 21300000, guid: 4ef03e39fe2975b47afe1ef3516e6269, type: 3}
+  - {fileID: 21300000, guid: a5c6ef694cf9377408fa2edf64a8f74b, type: 3}
+  - {fileID: 21300000, guid: 08869189b8a9ef34eafb6e88c5480ae8, type: 3}
+  - {fileID: 21300000, guid: bb79bec9ea7b26545b582ac130be2854, type: 3}
+  - {fileID: 21300000, guid: 71730f9a38acfb0429fc0f370cf0c638, type: 3}
+  - {fileID: 21300000, guid: 5e3d79ba0261a7440aafdfa699abc161, type: 3}
+  - {fileID: 21300000, guid: a24e00ca207d7c540b56b834f9f79977, type: 3}
+  - {fileID: 21300000, guid: e38777eb410710444bccc61db9da62c9, type: 3}
+  - {fileID: 21300000, guid: a507817c1e0c82e4dbe2f73baf0baadc, type: 3}
+  - {fileID: 21300000, guid: 38e7f10dacff8804ab012d97dcb6c241, type: 3}
+  - {fileID: 21300000, guid: 9a339b1df1267e64eaef5faf420f6634, type: 3}
+  - {fileID: 21300000, guid: 8b81b3cd85b032c449c1b07936b5c7f0, type: 3}
+  - {fileID: 21300000, guid: 090b4edd7dd6814428bb2f26b63af8a1, type: 3}
+  - {fileID: 21300000, guid: e3b5ba1e3b1031f488546993899bb615, type: 3}
+  - {fileID: 21300000, guid: f8b4127fa38556e49b09f539f7af0582, type: 3}
+  - {fileID: 21300000, guid: fbbc438ffc844a94282b20b85592fef8, type: 3}
+  - {fileID: 21300000, guid: c211ff8f350754a4e8758e227e7d2758, type: 3}
+  - {fileID: 21300000, guid: e659609fcfa483446aa1e5b60306fd82, type: 3}
+  - {fileID: 21300000, guid: cbdb3abfbf8ff054ea104559ed5fe5b0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - run_4
+  - walk_02
+  - fall_3
+  - up_3
+  - walk_06
+  - walk_03
+  - fall_1
+  - walk_05
+  - run_2
+  - up_2
+  - run_3
+  - walk_00
+  - run_8
+  - crawl_1
+  - run_6
+  - run_7
+  - walk_07
+  - preparation for action
+  - ground
+  - up_1
+  - run_1
+  - cocoroch jump3
+  - grounded
+  - run_5
+  - fall_2
+  - cocoroch jump4
+  - walk_04
+  - cocoroch jump2
+  - crawl_3
+  - crawl_2
+  - walk_01
+  m_RenderDataMap: {}
+  m_Tag: PlayerAtlas
+  m_IsVariant: 0

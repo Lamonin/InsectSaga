@@ -13,7 +13,7 @@ namespace Objects
             if (!interactable) return;
             events[currentEvent]?.Invoke();
         }
-
+        
         public override void Deactivate()
         {
             base.Deactivate();

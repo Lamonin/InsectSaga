@@ -25,6 +25,7 @@ public class InsectController_Inspector : Editor
     private SerializedProperty m_Sprite;
     private SerializedProperty m_Animator;
     private SerializedProperty m_CollTransform;
+    private SerializedProperty m_PlatformerCollTransform;
 
     private void OnEnable()
     {
@@ -51,6 +52,7 @@ public class InsectController_Inspector : Editor
         m_Sprite = serializedObject.FindProperty("sprite");
         m_Animator = serializedObject.FindProperty("animator");
         m_CollTransform = serializedObject.FindProperty("collTransform");
+        m_PlatformerCollTransform = serializedObject.FindProperty("platformerColl");
     }
 
     private void AddHeader(string label, bool space = true)
@@ -91,6 +93,7 @@ public class InsectController_Inspector : Editor
         EditorGUILayout.PropertyField(m_Sprite);
         EditorGUILayout.PropertyField(m_Animator);
         EditorGUILayout.PropertyField(m_CollTransform);
+        EditorGUILayout.PropertyField(m_PlatformerCollTransform);
         
         serializedObject.ApplyModifiedProperties();
         //base.OnInspectorGUI();
