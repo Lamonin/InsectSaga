@@ -47,7 +47,6 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 4b6e8811bf1de14438f5019ebafe6c4b, type: 3}
     - {fileID: 2800000, guid: f87a48426972058478ebb1c8cb976779, type: 3}
     - {fileID: 2800000, guid: 9a22e2a439dabfb44b8bc00e2c15116c, type: 3}
-    - {fileID: 2800000, guid: 771d7f008c19e8e4cb8fd5da55e42046, type: 3}
     - {fileID: 2800000, guid: 079653f87626ed547adf1486077e00ba, type: 3}
     - {fileID: 2800000, guid: f083a5d7333074a4088b6adf90512c3d, type: 3}
     - {fileID: 2800000, guid: 1fb6ccbfdfc90f34488de822c3a826cb, type: 3}
@@ -64,7 +63,6 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: 771d7f008c19e8e4cb8fd5da55e42046, type: 3}
   - {fileID: 21300000, guid: 4b6e8811bf1de14438f5019ebafe6c4b, type: 3}
   - {fileID: 21300000, guid: f87a48426972058478ebb1c8cb976779, type: 3}
   - {fileID: 21300000, guid: 1ab58ea359c229646a26c3d4ee3b8a6c, type: 3}
@@ -80,7 +78,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: c3e041ce0f880214786b9c003cf27311, type: 3}
   - {fileID: 21300000, guid: 1fb6ccbfdfc90f34488de822c3a826cb, type: 3}
   m_PackedSpriteNamesToIndex:
-  - titan
   - safe light
   - safe shadow
   - light background
