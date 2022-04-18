@@ -17,9 +17,8 @@ namespace Controllers
         [Tooltip("Время для прыжка Койота")] public float hangTime;
         [Tooltip("Время для буфера прыжка")] public float jumpBufferTime;
 
-        [Header("Дополнительно")]
-        public string groundLayerName = "Ground";
-        [HideInInspector] public LayerMask groundLayer;
+        [Header("Другое")]
+        public LayerMask groundLayer;
         public Vector2 groundCheckPos;
         public float groundCheckRadius;
         
@@ -91,7 +90,6 @@ namespace Controllers
         protected virtual void Start()
         {
             rb2d = GetComponent<Rigidbody2D>();
-            groundLayer = 1 << LayerMask.NameToLayer(groundLayerName);
         }
         
         protected virtual void Update()

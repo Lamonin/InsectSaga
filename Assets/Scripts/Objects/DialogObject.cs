@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -74,6 +75,7 @@ namespace Objects
 
         private bool _isTyping;
         private string _tag;
+        readonly Regex _regExp = new Regex(@"\""(.*)\""");
         private IEnumerator MessageSymbolTyping()
         {
             if (String.IsNullOrEmpty(_message)) yield break;
@@ -86,6 +88,13 @@ namespace Objects
                 {
                     if (ch == '>')
                     {
+                        if (_tag.Contains("delay"))
+                        {
+                            var delay = int.Parse(_regExp.Match(_tag).Groups[1].Value);
+                            _tag = String.Empty;
+                            yield return new WaitForSeconds(delay/1000f);
+                            continue;
+                        }
                         GameUI.Handler.dialogText.text += _tag;
                         _tag = String.Empty;
                     }
@@ -97,7 +106,6 @@ namespace Objects
                     }
                 }
                 
- 
                 GameUI.Handler.dialogText.text += ch;
                 yield return new WaitForSeconds(delayToTypeSymbol);
             }

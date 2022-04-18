@@ -250,10 +250,9 @@ MonoBehaviour:
   jumpPower: 0
   hangTime: 0
   jumpBufferTime: 0
-  groundLayerName: Ground
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   groundCheckPos: {x: 0, y: -0.4}
   groundCheckRadius: 0.15
   sprite: {fileID: 4327496504686188409}
