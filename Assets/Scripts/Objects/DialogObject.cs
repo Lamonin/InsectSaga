@@ -26,6 +26,9 @@ namespace Objects
         private Coroutine _messageTypeRoutine;
         private Coroutine _delayBeforeNextMessage;
         
+        private readonly Regex _delayTagExp = new Regex(@"<delay=\""(.*?)\"">");
+        private readonly Regex _delayTagValueExp = new Regex(@"\""(.*)\""");
+        
         protected override void Start()
         {
             base.Start();
@@ -46,7 +49,6 @@ namespace Objects
             
             if (_currentMessageNumber == 0) //START DIALOG
             {
-                //GameUI.Handler.dialogText.gameObject.SetActive(true);
                 EventBus.OnDialogueStart?.Invoke(stopPlayerInDialog);
             }
 
@@ -54,6 +56,8 @@ namespace Objects
             {
                 StopCoroutine(_messageTypeRoutine);
                 _isTyping = false;
+                _message = _delayTagExp.Replace(_message, "");
+
                 GameUI.Handler.dialogText.text = _message;
             }
             else if (_currentMessageNumber < dialogMessages.Length) //NEXT MESSAGE
@@ -75,7 +79,6 @@ namespace Objects
 
         private bool _isTyping;
         private string _tag;
-        readonly Regex _regExp = new Regex(@"\""(.*)\""");
         private IEnumerator MessageSymbolTyping()
         {
             if (String.IsNullOrEmpty(_message)) yield break;
@@ -90,7 +93,7 @@ namespace Objects
                     {
                         if (_tag.Contains("delay"))
                         {
-                            var delay = int.Parse(_regExp.Match(_tag).Groups[1].Value);
+                            var delay = int.Parse(_delayTagValueExp.Match(_tag).Groups[1].Value);
                             _tag = String.Empty;
                             yield return new WaitForSeconds(delay/1000f);
                             continue;
