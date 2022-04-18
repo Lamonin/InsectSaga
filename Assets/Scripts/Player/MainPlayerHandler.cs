@@ -17,13 +17,13 @@ namespace Player
 
             _input.Player.Jump.performed += _ =>
             {
-                if (isCharacterStopped) return;
+                if (isCharacterStopped ||!isCanJump) return;
                 chController.Jump();
             };
             
             _input.Player.RunModeOn.performed += _ =>
             {
-                if (isCharacterStopped) return;
+                if (isCharacterStopped || !isCanCrawl) return;
                 chController.tryToCrawl = true;
             };
             
@@ -112,6 +112,11 @@ namespace Player
             }
 
             #endregion
+            
+            if (!isCanRun)
+            {
+                moveDir = Mathf.Clamp(moveDir, -chController.stickOffsetBeforeRun, chController.stickOffsetBeforeRun);
+            }
 
             return moveDir;
         }
@@ -123,6 +128,7 @@ namespace Player
                 chController.moveDir = 0;
                 return;
             }
+            
             chController.moveDir = GetPlayerInputDirection();
         }
 

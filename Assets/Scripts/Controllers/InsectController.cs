@@ -282,7 +282,7 @@ namespace Controllers
                         if (_frameAnimator.CurrentState == JUMP || _frameAnimator.CurrentState == FALL)
                             _groundAnimRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
                         else if (moveDir != 0 && Mathf.Abs(rb2d.velocity.x) > 0.02f)
-                            _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) < stickOffsetBeforeRun ? WALK : RUN);
+                            _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) <= stickOffsetBeforeRun ? WALK : RUN);
                         else
                             _frameAnimator.ChangeAnimation(IDLE);
                     }

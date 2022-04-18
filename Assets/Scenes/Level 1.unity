@@ -7692,6 +7692,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: isCanRun
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: isCanJump
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: isCanCrawl
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422447, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: runSpeed
       value: 4
@@ -8087,7 +8099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708022667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -33, y: 2.5, z: -10}
+  m_LocalPosition: {x: -21.84, y: 2.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

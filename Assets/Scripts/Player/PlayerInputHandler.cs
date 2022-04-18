@@ -6,6 +6,9 @@ namespace Player
     public class PlayerInputHandler : MonoBehaviour
     {
         public bool isCharacterStopped;
+        public bool isCanRun = true;
+        public bool isCanJump = true;
+        public bool isCanCrawl = true;
         protected InputScheme _input;
         
         private void DialogueStart(bool stopped)
