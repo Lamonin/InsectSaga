@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Controllers
 {
     //ENUMS
-    public enum CharacterStates { Normal, Crawl, JumpCrawl }
+    public enum ChState { Normal, Crawl, CrawlJump }
     public enum GroundSide { Floor, Ceil, LWall, RWall }
     
     public class InsectController : PlatformerController
@@ -26,26 +26,27 @@ namespace Controllers
 
         //VARIABLES
         public bool tryToCrawl;
+        private int _crawlDir = 1;
         private bool _flip;
-        private bool _isJumpInCrawl;
         private bool _isNowRotated;
-        private FrameBasedAnimator _frameAnimator;
+        private bool _isJumpInCrawl;
         private float _distanceToWall;
-        private int _crawlDir;
-        private Coroutine _groundRoutine;
-        public event Action<CharacterStates> OnStateChanged;
+        private Coroutine _groundAnimRoutine;
+        private Coroutine _jumpInCrawlRoutine;
+        private FrameBasedAnimator _frameAnimator;
+        public event Action<ChState> OnStateChanged;
         
-        public GroundSide chSide;
+        public GroundSide chSide = GroundSide.Floor;
         //Properties
-        private CharacterStates _state;
-        public CharacterStates State
+        private ChState _state = ChState.Normal;
+        public ChState State
         {
             get => _state;
             set
             {
-                if (_groundRoutine != null)
+                if (_groundAnimRoutine != null)
                 {
-                    StopCoroutine(_groundRoutine);
+                    StopCoroutine(_groundAnimRoutine);
                     _frameAnimator.Unfreeze();
                 }
                 _state = value;
@@ -55,10 +56,12 @@ namespace Controllers
 
         private void ToCrawlState()
         {
-            if (State == CharacterStates.Crawl || _isJumpInCrawl) return;
+            if (_state == ChState.Crawl || _isJumpInCrawl) return;
+            
             var isOnWall = CheckRunWall();
             var isOnWallSecond = CheckRunWallSecond();
             var isOnGround = CheckRunGround();
+            
             if (!isOnGround && !isOnWall && !isOnWallSecond) return;
 
             /*if (isOnWall) Debug.Log("isOnWall");
@@ -67,6 +70,8 @@ namespace Controllers
             
             platformerColl.SetActive(false);
             collTransform.gameObject.SetActive(true);
+
+            rb2d.angularVelocity = 0;
             
             Quaternion angleRot = Quaternion.Euler(0, 0, 0);
 
@@ -79,21 +84,21 @@ namespace Controllers
             angleRot = Quaternion.Euler(0, 0, angleRot.eulerAngles.z);
 
             
-            if (State == CharacterStates.Normal)
+            if (_state == ChState.Normal)
             {
                 transform.rotation = angleRot;
             }
             else
             {
                 _isNowRotated = true;
-                transform.DORotateQuaternion(angleRot, 0.1f).SetEase(Ease.Linear).SetUpdate(UpdateType.Fixed)
+                transform.DORotateQuaternion(angleRot, 0.1f).SetEase(Ease.OutSine).SetUpdate(UpdateType.Fixed)
                 .OnComplete(() => _isNowRotated = false);
             }
 
-            State = CharacterStates.Crawl;
-            rb2d.constraints = RigidbodyConstraints2D.None;
+            State = ChState.Crawl;
             rb2d.gravityScale = 0;
             rb2d.velocity = Vector2.zero; //Reset velocity, otherwise it accumulates
+            rb2d.constraints = RigidbodyConstraints2D.None;
         }
 
         private void FlipAndRotateCharacter(float rotAngle)
@@ -106,12 +111,10 @@ namespace Controllers
 
         private IEnumerator ToCrawlJumpState()
         {
-            if (State == CharacterStates.JumpCrawl || _isJumpInCrawl) yield break;
+            if (_state == ChState.CrawlJump) yield break;
 
-            State = CharacterStates.JumpCrawl;
-            _isJumpInCrawl = true;
+            State = ChState.CrawlJump;
             rb2d.gravityScale = 4;
-            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb2d.velocity = Vector2.zero;
             transform.DOKill();
 
@@ -145,6 +148,7 @@ namespace Controllers
                     transform.rotation = Quaternion.Euler(0, 0, 0);
             }
 
+            _isJumpInCrawl = true;
             yield return new WaitForSeconds(0.1f);
             _isJumpInCrawl = false;
         }
@@ -152,11 +156,12 @@ namespace Controllers
         public void ToNormalState()
         {
             tryToCrawl = false;
-            if (State == CharacterStates.Normal) return;
+            if (State == ChState.Normal) return;
+            if (_jumpInCrawlRoutine != null)
+                StopCoroutine(_jumpInCrawlRoutine);
             
-            platformerColl.SetActive(true);
-
             transform.DOKill();
+            platformerColl.SetActive(true);
 
             collTransform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -169,18 +174,18 @@ namespace Controllers
             _isJumpInCrawl = false;
             _frameAnimator.ChangeAnimation(IDLE);
 
-            State = CharacterStates.Normal;
+            State = ChState.Normal;
         }
 
         public override void Jump()
         {
-            if (State == CharacterStates.Normal)
+            if (State == ChState.Normal)
             {
                 base.Jump();
             }
-            else if (State != CharacterStates.JumpCrawl && !_isNowRotated)
+            else if (State != ChState.CrawlJump && !_isNowRotated)
             {
-                StartCoroutine(ToCrawlJumpState());
+                _jumpInCrawlRoutine = StartCoroutine(ToCrawlJumpState());
             }
         }
 
@@ -193,7 +198,7 @@ namespace Controllers
 
         private RaycastHit2D CheckRunWall()
         {
-            float mult = State != CharacterStates.Normal ? 1.5f : 1;
+            float mult = _state != ChState.Normal ? 1.5f : 1;
             return Physics2D.Raycast(transform.position, transform.right * _crawlDir, grabWallDistance * mult,
                 groundLayer);
         }
@@ -209,13 +214,13 @@ namespace Controllers
 
         protected override void Move()
         {
-            if (State == CharacterStates.JumpCrawl) return;
+            if (_state == ChState.CrawlJump) return;
 
-            if (State == CharacterStates.Normal)
+            if (_state == ChState.Normal)
             {
                 base.Move();
             }
-            else if (State == CharacterStates.Crawl)
+            else // State == ChState.Crawl
             {
                 var tRight = transform.right * _crawlDir;
                 var tPos = transform.position;
@@ -249,7 +254,7 @@ namespace Controllers
 
             if (Mathf.Abs(tUp.x) > Mathf.Abs(tUp.y) && Mathf.Abs(tUp.y) < 0.1f)
                 return tUp.x > 0 ? GroundSide.LWall : GroundSide.RWall;
-
+            
             if (Mathf.Abs(tUp.x) < 0.1f)
                 return tUp.y > 0 ? GroundSide.Floor : GroundSide.Ceil;
 
@@ -271,36 +276,26 @@ namespace Controllers
         {
             switch (State)
             {
-                    
-                case CharacterStates.Normal:
+                case ChState.Normal:
                     if (IsGround)
                     {
                         if (_frameAnimator.CurrentState == JUMP || _frameAnimator.CurrentState == FALL)
-                        {
-                            _groundRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
-                            return;
-                        }
-                        
-                        if (moveDir != 0 && Mathf.Abs(rb2d.velocity.x) > 0.02f)
-                        {
+                            _groundAnimRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
+                        else if (moveDir != 0 && Mathf.Abs(rb2d.velocity.x) > 0.02f)
                             _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) < stickOffsetBeforeRun ? WALK : RUN);
-                        }
                         else
-                        {
                             _frameAnimator.ChangeAnimation(IDLE);
-                        }
                     }
                     else
-                    {
                         _frameAnimator.ChangeAnimation(rb2d.velocity.y > 0 ? JUMP : FALL);
-                    }
+                    
                     break;
                 
-                case CharacterStates.Crawl:
+                case ChState.Crawl:
                     _frameAnimator.ChangeAnimation(moveDir != 0 ? CRAWL : IDLE_CRAWL);
                     break;
                 
-                case CharacterStates.JumpCrawl:
+                case ChState.CrawlJump:
                     _frameAnimator.ChangeAnimation(IDLE_CRAWL);
                     break;
                 
@@ -313,7 +308,7 @@ namespace Controllers
 
         private void UpdatePlayerDirection()
         {
-            if (State == CharacterStates.JumpCrawl) return;
+            if (_state == ChState.CrawlJump) return;
             if (moveDir < 0)
             {
                 _flip = true;
@@ -329,20 +324,22 @@ namespace Controllers
         protected override void Start()
         {
             base.Start();
+            
             _frameAnimator = new FrameBasedAnimator(animator);
 
             _distanceToWall = 0.2f + 1 / Mathf.Sqrt(2);
-            State = CharacterStates.Normal;
-            chSide = GroundSide.Floor;
         }
 
         protected override void Update()
         {
             if (tryToCrawl) ToCrawlState();
-            UpdatePlayerDirection();
-            UpdateAnimations();
             chSide = GetPlayerGroundSide();
-            base.Update();
+            UpdateAnimations();
+            if (_state != ChState.CrawlJump)
+            {
+                UpdatePlayerDirection();
+                base.Update();
+            }
         }
 
         protected override void FixedUpdate()
@@ -352,6 +349,7 @@ namespace Controllers
 
         protected override void OnDrawGizmosSelected()
         {
+            
             base.OnDrawGizmosSelected();
         }
     }

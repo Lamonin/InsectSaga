@@ -16,7 +16,7 @@ public class InsectController_Inspector : Editor
     private SerializedProperty m_RotationSpeed;
     private SerializedProperty m_JumpCrawlPower;
     private SerializedProperty m_JumpCrawlFromWallPower;
-    private SerializedProperty m_GroundLayerName;
+    private SerializedProperty m_GroundLayer;
     private SerializedProperty m_GroundCheckPos;
     private SerializedProperty m_GroundCheckRadius;
     private SerializedProperty m_GrabWallDistance;
@@ -26,6 +26,8 @@ public class InsectController_Inspector : Editor
     private SerializedProperty m_Animator;
     private SerializedProperty m_CollTransform;
     private SerializedProperty m_PlatformerCollTransform;
+
+    private bool m_IsDebug;
 
     private void OnEnable()
     {
@@ -41,8 +43,8 @@ public class InsectController_Inspector : Editor
         m_RotationSpeed = serializedObject.FindProperty("rotationSpeed");
         m_JumpCrawlPower = serializedObject.FindProperty("jumpCrawlPower");
         m_JumpCrawlFromWallPower = serializedObject.FindProperty("jumpCrawlFromWallPower");
-       
-        m_GroundLayerName = serializedObject.FindProperty("groundLayerName");
+        
+        m_GroundLayer = serializedObject.FindProperty("groundLayer");
         m_GroundCheckPos = serializedObject.FindProperty("groundCheckPos");
         m_GroundCheckRadius = serializedObject.FindProperty("groundCheckRadius");
         m_GrabWallDistance = serializedObject.FindProperty("grabWallDistance");
@@ -61,15 +63,24 @@ public class InsectController_Inspector : Editor
         EditorGUILayout.LabelField(label, EditorStyles.boldLabel);
     }
 
+    private void NoAttributeProperty(SerializedProperty property, string label)
+    {
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField(label);
+        EditorGUILayout.PropertyField(property, GUIContent.none);
+        EditorGUILayout.EndHorizontal();
+    }
+
     public override void OnInspectorGUI()
     {
         AddHeader("Режим ходьбы", false); 
+        //NoAttributeProperty(m_WalkSpeed, "Скорость ходьбы");
         EditorGUILayout.PropertyField(m_WalkSpeed, new GUIContent("Скорость ходьбы"));
         EditorGUILayout.PropertyField(m_RunSpeed, new GUIContent("Скорость бега"));
         EditorGUILayout.PropertyField(m_StickOffsetBeforeRun, new GUIContent("Мин. отклон. стика"));
         
         EditorGUILayout.Space();
-        
+
         EditorGUILayout.PropertyField(m_IsCanJump, new GUIContent("Может ли прыгать?"));
         EditorGUILayout.PropertyField(m_JumpPower, new GUIContent("Сила прыжка"));
         EditorGUILayout.PropertyField(m_HangTime, new GUIContent("Прыжок Койота"));
@@ -81,21 +92,34 @@ public class InsectController_Inspector : Editor
         EditorGUILayout.PropertyField(m_JumpCrawlPower, new GUIContent("Сила прыжка"));
         EditorGUILayout.PropertyField(m_JumpCrawlFromWallPower, new GUIContent("Сила прыжка от стены"));
         
-        AddHeader("Другое");
-        EditorGUILayout.PropertyField(m_GroundLayerName, new GUIContent("Название слоя поверхности"));
-        EditorGUILayout.PropertyField(m_GroundCheckPos, new GUIContent("Позиция проверки поверхности"));
-        EditorGUILayout.PropertyField(m_GroundCheckRadius, new GUIContent("Радиус проверки поверхности"));
-        EditorGUILayout.PropertyField(m_GrabWallDistance, new GUIContent("Расстояние прицепления к стен"));
-        EditorGUILayout.PropertyField(m_GrabGroundDistance, new GUIContent("Расстояние прицепления к земле"));
-        EditorGUILayout.PropertyField(m_RayGroundLength, new GUIContent("Длина луча к земле (поворот)"));
+        // AddHeader("Другое");
+        EditorGUILayout.PropertyField(m_GroundLayer, new GUIContent("Слой поверхности"));
+        EditorGUILayout.PropertyField(m_GroundCheckPos, new GUIContent("Ground check pos."));
+        EditorGUILayout.PropertyField(m_GroundCheckRadius, new GUIContent("Ground check radius"));
+        EditorGUILayout.PropertyField(m_GrabWallDistance, new GUIContent("Wall grab distance"));
+        EditorGUILayout.PropertyField(m_GrabGroundDistance, new GUIContent("Ground grab distance"));
+        EditorGUILayout.PropertyField(m_RayGroundLength, new GUIContent("Ground ray length"));
         
-        AddHeader("Компоненты");
+        // AddHeader("Компоненты");
+        
         EditorGUILayout.PropertyField(m_Sprite);
         EditorGUILayout.PropertyField(m_Animator);
         EditorGUILayout.PropertyField(m_CollTransform);
         EditorGUILayout.PropertyField(m_PlatformerCollTransform);
         
         serializedObject.ApplyModifiedProperties();
+
+        EditorGUILayout.Space();
+        m_IsDebug = EditorGUILayout.Toggle("Отладка", m_IsDebug);
+        
+        if (m_IsDebug)
+        {
+            var drawTarget = (InsectController) target;
+            EditorGUILayout.LabelField("transform.up: " + drawTarget.transform.up);
+            EditorGUILayout.LabelField("Сторона: " + drawTarget.chSide);
+            EditorGUILayout.LabelField("Состояние: " + drawTarget.State);
+        }
+
         //base.OnInspectorGUI();
     }
 }

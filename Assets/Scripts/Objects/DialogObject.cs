@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,6 +26,9 @@ namespace Objects
         private Coroutine _messageTypeRoutine;
         private Coroutine _delayBeforeNextMessage;
         
+        private readonly Regex _delayTagExp = new Regex(@"<delay=\""(.*?)\"">");
+        private readonly Regex _delayTagValueExp = new Regex(@"\""(.*)\""");
+        
         protected override void Start()
         {
             base.Start();
@@ -45,7 +49,6 @@ namespace Objects
             
             if (_currentMessageNumber == 0) //START DIALOG
             {
-                //GameUI.Handler.dialogText.gameObject.SetActive(true);
                 EventBus.OnDialogueStart?.Invoke(stopPlayerInDialog);
             }
 
@@ -53,6 +56,8 @@ namespace Objects
             {
                 StopCoroutine(_messageTypeRoutine);
                 _isTyping = false;
+                _message = _delayTagExp.Replace(_message, "");
+
                 GameUI.Handler.dialogText.text = _message;
             }
             else if (_currentMessageNumber < dialogMessages.Length) //NEXT MESSAGE
@@ -86,6 +91,13 @@ namespace Objects
                 {
                     if (ch == '>')
                     {
+                        if (_tag.Contains("delay"))
+                        {
+                            var delay = int.Parse(_delayTagValueExp.Match(_tag).Groups[1].Value);
+                            _tag = String.Empty;
+                            yield return new WaitForSeconds(delay/1000f);
+                            continue;
+                        }
                         GameUI.Handler.dialogText.text += _tag;
                         _tag = String.Empty;
                     }
@@ -97,7 +109,6 @@ namespace Objects
                     }
                 }
                 
- 
                 GameUI.Handler.dialogText.text += ch;
                 yield return new WaitForSeconds(delayToTypeSymbol);
             }

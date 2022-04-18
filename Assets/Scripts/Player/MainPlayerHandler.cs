@@ -9,31 +9,31 @@ namespace Player
     {
         public InsectController chController;
 
-        private bool _ceilRay, _floorRay, _leftWallRay, _rightWallRay;
+        private bool _ceilRay, _floorRay, _lWallRay, _rWallRay;
         
         protected override void Awake()
         {
             base.Awake();
 
-            _input.Player.Jump.performed += context =>
+            _input.Player.Jump.performed += _ =>
             {
                 if (isCharacterStopped) return;
                 chController.Jump();
             };
             
-            _input.Player.RunModeOn.performed += context =>
+            _input.Player.RunModeOn.performed += _ =>
             {
                 if (isCharacterStopped) return;
                 chController.tryToCrawl = true;
             };
             
-            _input.Player.RunModeOff.performed += context =>
+            _input.Player.RunModeOff.performed += _ =>
             {
                 if (isCharacterStopped) return;
                 chController.ToNormalState();
             };
             
-            _input.Player.Using.performed += context => { InteractWithUsableObject(); };
+            _input.Player.Using.performed += _ => { InteractWithUsableObject(); };
         }
 
         protected override void OnEnable()
@@ -59,10 +59,10 @@ namespace Player
 
         private float GetPlayerInputDirection()
         {
-            Vector2 inputDir = _input.Player.Movement.ReadValue<Vector2>();
+            var inputDir = _input.Player.Movement.ReadValue<Vector2>();
 
             #region CorrectPlayerInputDirection
-
+            
             float moveDir = chController.chSide switch
             {
                 GroundSide.Floor => inputDir.x,
@@ -83,22 +83,20 @@ namespace Player
             else if (rot > 275 && rot < 355 && inputDir.x > 0 && inputDir.y > 0)
                 moveDir = 0;
 
-            _rightWallRay = CastRay(Vector2.right, 0.5f);
-            _leftWallRay = CastRay(Vector2.left, 0.5f);
+            _rWallRay = CastRay(Vector2.right, 0.5f);
+            _lWallRay = CastRay(Vector2.left, 0.5f);
             _ceilRay = CastRay(Vector2.up, 0.5f);
             _floorRay = CastRay(Vector2.down, 0.5f);
 
             switch (chController.chSide)
             {
                 case GroundSide.Floor:
-                    if (_rightWallRay && inputDir.x > 0 && inputDir.y < 0 ||
-                        _leftWallRay && inputDir.x < 0 && inputDir.y < 0)
+                    if (_rWallRay && inputDir.x > 0 && inputDir.y < 0 || _lWallRay && inputDir.x < 0 && inputDir.y < 0)
                         moveDir = 0;
                     break;
 
                 case GroundSide.Ceil:
-                    if (_rightWallRay && inputDir.x > 0 && inputDir.y > 0 ||
-                        _leftWallRay && inputDir.x < 0 && inputDir.y > 0)
+                    if (_rWallRay && inputDir.x > 0 && inputDir.y > 0 || _lWallRay && inputDir.x < 0 && inputDir.y > 0)
                         moveDir = 0;
                     break;
 
@@ -130,14 +128,14 @@ namespace Player
 
         protected override void InteractWithUsableObject()
         {
-            if (chController.State != CharacterStates.Normal) return;
+            if (chController.State != ChState.Normal) return;
             base.InteractWithUsableObject();
         }
 
-        private void UpdateUseIcon(CharacterStates newState)
+        private void UpdateUseIcon(ChState newState)
         {
             if (UsableObject is null) return;
-            if (newState == CharacterStates.Normal)
+            if (newState == ChState.Normal)
             {
                 GameUI.ShowUseIcon(UsableObject);
             }
@@ -156,7 +154,7 @@ namespace Player
             else if (other.CompareTag("Usable"))
             {
                 UsableObject = other.GetComponent<UsableObject>();
-                if (chController.State == CharacterStates.Normal)
+                if (chController.State == ChState.Normal)
                 {
                     GameUI.ShowUseIcon(UsableObject);
                 }
