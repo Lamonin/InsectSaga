@@ -42,7 +42,7 @@ namespace Controllers
         private void UpdateMoveSpeed()
         {
             if (moveDir != 0)
-                _moveSpeed = Mathf.Sign(moveDir) * (Mathf.Abs(moveDir) < stickOffsetBeforeRun ? walkSpeed : runSpeed);
+                _moveSpeed = Mathf.Sign(moveDir) * (Mathf.Abs(moveDir) <= stickOffsetBeforeRun ? walkSpeed : runSpeed);
             else
                 _moveSpeed = 0;
         }

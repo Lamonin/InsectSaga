@@ -11,6 +11,7 @@ namespace AnimationsHandler
 
         private readonly int IDLE = Animator.StringToHash("idle");
         private readonly int WALK = Animator.StringToHash("walk");
+        private readonly int RUN = Animator.StringToHash("run");
         private readonly int JUMP = Animator.StringToHash("jump");
 
         void Start()
@@ -24,7 +25,7 @@ namespace AnimationsHandler
             {
                 if (chController.moveDir != 0 && Mathf.Abs(chController.GetRigidBody2D.velocity.x) > 0.02f)
                 {
-                    _frameAnimator.ChangeAnimation(WALK);
+                    _frameAnimator.ChangeAnimation(Mathf.Abs(chController.moveDir) <= chController.stickOffsetBeforeRun ? WALK : RUN);
                 }
                 else
                 {
