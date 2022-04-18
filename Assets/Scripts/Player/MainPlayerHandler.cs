@@ -149,7 +149,8 @@ namespace Player
         {
             if (other.CompareTag("Enemy"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                EventBus.OnPlayerDiedEvent?.Invoke();
             }
             else if (other.CompareTag("Usable"))
             {
