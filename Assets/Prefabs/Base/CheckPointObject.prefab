@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8509245124073546406}
   - component: {fileID: 5976967763304290545}
   - component: {fileID: 3218939231189998284}
+  - component: {fileID: 5476973625937987212}
   m_Layer: 0
   m_Name: CheckPointObject
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3389054306506642865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.58, y: -4.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72,3 +73,92 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5476973625937987212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3389054306506642865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -499960783, guid: c3ab396f3f53d1c4ebc7bae03391b186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldsEnable:
+    Version: 2
+    PathsEnabled:
+    - CheckPoint/isSaved
+    ModificationVersion: 5
+    ComponentsEnabled: []
+    HashFieldsEnabled: []
+    ObjectsEnabled: 
+    HashSetFieldsEnabled:
+      m_buckets: 000000000000000001000000
+      m_slots:
+      - hashCode: 308935523
+        next: -1
+        value:
+          HashCodePath: 1008119048
+          HashCodeMember: 2023990883
+      - hashCode: 0
+        next: 0
+        value:
+          HashCodePath: 0
+          HashCodeMember: 0
+      - hashCode: 0
+        next: 0
+        value:
+          HashCodePath: 0
+          HashCodeMember: 0
+      m_count: 1
+      m_lastIndex: 1
+      m_freeList: -1
+      m_version: 9
+    HashSetObjectsEnabled:
+      m_buckets: 000000000000000001000000
+      m_slots:
+      - hashCode: 1008119048
+        next: -1
+        value: 1008119048
+      - hashCode: 0
+        next: 0
+        value: 0
+      - hashCode: 0
+        next: 0
+        value: 0
+      m_count: 1
+      m_lastIndex: 1
+      m_freeList: -1
+      m_version: 7
+    HashSetComponentsEnabled:
+      m_buckets: 000000000000000001000000
+      m_slots:
+      - hashCode: 1008119048
+        next: -1
+        value: CheckPoint
+      - hashCode: 0
+        next: 0
+        value: 
+      - hashCode: 0
+        next: 0
+        value: 
+      m_count: 1
+      m_lastIndex: 1
+      m_freeList: -1
+      m_version: 7
+    AreValidSavedHashs: 1
+  Position: 0
+  Rotation: 0
+  Scale: 0
+  Name: 0
+  Tag: 0
+  Active: 0
+  Static: 0
+  Layer: 0
+  GAMEOBJECT_STATIC_ID: 0
+  GAMEOBJECT_PATH: 
+  Private_prefabId: 677089952
+  PrefabSetTime: 1650379318
+  CreateInRuntime: 0
+  onLoad: 3

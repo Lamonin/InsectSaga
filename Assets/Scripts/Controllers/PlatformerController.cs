@@ -50,7 +50,8 @@ namespace Controllers
         protected virtual void Move()
         {
             UpdateMoveSpeed();
-            if (_moveSpeed != 0)
+            
+            if (IsGround || _moveSpeed != 0)
             {
                 rb2d.velocity = new Vector2(_moveSpeed, rb2d.velocity.y);
             }

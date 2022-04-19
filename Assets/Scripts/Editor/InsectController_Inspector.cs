@@ -119,7 +119,5 @@ public class InsectController_Inspector : Editor
             EditorGUILayout.LabelField("Сторона: " + drawTarget.chSide);
             EditorGUILayout.LabelField("Состояние: " + drawTarget.State);
         }
-
-        //base.OnInspectorGUI();
     }
 }

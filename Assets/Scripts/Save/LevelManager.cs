@@ -1,6 +1,6 @@
+using SaveIsEasy;
 using UnityEngine;
 
-[RequireComponent(typeof(ES3AutoSaveMgr))]
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Handler;
@@ -8,7 +8,6 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         Handler ??= this;
-        LoadData();
     }
 
     private void OnEnable()
@@ -23,7 +22,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        
+        LoadData();
     }
 
     [ContextMenu("Restart Level")]
@@ -36,11 +35,13 @@ public class LevelManager : MonoBehaviour
     [ContextMenu("Save Level")]
     public void SaveData()
     {
-        ES3AutoSaveMgr.Current.Save();
+        SaveIsEasyAPI.SaveAll();
     }
 
     public void LoadData()
     {
-        ES3AutoSaveMgr.Current.Load();
+        var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
+        if (SaveIsEasyAPI.FileExists(path))
+            SaveIsEasyAPI.LoadAll();
     }
 }

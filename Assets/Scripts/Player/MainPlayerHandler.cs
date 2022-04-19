@@ -1,7 +1,6 @@
-﻿using Controllers;
+﻿using UnityEngine;
 using Objects;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+using Controllers;
 
 namespace Player
 {
@@ -15,25 +14,25 @@ namespace Player
         {
             base.Awake();
 
-            _input.Player.Jump.performed += _ =>
+            InputScheme.Player.Jump.performed += _ =>
             {
                 if (isCharacterStopped ||!isCanJump) return;
                 chController.Jump();
             };
             
-            _input.Player.RunModeOn.performed += _ =>
+            InputScheme.Player.RunModeOn.performed += _ =>
             {
                 if (isCharacterStopped || !isCanCrawl) return;
                 chController.tryToCrawl = true;
             };
             
-            _input.Player.RunModeOff.performed += _ =>
+            InputScheme.Player.RunModeOff.performed += _ =>
             {
                 if (isCharacterStopped) return;
                 chController.ToNormalState();
             };
             
-            _input.Player.Using.performed += _ => { InteractWithUsableObject(); };
+            InputScheme.Player.Using.performed += _ => { InteractWithUsableObject(); };
         }
 
         protected override void OnEnable()
@@ -59,7 +58,7 @@ namespace Player
 
         private float GetPlayerInputDirection()
         {
-            var inputDir = _input.Player.Movement.ReadValue<Vector2>();
+            var inputDir = InputScheme.Player.Movement.ReadValue<Vector2>();
 
             #region CorrectPlayerInputDirection
             

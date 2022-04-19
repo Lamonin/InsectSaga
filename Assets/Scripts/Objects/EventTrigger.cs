@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class EventTrigger : MonoBehaviour
 {
+    public bool interactable = true;
     public string triggerTag;
     public UnityEvent triggerEvent;
 
@@ -10,6 +11,7 @@ public class EventTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!interactable) return;
         if (other.CompareTag(triggerTag) && !_isTriggered)
         {
             _isTriggered = true;

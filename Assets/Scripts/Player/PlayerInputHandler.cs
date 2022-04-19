@@ -1,4 +1,5 @@
 ﻿using Objects;
+using SaveIsEasy;
 using UnityEngine;
 
 namespace Player
@@ -9,7 +10,7 @@ namespace Player
         public bool isCanRun = true;
         public bool isCanJump = true;
         public bool isCanCrawl = true;
-        protected InputScheme _input;
+        [AvoidSaving] protected InputScheme InputScheme;
         
         private void DialogueStart(bool stopped)
         {
@@ -23,12 +24,12 @@ namespace Player
 
         protected virtual void Awake()
         {
-            _input = new InputScheme();
+            InputScheme = new InputScheme();
         }
 
         protected virtual void OnEnable()
         {
-            _input.Enable();
+            InputScheme.Enable();
             
             EventBus.OnDialogueStart += DialogueStart;
             EventBus.OnDialogueEnd += DialogueEnd;
@@ -36,7 +37,7 @@ namespace Player
 
         protected virtual void OnDisable()
         {
-            _input.Disable();
+            InputScheme.Disable();
             
             EventBus.OnDialogueStart -= DialogueStart;
             EventBus.OnDialogueEnd -= DialogueEnd;

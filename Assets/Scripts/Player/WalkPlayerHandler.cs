@@ -11,13 +11,13 @@ namespace Player
         {
             base.Awake();
             
-            _input.Player.Jump.performed += context =>
+            InputScheme.Player.Jump.performed += context =>
             {
                 if (isCharacterStopped) return;
                 chController.Jump();
             };
             
-            _input.Player.Using.performed += context => { InteractWithUsableObject(); };
+            InputScheme.Player.Using.performed += context => { InteractWithUsableObject(); };
         }
 
         private void Start()
@@ -31,7 +31,7 @@ namespace Player
                 chController.moveDir = 0;    
                 return;
             }
-            chController.moveDir = _input.Player.Movement.ReadValue<Vector2>().x;
+            chController.moveDir = InputScheme.Player.Movement.ReadValue<Vector2>().x;
         }
     }
 }

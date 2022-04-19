@@ -9,10 +9,10 @@ public class CheckPoint : MonoBehaviour
         if (isSaved) return;
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Сохранение уровня!");
+            isSaved = true;
+            Debug.Log("Задействовал чекпоинт!");
             if (LevelManager.Handler != null)
                 LevelManager.Handler.SaveData();
-            isSaved = true;
         }
     }
 }
