@@ -4,7 +4,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Handler;
-    
+    public bool loadOnStart = true;
+
     private void Awake()
     {
         Handler ??= this;
