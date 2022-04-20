@@ -4,7 +4,8 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Handler;
-    
+    public bool loadSaveOnStart;
+
     private void Awake()
     {
         Handler ??= this;
@@ -12,17 +13,19 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventBus.OnPlayerDiedEvent += RestartLevelFromCheckpoint;
+        //EventBus.OnPlayerDiedEvent += RestartLevelFromCheckpoint;
+        EventBus.OnBlackScreenFadeInEvent += RestartLevelFromCheckpoint;
     }
 
     private void OnDisable()
     {
-        EventBus.OnPlayerDiedEvent -= RestartLevelFromCheckpoint;
+        //EventBus.OnPlayerDiedEvent -= RestartLevelFromCheckpoint;
+        EventBus.OnBlackScreenFadeInEvent -= RestartLevelFromCheckpoint;
     }
 
     void Start()
     {
-        LoadData();
+        if (loadSaveOnStart) LoadData();
     }
 
     [ContextMenu("Restart Level")]
@@ -42,6 +45,15 @@ public class LevelManager : MonoBehaviour
     {
         var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
         if (SaveIsEasyAPI.FileExists(path))
+        {
+            Debug.Log("Загрузка сохранения!");
             SaveIsEasyAPI.LoadAll();
+            BlackSplashImage.Handler.FadeOut();
+            EventBus.OnPlayerRespawned?.Invoke();
+        }
+        else
+        {
+            Debug.Log("Не найдено файла сохранения!");
+        }
     }
 }

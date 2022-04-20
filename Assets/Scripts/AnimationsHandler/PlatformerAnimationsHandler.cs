@@ -20,7 +20,7 @@ namespace AnimationsHandler
 
         private void UpdateAnimations()
         {
-            if (chController.IsGround)
+            if (chController.isGround)
             {
                 if (chController.moveDir != 0 && Mathf.Abs(chController.GetRigidBody2D.velocity.x) > 0.02f)
                 {

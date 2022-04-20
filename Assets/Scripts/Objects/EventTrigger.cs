@@ -9,6 +9,11 @@ public class EventTrigger : MonoBehaviour
 
     private bool _isTriggered;
 
+    public void ResetTrigger()
+    {
+        _isTriggered = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!interactable) return;
