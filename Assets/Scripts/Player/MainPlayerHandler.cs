@@ -38,12 +38,14 @@ namespace Player
         protected override void OnEnable()
         {
             base.OnEnable();
+            EventBus.OnPlayerRespawned += InputScheme.Enable;
             chController.OnStateChanged += UpdateUseIcon;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
+            EventBus.OnPlayerRespawned -= InputScheme.Enable;
             chController.OnStateChanged -= UpdateUseIcon;
         }
 
@@ -122,13 +124,7 @@ namespace Player
 
         private void Update()
         {
-            if (isCharacterStopped)
-            {
-                chController.moveDir = 0;
-                return;
-            }
-            
-            chController.moveDir = GetPlayerInputDirection();
+            chController.moveDir = isCharacterStopped ? 0 : GetPlayerInputDirection();
         }
 
         protected override void InteractWithUsableObject()
@@ -154,7 +150,7 @@ namespace Player
         {
             if (other.CompareTag("Enemy"))
             {
-                //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                InputScheme.Disable();
                 EventBus.OnPlayerDiedEvent?.Invoke();
             }
             else if (other.CompareTag("Usable"))
