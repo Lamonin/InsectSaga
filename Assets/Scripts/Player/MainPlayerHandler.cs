@@ -146,11 +146,21 @@ namespace Player
             }
         }
 
+        public void ActivateLift(Transform lift)
+        {
+            chController.State = ChState.Lift;
+            transform.SetParent(lift);
+            transform.localPosition = new Vector3(0, -2.87f, -0.5f);
+            InputScheme.Disable();
+            chController.GetRigidBody2D.gravityScale = 0;
+        }
+
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
             {
                 InputScheme.Disable();
+                BlackSplashImage.Handler.FadeIn(0.2f);
                 EventBus.OnPlayerDiedEvent?.Invoke();
             }
             else if (other.CompareTag("Usable"))

@@ -13,12 +13,14 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        EventBus.OnPlayerDiedEvent += RestartLevelFromCheckpoint;
+        //EventBus.OnPlayerDiedEvent += RestartLevelFromCheckpoint;
+        EventBus.OnBlackScreenFadeInEvent += RestartLevelFromCheckpoint;
     }
 
     private void OnDisable()
     {
-        EventBus.OnPlayerDiedEvent -= RestartLevelFromCheckpoint;
+        //EventBus.OnPlayerDiedEvent -= RestartLevelFromCheckpoint;
+        EventBus.OnBlackScreenFadeInEvent -= RestartLevelFromCheckpoint;
     }
 
     void Start()
@@ -46,6 +48,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Загрузка сохранения!");
             SaveIsEasyAPI.LoadAll();
+            BlackSplashImage.Handler.FadeOut();
             EventBus.OnPlayerRespawned?.Invoke();
         }
         else

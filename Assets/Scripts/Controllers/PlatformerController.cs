@@ -37,7 +37,7 @@ namespace Controllers
         public Rigidbody2D GetRigidBody2D => rb2d;
 
         //PROPERTIES
-        public bool IsGround => Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, groundLayer);
+        [HideInInspector] public bool isGround;
 
         private void UpdateMoveSpeed()
         {
@@ -51,7 +51,7 @@ namespace Controllers
         {
             UpdateMoveSpeed();
             
-            if (IsGround || _moveSpeed != 0)
+            if (isGround || _moveSpeed != 0)
             {
                 rb2d.velocity = new Vector2(_moveSpeed, rb2d.velocity.y);
             }
@@ -68,7 +68,7 @@ namespace Controllers
             if (!isCanJump) return;
             
             _jumpCounter = jumpBufferTime;
-            if (!IsGround && _hangCounter <= 0) return;
+            if (!isGround && _hangCounter <= 0) return;
             _hangCounter = -1;
             _jumpCounter = -1;
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpPower);
@@ -76,7 +76,7 @@ namespace Controllers
 
         private void ManageHangAndJumpBufferTimer()
         {
-            if (IsGround)
+            if (isGround)
             {
                 _hangCounter = hangTime;
                 if (_jumpCounter > 0) Jump();
@@ -95,6 +95,7 @@ namespace Controllers
         
         protected virtual void Update()
         {
+            isGround = Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, groundLayer);
             if (moveDir != 0) sprite.flipX = moveDir < 0;
             ManageHangAndJumpBufferTimer();
         }

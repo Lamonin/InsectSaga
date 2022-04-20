@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Controllers
 {
     //ENUMS
-    public enum ChState { Normal, Crawl, CrawlJump }
+    public enum ChState { Normal, Crawl, CrawlJump, Lift }
     public enum GroundSide { Floor, Ceil, LWall, RWall }
     
     public class InsectController : PlatformerController
@@ -22,7 +22,6 @@ namespace Controllers
         public Animator animator;
         public Transform collTransform;
         public GameObject platformerColl;
-
 
         //VARIABLES
         public bool tryToCrawl;
@@ -114,7 +113,7 @@ namespace Controllers
             if (_state == ChState.CrawlJump) yield break;
 
             State = ChState.CrawlJump;
-            rb2d.gravityScale = 4;
+            rb2d.gravityScale = 3;
             rb2d.velocity = Vector2.zero;
             transform.DOKill();
 
@@ -167,7 +166,7 @@ namespace Controllers
             transform.rotation = Quaternion.Euler(0, 0, 0);
 
             rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
-            rb2d.gravityScale = 4;
+            rb2d.gravityScale = 3;
 
             collTransform.gameObject.SetActive(false);
             _isNowRotated = false;
@@ -220,7 +219,7 @@ namespace Controllers
             {
                 base.Move();
             }
-            else // State == ChState.Crawl
+            else if (_state == ChState.Crawl)// State == ChState.Crawl
             {
                 var tRight = transform.right * _crawlDir;
                 var tPos = transform.position;
@@ -277,7 +276,7 @@ namespace Controllers
             switch (State)
             {
                 case ChState.Normal:
-                    if (IsGround)
+                    if (isGround)
                     {
                         if (_frameAnimator.CurrentState == JUMP || _frameAnimator.CurrentState == FALL)
                             _groundAnimRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
@@ -298,7 +297,9 @@ namespace Controllers
                 case ChState.CrawlJump:
                     _frameAnimator.ChangeAnimation(IDLE_CRAWL);
                     break;
-                
+                case ChState.Lift:
+                    _frameAnimator.ChangeAnimation(IDLE);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

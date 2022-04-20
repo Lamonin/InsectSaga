@@ -9,4 +9,9 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void LoadDefinedSceneAfterDelay(float delay)
+    {
+        Invoke(nameof(LoadDefinedScene), delay);
+    }
 }
