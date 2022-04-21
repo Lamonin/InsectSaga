@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using Objects;
 using Controllers;
+using UnityEngine.SceneManagement;
 
 namespace Player
 {
@@ -13,7 +14,7 @@ namespace Player
         protected override void Awake()
         {
             base.Awake();
-
+            
             InputScheme.Player.Jump.performed += _ =>
             {
                 if (isCharacterStopped ||!isCanJump) return;
@@ -159,9 +160,16 @@ namespace Player
         {
             if (other.CompareTag("Enemy"))
             {
-                InputScheme.Disable();
-                BlackSplashImage.Handler.FadeIn(0.2f);
-                EventBus.OnPlayerDiedEvent?.Invoke();
+                if (BlackSplashImage.Handler != null)
+                {
+                    InputScheme.Disable();
+                    BlackSplashImage.Handler.FadeIn(0.2f);
+                    EventBus.OnPlayerDiedEvent?.Invoke();
+                }
+                else
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
             }
             else if (other.CompareTag("Usable"))
             {

@@ -13,13 +13,11 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //EventBus.OnPlayerDiedEvent += RestartLevelFromCheckpoint;
         EventBus.OnBlackScreenFadeInEvent += RestartLevelFromCheckpoint;
     }
 
     private void OnDisable()
     {
-        //EventBus.OnPlayerDiedEvent -= RestartLevelFromCheckpoint;
         EventBus.OnBlackScreenFadeInEvent -= RestartLevelFromCheckpoint;
     }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
@@ -140,7 +140,7 @@ namespace Controllers
             else //JUMP FROM FLOOR or CEIL
             {
                 var ceil = chSide == GroundSide.Ceil ? -1 : 1;
-                rb2d.AddForce(new Vector2(_crawlDir * 1.2f, 1.2f) * ceil * jumpCrawlPower, ForceMode2D.Impulse);
+                rb2d.AddForce(new Vector2(_crawlDir * 1.2f, 1.2f) * (ceil * jumpCrawlPower), ForceMode2D.Impulse);
                 if (ceil == -1) //Flips character if he jumps from the ceiling
                     FlipAndRotateCharacter(0);
                 else //RESET ROTATION ANGLE FOR BEST LOOK
@@ -227,22 +227,25 @@ namespace Controllers
 
                 if (moveDir != 0)
                 {
-                    _rayGround = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
-                    _rayWall = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
+                    // _rayGround = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
+                    // _rayWall = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
+                    
+                    _rayGround = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
+                    _rayWall = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
 
-                    if (!_rayWall)
+                    if (!_rayGround)
                     {
                         rb2d.MoveRotation(rb2d.rotation + (_flip ? rotationSpeed : -rotationSpeed));
                     }
-                    else if (_rayGround)
+                    else if (_rayWall)
                     {
                         rb2d.MoveRotation(rb2d.rotation + (_flip ? -rotationSpeed : rotationSpeed));
                     }
                 }
 
-                var pos = rb2d.position - (Vector2) tUp * Time.fixedDeltaTime * 2; //gravity to surface
+                var pos = rb2d.position - (Vector2) tUp * (Time.fixedDeltaTime * 2); //gravity to surface
                 if (moveDir != 0)
-                    pos += (Vector2) (tRight * crawlSpeed * Time.fixedDeltaTime);
+                    pos += (Vector2) (tRight * (crawlSpeed * Time.fixedDeltaTime));
                 rb2d.MovePosition(pos);
             }
         }
@@ -286,7 +289,12 @@ namespace Controllers
                             _frameAnimator.ChangeAnimation(IDLE);
                     }
                     else
-                        _frameAnimator.ChangeAnimation(rb2d.velocity.y > 0 ? JUMP : FALL);
+                    {
+                        float velY = rb2d.velocity.y;
+                        if (velY > 0.5f) _frameAnimator.ChangeAnimation(JUMP);
+                        else if (velY < -0.5f) _frameAnimator.ChangeAnimation(FALL);
+                        //_frameAnimator.ChangeAnimation(rb2d.velocity.y > 0 ? JUMP : FALL);
+                    }
                     
                     break;
                 

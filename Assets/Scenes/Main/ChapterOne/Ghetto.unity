@@ -2555,7 +2555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305479177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4040003, y: -2.282, z: -10.5}
+  m_LocalPosition: {x: 101.68, y: -2.73, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2594,7 +2594,7 @@ MonoBehaviour:
     Version: 2
     PathsEnabled:
     - GameObject/activeSelf
-    ModificationVersion: 13
+    ModificationVersion: 15
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -2639,7 +2639,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 28
+      m_version: 32
     HashSetObjectsEnabled:
       m_buckets: 000000000100000000000000
       m_slots:
@@ -2655,7 +2655,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 26
+      m_version: 30
     HashSetComponentsEnabled:
       m_buckets: 000000000000000000000000
       m_slots:
@@ -2671,7 +2671,7 @@ MonoBehaviour:
       m_count: 0
       m_lastIndex: 0
       m_freeList: -1
-      m_version: 14
+      m_version: 16
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -2686,7 +2686,7 @@ MonoBehaviour:
   Private_prefabId: 1646881525
   PrefabSetTime: 1650428205
   CreateInRuntime: 0
-  onLoad: 3
+  onLoad: 0
 --- !u!1 &309763273
 GameObject:
   m_ObjectHideFlags: 0
@@ -16732,6 +16732,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4847749899693154576, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: ff93abf5bdfd26e4b951207bb49e5762, type: 2}
     - target: {fileID: 6304598445828232588, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -16766,11 +16770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422432, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.404
+      value: 101.68
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422432, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6820002
+      value: -3.13
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422432, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16810,12 +16814,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: isCanRun
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6304598447337422447, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
-      propertyPath: jumpPower
-      value: 8
-      objectReference: {fileID: 0}
+    - target: {fileID: 6590130642301715940, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 99a188f656bf38c49995604be71d958f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
 --- !u!4 &618466960 stripped
@@ -16854,7 +16858,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 61
+    ModificationVersion: 104
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -17309,7 +17313,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 854
+      m_version: 1370
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -17367,7 +17371,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 325
+      m_version: 540
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -17383,7 +17387,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 169
+      m_version: 298
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -19832,7 +19836,7 @@ MonoBehaviour:
     Version: 2
     PathsEnabled:
     - GameObject/activeSelf
-    ModificationVersion: 22
+    ModificationVersion: 23
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -19857,7 +19861,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 43
+      m_version: 45
     HashSetObjectsEnabled:
       m_buckets: 000000000100000000000000
       m_slots:
@@ -19873,14 +19877,14 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 43
+      m_version: 45
     HashSetComponentsEnabled:
       m_buckets: 
       m_slots: []
       m_count: 0
       m_lastIndex: 0
       m_freeList: -1
-      m_version: 22
+      m_version: 23
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -19895,7 +19899,7 @@ MonoBehaviour:
   Private_prefabId: 1610183648
   PrefabSetTime: 1650451740
   CreateInRuntime: 0
-  onLoad: 3
+  onLoad: 0
 --- !u!114 &774183546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25048,7 +25052,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5011725, y: -2.2828999, z: -10.5}
+  m_LocalPosition: {x: 101.68, y: -2.73, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27467,7 +27471,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489909928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.406, y: -1.25, z: -0.09}
+  m_LocalPosition: {x: -0.406, y: -1.5, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32127,7 +32131,7 @@ MonoBehaviour:
     Version: 2
     PathsEnabled:
     - GameObject/activeSelf
-    ModificationVersion: 18
+    ModificationVersion: 24
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -32152,7 +32156,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 35
+      m_version: 47
     HashSetObjectsEnabled:
       m_buckets: 000000000100000000000000
       m_slots:
@@ -32168,14 +32172,14 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 35
+      m_version: 47
     HashSetComponentsEnabled:
       m_buckets: 
       m_slots: []
       m_count: 0
       m_lastIndex: 0
       m_freeList: -1
-      m_version: 18
+      m_version: 24
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -32190,7 +32194,7 @@ MonoBehaviour:
   Private_prefabId: 1491667543
   PrefabSetTime: 1650428216
   CreateInRuntime: 0
-  onLoad: 3
+  onLoad: 0
 --- !u!114 &1790384107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32796,7 +32800,7 @@ MonoBehaviour:
     Version: 2
     PathsEnabled:
     - MultipleDialogs/currentDialog
-    ModificationVersion: 10
+    ModificationVersion: 11
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -32821,7 +32825,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 19
+      m_version: 21
     HashSetObjectsEnabled:
       m_buckets: 000000000000000001000000
       m_slots:
@@ -32837,7 +32841,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 19
+      m_version: 21
     HashSetComponentsEnabled:
       m_buckets: 010000000000000000000000
       m_slots:
@@ -32853,7 +32857,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 19
+      m_version: 21
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
