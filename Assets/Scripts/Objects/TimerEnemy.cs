@@ -7,6 +7,9 @@ public class TimerEnemy : MonoBehaviour
     [Tooltip("Задержка")] private bool isEnabledOnStart;
     
     [SerializeField]
+    [Tooltip("Задержка перед началом")] private float delayBeforeStart;
+    
+    [SerializeField]
     [Tooltip("Задержка")] private float delayBeforeDangerous;
 
     [SerializeField]
@@ -39,6 +42,7 @@ public class TimerEnemy : MonoBehaviour
 
     private IEnumerator DungerZoneState()
     {
+        yield return new WaitForSeconds(delayBeforeStart);
         while(_enabled)
         {
             yield return new WaitForSeconds(delayBeforeDangerous);
