@@ -219,7 +219,7 @@ namespace Controllers
             {
                 base.Move();
             }
-            else if (_state == ChState.Crawl)// State == ChState.Crawl
+            else if (_state == ChState.Crawl)
             {
                 var tRight = transform.right * _crawlDir;
                 var tPos = transform.position;
@@ -227,9 +227,6 @@ namespace Controllers
 
                 if (moveDir != 0)
                 {
-                    // _rayGround = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
-                    // _rayWall = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
-                    
                     _rayGround = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
                     _rayWall = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
 

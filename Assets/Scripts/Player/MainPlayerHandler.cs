@@ -164,6 +164,10 @@ namespace Player
                 {
                     InputScheme.Disable();
                     BlackSplashImage.Handler.FadeIn(0.2f);
+                    if (LevelManager.Handler == null)
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    }
                     EventBus.OnPlayerDiedEvent?.Invoke();
                 }
                 else

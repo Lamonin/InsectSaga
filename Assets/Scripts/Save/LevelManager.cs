@@ -1,5 +1,6 @@
 using SaveIsEasy;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -29,7 +30,10 @@ public class LevelManager : MonoBehaviour
     [ContextMenu("Restart Level")]
     private void RestartLevelFromCheckpoint()
     {
-        LoadData();
+        if (!LoadData())
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         Debug.Log("Level restarted!");
     }
 
@@ -39,7 +43,7 @@ public class LevelManager : MonoBehaviour
         SaveIsEasyAPI.SaveAll();
     }
 
-    public void LoadData()
+    public bool LoadData()
     {
         var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
         if (SaveIsEasyAPI.FileExists(path))
@@ -48,10 +52,9 @@ public class LevelManager : MonoBehaviour
             SaveIsEasyAPI.LoadAll();
             BlackSplashImage.Handler.FadeOut();
             EventBus.OnPlayerRespawned?.Invoke();
+            return true;
         }
-        else
-        {
-            Debug.Log("Не найдено файла сохранения!");
-        }
+        Debug.Log("Не найдено файла сохранения!");
+        return false;
     }
 }
