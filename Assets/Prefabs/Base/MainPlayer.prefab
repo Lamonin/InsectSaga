@@ -302,9 +302,9 @@ MonoBehaviour:
   jumpPower: 10
   hangTime: 0.05
   jumpBufferTime: 0.1
-  groundLayer:
+  walkGroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
   groundCheckPos: {x: 0, y: -0.4}
   groundCheckRadius: 0.08
   sprite: {fileID: 6304598445828232588}
@@ -317,6 +317,9 @@ MonoBehaviour:
   jumpCrawlPower: 7
   jumpCrawlFromWallPower: 9
   rayGroundLength: 0.5
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   animator: {fileID: 6304598447337422367}
   collTransform: {fileID: 6304598447302880537}
   platformerColl: {fileID: 2154833475092800613}

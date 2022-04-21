@@ -17,6 +17,7 @@ public class InsectController_Inspector : Editor
     private SerializedProperty m_JumpCrawlPower;
     private SerializedProperty m_JumpCrawlFromWallPower;
     private SerializedProperty m_GroundLayer;
+    private SerializedProperty m_WalkGroundLayer;
     private SerializedProperty m_GroundCheckPos;
     private SerializedProperty m_GroundCheckRadius;
     private SerializedProperty m_GrabWallDistance;
@@ -45,6 +46,7 @@ public class InsectController_Inspector : Editor
         m_JumpCrawlFromWallPower = serializedObject.FindProperty("jumpCrawlFromWallPower");
         
         m_GroundLayer = serializedObject.FindProperty("groundLayer");
+        m_WalkGroundLayer = serializedObject.FindProperty("walkGroundLayer");
         m_GroundCheckPos = serializedObject.FindProperty("groundCheckPos");
         m_GroundCheckRadius = serializedObject.FindProperty("groundCheckRadius");
         m_GrabWallDistance = serializedObject.FindProperty("grabWallDistance");
@@ -94,6 +96,7 @@ public class InsectController_Inspector : Editor
         
         // AddHeader("Другое");
         EditorGUILayout.PropertyField(m_GroundLayer, new GUIContent("Слой поверхности"));
+        EditorGUILayout.PropertyField(m_WalkGroundLayer, new GUIContent("Слой поверхности"));
         EditorGUILayout.PropertyField(m_GroundCheckPos, new GUIContent("Ground check pos."));
         EditorGUILayout.PropertyField(m_GroundCheckRadius, new GUIContent("Ground check radius"));
         EditorGUILayout.PropertyField(m_GrabWallDistance, new GUIContent("Wall grab distance"));

@@ -18,6 +18,7 @@ namespace Controllers
         public float jumpCrawlPower;
         public float jumpCrawlFromWallPower;
         public float rayGroundLength;
+        public LayerMask groundLayer;
 
         public Animator animator;
         public Transform collTransform;
@@ -239,7 +240,7 @@ namespace Controllers
                         rb2d.MoveRotation(rb2d.rotation + (_flip ? -rotationSpeed : rotationSpeed));
                     }
                 }
-
+                
                 var pos = rb2d.position - (Vector2) tUp * (Time.fixedDeltaTime * 2); //gravity to surface
                 if (moveDir != 0)
                     pos += (Vector2) (tRight * (crawlSpeed * Time.fixedDeltaTime));
@@ -288,8 +289,8 @@ namespace Controllers
                     else
                     {
                         float velY = rb2d.velocity.y;
-                        if (velY > 0.5f) _frameAnimator.ChangeAnimation(JUMP);
-                        else if (velY < -0.5f) _frameAnimator.ChangeAnimation(FALL);
+                        if (velY > 2f) _frameAnimator.ChangeAnimation(JUMP);
+                        else if (velY < -2f) _frameAnimator.ChangeAnimation(FALL);
                         //_frameAnimator.ChangeAnimation(rb2d.velocity.y > 0 ? JUMP : FALL);
                     }
                     

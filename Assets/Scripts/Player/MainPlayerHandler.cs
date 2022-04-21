@@ -50,6 +50,8 @@ namespace Player
             chController.OnStateChanged -= UpdateUseIcon;
         }
 
+
+        
         private void Start()
         {
         }

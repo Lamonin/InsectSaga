@@ -18,7 +18,7 @@ namespace Controllers
         [Tooltip("Время для буфера прыжка")] public float jumpBufferTime;
 
         [Header("Другое")]
-        public LayerMask groundLayer;
+        public LayerMask walkGroundLayer;
         public Vector2 groundCheckPos;
         public float groundCheckRadius;
         
@@ -95,7 +95,7 @@ namespace Controllers
         
         protected virtual void Update()
         {
-            isGround = Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, groundLayer);
+            isGround = Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, walkGroundLayer);
             if (moveDir != 0) sprite.flipX = moveDir < 0;
             ManageHangAndJumpBufferTimer();
         }

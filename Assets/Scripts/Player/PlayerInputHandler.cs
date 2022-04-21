@@ -29,18 +29,28 @@ namespace Player
 
         protected virtual void OnEnable()
         {
-            InputScheme.Enable();
-            
+            EnableInput();
+
             EventBus.OnDialogueStart += DialogueStart;
             EventBus.OnDialogueEnd += DialogueEnd;
         }
 
         protected virtual void OnDisable()
         {
-            InputScheme.Disable();
+            DisableInput();
             
             EventBus.OnDialogueStart -= DialogueStart;
             EventBus.OnDialogueEnd -= DialogueEnd;
+        }
+        
+        public void EnableInput()
+        {
+            InputScheme.Enable();
+        }
+
+        public void DisableInput()
+        {
+            InputScheme.Disable();
         }
         
         protected UsableObject UsableObject;
