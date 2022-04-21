@@ -16854,7 +16854,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 60
+    ModificationVersion: 61
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -17309,7 +17309,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 842
+      m_version: 854
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -17367,7 +17367,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 320
+      m_version: 325
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -17383,7 +17383,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 166
+      m_version: 169
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -25221,7 +25221,7 @@ GameObject:
   - component: {fileID: 1143388731}
   - component: {fileID: 1143388730}
   m_Layer: 0
-  m_Name: Light 2D
+  m_Name: GlobalLight2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25557,7 +25557,7 @@ GameObject:
   - component: {fileID: 1190798148}
   - component: {fileID: 1190798147}
   m_Layer: 0
-  m_Name: Global Volume
+  m_Name: PostEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
