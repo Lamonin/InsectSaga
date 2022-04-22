@@ -1839,7 +1839,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 1
   richText: 0
@@ -1904,7 +1903,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: -2.33}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   currentEvent: 0
   events:
   - m_PersistentCalls:
@@ -2538,7 +2536,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7772021, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2555,7 +2553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305479177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2600002, y: -2.1799998, z: -10.5}
+  m_LocalPosition: {x: 3.26, y: -2.1799998, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14432,7 +14430,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0.02, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   currentDialog: 0
 --- !u!1 &360250496
 GameObject:
@@ -15800,7 +15797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a11cc8a9a92444468794cd44b82b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
   triggerTag: Player
   triggerEvent:
     m_PersistentCalls:
@@ -16732,10 +16728,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4847749899693154576, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: ff93abf5bdfd26e4b951207bb49e5762, type: 2}
     - target: {fileID: 6304598445828232588, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_SortingLayer
       value: 1
@@ -16816,6 +16808,18 @@ PrefabInstance:
       propertyPath: isCanRun
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: <isCanRun>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: <isCanJump>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: <isCanCrawl>k__BackingField
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6590130642301715940, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_Material
       value: 
@@ -16858,7 +16862,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 108
+    ModificationVersion: 109
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -17313,7 +17317,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 1418
+      m_version: 1430
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -17371,7 +17375,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 560
+      m_version: 565
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -17387,7 +17391,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 310
+      m_version: 313
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -20012,7 +20016,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 1
   richText: 1
@@ -21221,6 +21224,208 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1009586218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1009586222}
+  - component: {fileID: 1009586221}
+  - component: {fileID: 1009586220}
+  - component: {fileID: 1009586219}
+  m_Layer: 0
+  m_Name: EnableRunNJump
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1009586219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009586218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -499960783, guid: c3ab396f3f53d1c4ebc7bae03391b186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldsEnable:
+    Version: 2
+    PathsEnabled:
+    - EventTrigger/_isTriggered
+    - EventTrigger/interactable
+    ModificationVersion: 5
+    ComponentsEnabled: []
+    HashFieldsEnabled: []
+    ObjectsEnabled: 
+    HashSetFieldsEnabled:
+      m_buckets: 020000000100000000000000
+      m_slots:
+      - hashCode: 478502326
+        next: -1
+        value:
+          HashCodePath: -1708915566
+          HashCodeMember: 1728845430
+      - hashCode: 1021870476
+        next: -1
+        value:
+          HashCodePath: -1708915566
+          HashCodeMember: -2022753716
+      - hashCode: 0
+        next: 0
+        value:
+          HashCodePath: 0
+          HashCodeMember: 0
+      m_count: 2
+      m_lastIndex: 2
+      m_freeList: -1
+      m_version: 11
+    HashSetObjectsEnabled:
+      m_buckets: 000000000000000001000000
+      m_slots:
+      - hashCode: 438568082
+        next: -1
+        value: -1708915566
+      - hashCode: 0
+        next: 0
+        value: 0
+      - hashCode: 0
+        next: 0
+        value: 0
+      m_count: 1
+      m_lastIndex: 1
+      m_freeList: -1
+      m_version: 8
+    HashSetComponentsEnabled:
+      m_buckets: 000000000000000001000000
+      m_slots:
+      - hashCode: 438568082
+        next: -1
+        value: EventTrigger
+      - hashCode: 0
+        next: 0
+        value: 
+      - hashCode: 0
+        next: 0
+        value: 
+      m_count: 1
+      m_lastIndex: 1
+      m_freeList: -1
+      m_version: 8
+    AreValidSavedHashs: 1
+  Position: 0
+  Rotation: 0
+  Scale: 0
+  Name: 0
+  Tag: 0
+  Active: 0
+  Static: 0
+  Layer: 0
+  GAMEOBJECT_STATIC_ID: 0
+  GAMEOBJECT_PATH: 
+  Private_prefabId: 1964346387
+  PrefabSetTime: 1650618568
+  CreateInRuntime: 0
+  onLoad: 0
+--- !u!61 &1009586220
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009586218}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1009586221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009586218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a11cc8a9a92444468794cd44b82b762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerTag: Player
+  triggerEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1009586221}
+        m_TargetAssemblyTypeName: EventTrigger, Assembly-CSharp
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 618466965}
+        m_TargetAssemblyTypeName: Player.PlayerInputHandler, Assembly-CSharp
+        m_MethodName: set_isCanJump
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 618466965}
+        m_TargetAssemblyTypeName: Player.PlayerInputHandler, Assembly-CSharp
+        m_MethodName: set_isCanRun
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!4 &1009586222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009586218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.686, y: -2.791, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1028004194
 GameObject:
   m_ObjectHideFlags: 0
@@ -25052,7 +25257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.501437, y: -2.181, z: -10.5}
+  m_LocalPosition: {x: 4.500274, y: -2.181, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25645,7 +25850,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 1
   richText: 1
@@ -32269,7 +32473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a11cc8a9a92444468794cd44b82b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
   triggerTag: Player
   triggerEvent:
     m_PersistentCalls:
@@ -32736,7 +32939,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0.02, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   currentDialog: 0
 --- !u!95 &1821933836
 Animator:
@@ -32919,7 +33121,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 1
   richText: 1
@@ -35471,7 +35672,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0.02, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   currentDialog: 0
 --- !u!61 &1970594831
 BoxCollider2D:
@@ -36274,7 +36474,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a11cc8a9a92444468794cd44b82b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
   triggerTag: Player
   triggerEvent:
     m_PersistentCalls:

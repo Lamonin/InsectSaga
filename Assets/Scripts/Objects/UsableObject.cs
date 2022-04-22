@@ -7,7 +7,7 @@ namespace Objects
         public Vector2 useIconPosition;
         [HideInInspector] public Vector2 useIconOffset;
 
-        public bool interactable = true;
+        public bool interactable { get; set; } = true;
 
         protected virtual void Start()
         {

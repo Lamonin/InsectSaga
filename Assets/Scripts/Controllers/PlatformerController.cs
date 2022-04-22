@@ -51,15 +51,15 @@ namespace Controllers
         {
             UpdateMoveSpeed();
 
+            var vel = rb2d.velocity;
             if (isGround || _moveSpeed != 0)
             {
-                rb2d.velocity = new Vector2(_moveSpeed, rb2d.velocity.y);
+                rb2d.velocity = new Vector2(_moveSpeed, vel.y);
             }
             else
             {
-                var v2 = rb2d.velocity;
-                v2.x *= 0.95f;
-                rb2d.velocity = v2;
+                vel.x *= 0.95f;
+                rb2d.velocity = vel;
             }
         }
 
@@ -69,8 +69,8 @@ namespace Controllers
             
             _jumpCounter = jumpBufferTime;
             if (!isGround && _hangCounter <= 0) return;
-            _hangCounter = -1;
-            _jumpCounter = -1;
+            _hangCounter = _jumpCounter = -1;
+            
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpPower);
         }
 

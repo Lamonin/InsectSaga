@@ -230,6 +230,9 @@ namespace Controllers
                 {
                     _rayGround = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
                     _rayWall = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
+                    //TODO
+                    // bool overlapWallBox = Physics2D.OverlapBox(tPos + tRight * (_distanceToWall / 2f), new Vector2(_distanceToWall, 0.2f),
+                    //     transform.rotation.eulerAngles.z, groundLayer);
 
                     if (!_rayGround)
                     {
@@ -356,7 +359,6 @@ namespace Controllers
 
         protected override void OnDrawGizmosSelected()
         {
-            
             base.OnDrawGizmosSelected();
         }
     }

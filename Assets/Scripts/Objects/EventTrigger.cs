@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class EventTrigger : MonoBehaviour
 {
-    public bool interactable = true;
+    public bool interactable { get; set; } = true;
     public string triggerTag;
     public UnityEvent triggerEvent;
 
