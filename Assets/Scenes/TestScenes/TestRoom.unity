@@ -1745,6 +1745,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1356974109924078779, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
+      propertyPath: delayBeforeStart
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy
@@ -1799,9 +1803,9 @@ MonoBehaviour:
   jumpPower: 0
   hangTime: 0
   jumpBufferTime: 0
-  groundLayer:
+  walkGroundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   groundCheckPos: {x: 0, y: 0}
   groundCheckRadius: 0
   sprite: {fileID: 0}
@@ -2122,7 +2126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 1.2}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
 --- !u!212 &1834915454
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2290,7 +2293,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 1.2}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 1
   richText: 1
@@ -2734,7 +2736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8639579865522934513, guid: 52d74c236b49af143acd32e95af8a91a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.3200006
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 8639579865522934513, guid: 52d74c236b49af143acd32e95af8a91a, type: 3}
       propertyPath: m_LocalPosition.y
