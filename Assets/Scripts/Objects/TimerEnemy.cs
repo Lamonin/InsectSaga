@@ -23,6 +23,8 @@ public class TimerEnemy : MonoBehaviour
     
     void Start()
     {
+        collision.SetActive(false);
+        sprite.SetActive(false);
         if (isEnabledOnStart)
             Activate();
     }
