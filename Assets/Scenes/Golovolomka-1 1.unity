@@ -192,11 +192,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
+      propertyPath: beginEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
       propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
+      propertyPath: beginEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
       propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1013109259}
+    - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
+      propertyPath: beginEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1013109259}
     - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
@@ -208,11 +220,27 @@ PrefabInstance:
       value: EnableInput
       objectReference: {fileID: 0}
     - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
+      propertyPath: beginEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
+      propertyPath: beginEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DisableInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
       propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Player.PlayerInputHandler, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
+      propertyPath: beginEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player.PlayerInputHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
       propertyPath: endEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1500429443099203241, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
+      propertyPath: beginEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1500429443099203242, guid: 5ad526c66b065434ebab4a2d523980d6, type: 3}
@@ -238,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -251,7 +279,7 @@ PrefabInstance:
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1013109259}
+      objectReference: {fileID: 2086267737}
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -266,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DisableInput
+      value: Activate
       objectReference: {fileID: 0}
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -274,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Player.PlayerInputHandler, Assembly-CSharp
+      value: BridgeObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8118246012564027303, guid: 6e18a4f5cdc687d409e7de487cc7c56a, type: 3}
       propertyPath: events.Array.data[0].m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -7481,7 +7509,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 2.1463845, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
