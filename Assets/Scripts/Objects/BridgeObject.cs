@@ -34,8 +34,8 @@ public class BridgeObject : MonoBehaviour
             .OnComplete(
             () =>
             {
-                endEvent?.Invoke();
                 if (!onlyOnce) _isProcessing = false;
+                endEvent?.Invoke();
             });
         _isUpped = !_isUpped;
     }
