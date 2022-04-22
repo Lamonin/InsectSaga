@@ -6,10 +6,10 @@ namespace Player
 {
     public class PlayerInputHandler : MonoBehaviour
     {
-        public bool isCharacterStopped { get; set; }
-        [field: SerializeField] public bool isCanRun { get; set; } = true;
-        [field: SerializeField] public bool isCanJump { get; set; } =  true;
-        [field: SerializeField] public bool isCanCrawl { get; set; } =  true;
+        [field: SerializeField] protected bool isCharacterStopped { get; set; }
+        [field: SerializeField] protected bool isCanRun { get; set; } = true;
+        [field: SerializeField] protected bool isCanJump { get; set; } =  true;
+        [field: SerializeField] protected bool isCanCrawl { get; set; } =  true;
         
         [AvoidSaving] protected InputScheme InputScheme;
         

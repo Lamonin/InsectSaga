@@ -156,7 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: -0.09, y: 0.6}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   currentDialog: 0
 --- !u!61 &100114908
 BoxCollider2D:
@@ -694,7 +693,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 0
   stopPlayerInDialog: 1
   richText: 1
@@ -1108,7 +1106,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 0
   richText: 0
@@ -6842,7 +6839,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0.02, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   currentDialog: 0
 --- !u!61 &1237525474
 BoxCollider2D:
@@ -6964,7 +6960,7 @@ Camera:
   far clip plane: 50
   field of view: 60
   orthographic: 1
-  orthographic size: 2.4
+  orthographic size: 2.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6988,7 +6984,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263063737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.933333, y: -0.48000002, z: -10.1}
+  m_LocalPosition: {x: 5.01, y: 0.06, z: -10.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7179,7 +7175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 1
   richText: 0
@@ -7554,7 +7549,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.7}
   useIconOffset: {x: 0, y: 0}
-  interactable: 0
   currentEvent: 0
   events:
   - m_PersistentCalls:
@@ -7678,7 +7672,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.7}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   currentEvent: 0
   events:
   - m_PersistentCalls:
@@ -7872,7 +7865,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0.51}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 1
   stopPlayerInDialog: 0
   richText: 0
@@ -8162,7 +8154,7 @@ GameObject:
   - component: {fileID: 1562075608}
   - component: {fileID: 1562075607}
   m_Layer: 0
-  m_Name: Light 2D
+  m_Name: Global Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8307,7 +8299,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useIconPosition: {x: 0, y: 0}
   useIconOffset: {x: 0, y: 0}
-  interactable: 1
   canSkipDialogs: 0
   stopPlayerInDialog: 1
   richText: 1
@@ -8508,7 +8499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a11cc8a9a92444468794cd44b82b762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactable: 1
   triggerTag: Player
   triggerEvent:
     m_PersistentCalls:
@@ -8524,6 +8514,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5127986471666821245}
+        m_TargetAssemblyTypeName: Player.PlayerInputHandler, Assembly-CSharp
+        m_MethodName: set_isCharacterStopped
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!4 &1713902767
 Transform:
@@ -14842,6 +14844,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c044ddaa6b3f45ffa0b97c4d54365eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <isCharacterStopped>k__BackingField: 0
+  <isCanRun>k__BackingField: 1
+  <isCanJump>k__BackingField: 1
+  <isCanCrawl>k__BackingField: 1
   chController: {fileID: 5127986471666821244}
 --- !u!114 &5127986471666821246
 MonoBehaviour:
