@@ -193,7 +193,10 @@ namespace Controllers
 
         private RaycastHit2D CheckRunGround()
         {
-            return Physics2D.Raycast(transform.position, Vector2.down, grabGroundDistance, groundLayer);
+            var dist = grabGroundDistance;
+            //Need to cling to the ground later
+            if (_state == ChState.CrawlJump && chSide == GroundSide.Floor) dist /= 1.5f;
+            return Physics2D.Raycast(transform.position, Vector2.down, dist, groundLayer);
         }
 
         private RaycastHit2D CheckRunWall()
