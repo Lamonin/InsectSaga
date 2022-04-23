@@ -50,8 +50,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Загрузка сохранения!");
             SaveIsEasyAPI.LoadAll();
-            BlackSplashImage.Handler.FadeOut();
-            EventBus.OnPlayerRespawned?.Invoke();
+            BlackSplashImage.Handler.FadeOut(1,0.8f, ()=>{ EventBus.OnPlayerRespawned?.Invoke(); });
             return true;
         }
         Debug.Log("Не найдено файла сохранения!");

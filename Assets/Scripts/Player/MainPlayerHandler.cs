@@ -158,6 +158,12 @@ namespace Player
             chController.GetRigidBody2D.gravityScale = 0;
         }
 
+        private void ResetPlayerStateInvoke()
+        {
+            chController.ToNormalState();
+            chController.tryToCrawl = false;
+        }
+
         protected override void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag("Enemy"))
@@ -165,7 +171,11 @@ namespace Player
                 if (BlackSplashImage.Handler != null)
                 {
                     InputScheme.Disable();
-                    BlackSplashImage.Handler.FadeIn(0.2f);
+                    
+                    Invoke(nameof(ResetPlayerStateInvoke), 0.1f);
+                    
+                    // BlackSplashImage.Handler.FadeIn(0.2f);
+                    BlackSplashImage.Handler.FlashFadeIn();
                     if (LevelManager.Handler == null)
                     {
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

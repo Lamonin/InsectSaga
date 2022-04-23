@@ -22,7 +22,7 @@ public class MainMenuHandler : MonoBehaviour
             SaveIsEasyAPI.LoadSceneAndGame();
         else
         {
-            SceneManager.LoadScene("Prologue");
+            SceneManager.LoadScene("IntroTextScene");
         }
     }
 

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
@@ -23,7 +24,14 @@ public class BlackSplashImage : MonoBehaviour
     {
         _image.DOKill();
         gameObject.SetActive(true);
-        _image.DOFade(1, timeToFade);
+        _image.DOFade(1, timeToFade).SetEase(Ease.Linear);
+    }
+
+    public void FlashFadeIn()
+    {
+        _image.DOKill();
+        gameObject.SetActive(true);
+        _image.DOFade(1, 0.01f).SetEase(Ease.Linear).OnComplete(()=>EventBus.OnBlackScreenFadeInEvent?.Invoke());
     }
     
     public void ForceFadeIn(float timeToFade)
@@ -39,7 +47,7 @@ public class BlackSplashImage : MonoBehaviour
     {
         _image.DOKill();
         gameObject.SetActive(true);
-        _image.DOFade(1, timeToFade).OnComplete(()=>EventBus.OnBlackScreenFadeInEvent?.Invoke());
+        _image.DOFade(1, timeToFade).SetEase(Ease.Linear).OnComplete(()=>EventBus.OnBlackScreenFadeInEvent?.Invoke());
     }
 
     public void FadeIn(float timeToFade)
@@ -50,9 +58,15 @@ public class BlackSplashImage : MonoBehaviour
         this.timeToFade = temp;
     }
 
-    public void FadeOut(float delay = 0)
+    public void FadeOut(float duration = 1, float delay = 0, Action actionAfterDelay = null)
     {
         _image.DOKill();
-        _image.DOFade(0, timeToFade).SetDelay(delay).OnComplete(()=>{ gameObject.SetActive(false); });
+        _image.DOFade(0, duration).SetEase(Ease.Linear).SetDelay(delay).OnStart(() =>
+        {
+            actionAfterDelay?.Invoke();
+        }).OnComplete(() =>
+        {
+            gameObject.SetActive(false);
+        });
     }
 }
