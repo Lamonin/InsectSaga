@@ -31,6 +31,7 @@ namespace Controllers
         private bool _isNowRotated;
         private bool _isJumpInCrawl;
         private float _distanceToWall;
+        private float _savedGravityScale;
         private Coroutine _groundAnimRoutine;
         private Coroutine _jumpInCrawlRoutine;
         private FrameBasedAnimator _frameAnimator;
@@ -62,7 +63,8 @@ namespace Controllers
             var isOnWallSecond = CheckRunWallSecond();
             var isOnGround = CheckRunGround();
             
-            if (!isOnGround && !isOnWall && !isOnWallSecond) return;
+            
+            if (!isOnGround && !isOnWall && !(isOnWallSecond&&CheckRunWallSecond(true))) return;
 
             /*if (isOnWall) Debug.Log("isOnWall");
             if (isOnWallSecond) Debug.Log("isOnWallSecond");
@@ -71,7 +73,9 @@ namespace Controllers
             platformerColl.SetActive(false);
             collTransform.gameObject.SetActive(true);
 
+            rb2d.freezeRotation = false;
             rb2d.angularVelocity = 0;
+            rb2d.gravityScale = 0;
             
             Quaternion angleRot = Quaternion.Euler(0, 0, 0);
 
@@ -82,6 +86,7 @@ namespace Controllers
 
             collTransform.localRotation = Quaternion.Euler(0, 0, -90);
             angleRot = Quaternion.Euler(0, 0, angleRot.eulerAngles.z);
+            transform.DOKill();
 
             
             if (_state == ChState.Normal)
@@ -92,13 +97,11 @@ namespace Controllers
             {
                 _isNowRotated = true;
                 transform.DORotateQuaternion(angleRot, 0.1f).SetEase(Ease.OutSine).SetUpdate(UpdateType.Fixed)
-                .OnComplete(() => _isNowRotated = false);
+                .OnComplete(() => _isNowRotated = false).OnKill(() => _isNowRotated = false);
             }
 
             State = ChState.Crawl;
-            rb2d.gravityScale = 0;
             rb2d.velocity = Vector2.zero; //Reset velocity, otherwise it accumulates
-            rb2d.constraints = RigidbodyConstraints2D.None;
         }
 
         private void FlipAndRotateCharacter(float rotAngle)
@@ -114,7 +117,7 @@ namespace Controllers
             if (_state == ChState.CrawlJump) yield break;
 
             State = ChState.CrawlJump;
-            rb2d.gravityScale = 3;
+            rb2d.gravityScale = _savedGravityScale;
             rb2d.velocity = Vector2.zero;
             transform.DOKill();
 
@@ -165,9 +168,9 @@ namespace Controllers
 
             collTransform.localRotation = Quaternion.Euler(0, 0, 0);
             transform.rotation = Quaternion.Euler(0, 0, 0);
-
-            rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
-            rb2d.gravityScale = 3;
+            
+            rb2d.freezeRotation = true;
+            rb2d.gravityScale = _savedGravityScale;
 
             collTransform.gameObject.SetActive(false);
             _isNowRotated = false;
@@ -194,20 +197,24 @@ namespace Controllers
         private RaycastHit2D CheckRunGround()
         {
             var dist = grabGroundDistance;
+            
             //Need to cling to the ground later
-            if (_state == ChState.CrawlJump && chSide == GroundSide.Floor) dist /= 1.5f;
+            //if (_state == ChState.CrawlJump && chSide == GroundSide.Floor) dist /= 1.5f;
+            if (_state == ChState.CrawlJump && Mathf.Abs(WrapAngle(transform.localEulerAngles.z)) < 6) dist /= 1.5f;
             return Physics2D.Raycast(transform.position, Vector2.down, dist, groundLayer);
         }
 
         private RaycastHit2D CheckRunWall()
         {
-            float mult = _state != ChState.Normal ? 1.5f : 1;
-            return Physics2D.Raycast(transform.position, transform.right * _crawlDir, grabWallDistance * mult,
+            float mult = _state != ChState.Normal ? 1.6f : 1;
+            return Physics2D.Raycast(transform.position, Vector2.right * _crawlDir, grabWallDistance * mult,
                 groundLayer);
         }
 
-        private RaycastHit2D CheckRunWallSecond()
+        private RaycastHit2D CheckRunWallSecond(bool secondRay = false)
         {
+            if (secondRay)
+                return Physics2D.Raycast(transform.position+transform.right * (-_crawlDir * 0.2f), -transform.up, grabWallDistance/1.2f, groundLayer);
             return Physics2D.Raycast(transform.position, -transform.up, grabWallDistance, groundLayer);
         }
 
@@ -233,9 +240,6 @@ namespace Controllers
                 {
                     _rayGround = Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, rayGroundLength, groundLayer);
                     _rayWall = Physics2D.Raycast(tPos, tRight, _distanceToWall, groundLayer);
-                    //TODO
-                    // bool overlapWallBox = Physics2D.OverlapBox(tPos + tRight * (_distanceToWall / 2f), new Vector2(_distanceToWall, 0.2f),
-                    //     transform.rotation.eulerAngles.z, groundLayer);
 
                     if (!_rayGround)
                     {
@@ -253,18 +257,31 @@ namespace Controllers
                 rb2d.MovePosition(pos);
             }
         }
+        
+        private float WrapAngle(float angle)
+        {
+            angle %= 360;
+            if(angle > 180)
+                return angle - 360;
+ 
+            return angle;
+        }
+        
+        private float WrapAngleAbs(float angle)
+        {
+            return Mathf.Abs(WrapAngle(angle));
+        }
 
         protected GroundSide GetPlayerGroundSide()
         {
-            var tUp = transform.up;
-
-            if (Mathf.Abs(tUp.x) > Mathf.Abs(tUp.y) && Mathf.Abs(tUp.y) < 0.1f)
-                return tUp.x > 0 ? GroundSide.LWall : GroundSide.RWall;
+            var rot = WrapAngle(transform.localEulerAngles.z);
             
-            if (Mathf.Abs(tUp.x) < 0.1f)
-                return tUp.y > 0 ? GroundSide.Floor : GroundSide.Ceil;
+            if (MathF.Abs(rot) > 120)
+                return GroundSide.Ceil;
+            if (MathF.Abs(rot) < 60)
+                return GroundSide.Floor;
 
-            return chSide;
+            return rot < 0 ? GroundSide.LWall : GroundSide.RWall;
         }
 
         #region ANIMATIONS
@@ -297,7 +314,6 @@ namespace Controllers
                         float velY = rb2d.velocity.y;
                         if (velY > 2f) _frameAnimator.ChangeAnimation(JUMP);
                         else if (velY < -2f) _frameAnimator.ChangeAnimation(FALL);
-                        //_frameAnimator.ChangeAnimation(rb2d.velocity.y > 0 ? JUMP : FALL);
                     }
                     
                     break;
@@ -309,9 +325,11 @@ namespace Controllers
                 case ChState.CrawlJump:
                     _frameAnimator.ChangeAnimation(IDLE_CRAWL);
                     break;
+                
                 case ChState.Lift:
                     _frameAnimator.ChangeAnimation(IDLE);
                     break;
+                
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -337,6 +355,7 @@ namespace Controllers
         protected override void Start()
         {
             base.Start();
+            _savedGravityScale = rb2d.gravityScale;
             
             _frameAnimator = new FrameBasedAnimator(animator);
 
@@ -362,6 +381,23 @@ namespace Controllers
 
         protected override void OnDrawGizmosSelected()
         {
+            var dist = grabGroundDistance;
+            if (_state == ChState.CrawlJump && Mathf.Abs(transform.rotation.eulerAngles.z) < 6) dist /= 1.5f;
+            
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawRay(transform.position, Vector2.down*dist);
+
+            Gizmos.color = Color.magenta;
+            float mult = _state != ChState.Normal ? 1.6f : 1;
+            Gizmos.DrawRay(transform.position, transform.right * _crawlDir*grabWallDistance*mult);
+            
+            Gizmos.color = Color.green;
+            Gizmos.DrawRay(transform.position, -transform.up*grabWallDistance);
+            
+            Gizmos.color = Color.red;
+            //Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, moveDir != 0 ? rayGroundLength:rayGroundLength*2, groundLayer);
+            Gizmos.DrawRay(transform.position+transform.right*_crawlDir*0.3f, -transform.up*rayGroundLength);
+
             base.OnDrawGizmosSelected();
         }
     }
