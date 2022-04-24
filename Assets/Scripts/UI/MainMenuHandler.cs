@@ -28,6 +28,13 @@ public class MainMenuHandler : MonoBehaviour
 
     public void LoadTestScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("TestRoom");
+    }
+
+
+    public void CloseGame()
+    {
+        Debug.Log("EXIT FROM GAME");
+        Application.Quit();
     }
 }
