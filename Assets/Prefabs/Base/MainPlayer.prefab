@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77f589415207439f8a405d10a99764df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <isCharacterStopped>k__BackingField: 0
   <isCanRun>k__BackingField: 1
   <isCanJump>k__BackingField: 1
   <isCanCrawl>k__BackingField: 1
@@ -311,7 +312,7 @@ MonoBehaviour:
   isGround: 0
   crawlSpeed: 6
   rotationSpeed: 20
-  grabWallDistance: 0.3
+  grabWallDistance: 0.32
   grabGroundDistance: 0.5
   jumpCrawlPower: 7
   jumpCrawlFromWallPower: 9

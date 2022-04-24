@@ -119,6 +119,7 @@ public class InsectController_Inspector : Editor
         {
             var drawTarget = (InsectController) target;
             EditorGUILayout.LabelField("transform.up: " + drawTarget.transform.up);
+            EditorGUILayout.LabelField("moveDir: " + drawTarget.moveDir);
             EditorGUILayout.LabelField("Сторона: " + drawTarget.chSide);
             EditorGUILayout.LabelField("Состояние: " + drawTarget.State);
             EditorGUILayout.LabelField("На земле: " + drawTarget.isGround);
