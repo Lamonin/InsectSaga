@@ -2536,7 +2536,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7781851, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2553,7 +2553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305479177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.2600002, y: -2.1799998, z: -10.5}
+  m_LocalPosition: {x: 3.26, y: -2.1799998, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2592,7 +2592,7 @@ MonoBehaviour:
     Version: 2
     PathsEnabled:
     - GameObject/activeSelf
-    ModificationVersion: 18
+    ModificationVersion: 19
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -2637,7 +2637,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 38
+      m_version: 40
     HashSetObjectsEnabled:
       m_buckets: 000000000100000000000000
       m_slots:
@@ -2653,7 +2653,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 36
+      m_version: 38
     HashSetComponentsEnabled:
       m_buckets: 000000000000000000000000
       m_slots:
@@ -2669,7 +2669,7 @@ MonoBehaviour:
       m_count: 0
       m_lastIndex: 0
       m_freeList: -1
-      m_version: 19
+      m_version: 20
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -7560,6 +7560,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 70, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 18
+      m_TileSpriteIndex: 21
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 75, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -11070,11 +11080,21 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: 77, y: 0, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 17
+      m_TileSpriteIndex: 17
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: 78, y: 0, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileIndex: 16
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -14044,7 +14064,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: b66d8959738eaa743853ea4e8498be24, type: 2}
   - m_RefCount: 23
     m_Data: {fileID: 11400000, guid: 868fb8af15921f542853a6563b01342e, type: 2}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 11400000, guid: 959c7dd0ca1b6bc40bb4bc7486f95593, type: 2}
   - m_RefCount: 7
     m_Data: {fileID: 11400000, guid: d80b14c255cb4ee4a88682b11873a5e5, type: 2}
@@ -14064,12 +14084,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 6c85fa17e423bfe4687fa0af539299fa, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 43d0bbe8368741849a01dc86391985e0, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 59f4071c76218d442ae2c8851fc6c70b, type: 2}
   - m_RefCount: 13
     m_Data: {fileID: 11400000, guid: 2b9315f08399e6945b9ae3d65d18fd93, type: 2}
   - m_RefCount: 20
@@ -14095,7 +14115,7 @@ Tilemap:
     m_Data: {fileID: 1857156169832310548, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
   - m_RefCount: 23
     m_Data: {fileID: 2173486394192824719, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
-  - m_RefCount: 12
+  - m_RefCount: 11
     m_Data: {fileID: 1176892915441114799, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
   - m_RefCount: 7
     m_Data: {fileID: 588761559725491571, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
@@ -14115,18 +14135,18 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 953496847, guid: 8f46b80ec2058694886b7cc356809ba4, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -1119411136, guid: 8f46b80ec2058694886b7cc356809ba4, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: -2046671286327548270, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
   - m_RefCount: 13
     m_Data: {fileID: 5929393682644463812, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
   - m_RefCount: 20
     m_Data: {fileID: -757182355081295271, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1672552702, guid: 8f46b80ec2058694886b7cc356809ba4, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 4893914675319011163, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
   - m_RefCount: 72
@@ -14134,7 +14154,7 @@ Tilemap:
   - m_RefCount: 95
     m_Data: {fileID: 1769424393812350210, guid: 448a0f028d8df7248985d614005e68d9, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 1065
+  - m_RefCount: 1067
     m_Data:
       e00: 1
       e01: 0
@@ -14153,7 +14173,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 1065
+  - m_RefCount: 1067
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -17119,7 +17139,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 109
+    ModificationVersion: 111
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -17574,7 +17594,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 1430
+      m_version: 1454
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -17632,7 +17652,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 565
+      m_version: 575
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -17648,7 +17668,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 313
+      m_version: 319
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -21517,7 +21537,7 @@ MonoBehaviour:
     PathsEnabled:
     - EventTrigger/_isTriggered
     - EventTrigger/interactable
-    ModificationVersion: 5
+    ModificationVersion: 9
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -21542,7 +21562,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 11
+      m_version: 23
     HashSetObjectsEnabled:
       m_buckets: 000000000000000001000000
       m_slots:
@@ -21558,7 +21578,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 8
+      m_version: 16
     HashSetComponentsEnabled:
       m_buckets: 000000000000000001000000
       m_slots:
@@ -21574,7 +21594,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 8
+      m_version: 16
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -21663,6 +21683,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Player.PlayerInputHandler, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -25324,7 +25356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.501437, y: -2.181, z: -10.5}
+  m_LocalPosition: {x: 4.502252, y: -2.181, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
