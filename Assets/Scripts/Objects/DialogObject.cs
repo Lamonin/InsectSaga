@@ -11,6 +11,7 @@ namespace Objects
         [Space]
         public bool canSkipDialogs;
         public bool stopPlayerInDialog;
+        public bool isDialogOnTop;
         [Tooltip("Возможность использовать теги")] public bool richText;
         public float delayToTypeSymbol = 0.02f;
         public float delayBeforeStartDialogAgain = 0.5f;
@@ -49,7 +50,7 @@ namespace Objects
             
             if (_currentMessageNumber == 0) //START DIALOG
             {
-                EventBus.OnDialogueStart?.Invoke(stopPlayerInDialog);
+                EventBus.OnDialogueStart?.Invoke(stopPlayerInDialog, isDialogOnTop);
             }
 
             if (_isTyping) //SKIP MESSAGE

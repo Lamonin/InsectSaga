@@ -13,7 +13,7 @@ namespace Player
         
         [AvoidSaving] protected InputScheme InputScheme;
         
-        private void DialogueStart(bool stopped)
+        private void DialogueStart(bool stopped, bool b)
         {
             isCharacterStopped = stopped;
         }
