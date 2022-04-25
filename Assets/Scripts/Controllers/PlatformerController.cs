@@ -5,26 +5,25 @@ namespace Controllers
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlatformerController : MonoBehaviour
     {
-        [Header("Параметры")]
-        [Tooltip("Скорость при ходьбе")] public float walkSpeed;
-        [Tooltip("Скорость при беге")] public float runSpeed;
-        [Tooltip("Насколько отклонить стик для перехода в режим бега")] 
-        [Range(0.01f, 1)] public float stickOffsetBeforeRun = 0.1f;
+        [Header("Параметры")] [Tooltip("Скорость при ходьбе")]
+        public float walkSpeed;
 
-        [Space]
-        [Tooltip("Может ли прыгать")] public bool isCanJump = true;
+        [Tooltip("Скорость при беге")] public float runSpeed;
+
+        [Tooltip("Насколько отклонить стик для перехода в режим бега")] [Range(0.01f, 1)]
+        public float stickOffsetBeforeRun = 0.1f;
+
+        [Space] [Tooltip("Может ли прыгать")] public bool isCanJump = true;
         [Tooltip("Сила прыжка")] public float jumpPower;
         [Tooltip("Время для прыжка Койота")] public float hangTime;
         [Tooltip("Время для буфера прыжка")] public float jumpBufferTime;
 
-        [Header("Другое")]
-        public LayerMask walkGroundLayer;
+        [Header("Другое")] public LayerMask walkGroundLayer;
         public Vector2 groundCheckPos;
         public float groundCheckRadius;
-        
-        [Header("Компоненты")]
-        public SpriteRenderer sprite;
-        
+
+        [Header("Компоненты")] public SpriteRenderer sprite;
+
         //VARIABLES
         [HideInInspector] public float moveDir;
         private float _moveSpeed;
@@ -33,7 +32,7 @@ namespace Controllers
 
         //COMPONENTS
         protected Rigidbody2D rb2d;
-        
+
         public Rigidbody2D GetRigidBody2D => rb2d;
 
         //PROPERTIES
@@ -66,11 +65,11 @@ namespace Controllers
         public virtual void Jump()
         {
             if (!isCanJump) return;
-            
+
             _jumpCounter = jumpBufferTime;
             if (!isGround && _hangCounter <= 0) return;
             _hangCounter = _jumpCounter = -1;
-            
+
             rb2d.velocity = new Vector2(rb2d.velocity.x, jumpPower);
         }
 
@@ -87,10 +86,15 @@ namespace Controllers
                 _jumpCounter -= Time.deltaTime;
             }
         }
-        
-        protected virtual void Start()
+
+        protected virtual void Awake()
         {
             rb2d = GetComponent<Rigidbody2D>();
+        }
+
+        protected virtual void Start()
+        {
+            
         }
         
         protected virtual void Update()

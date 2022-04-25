@@ -284,6 +284,12 @@ namespace Controllers
             return rot < 0 ? GroundSide.LWall : GroundSide.RWall;
         }
 
+        public void ResetState()
+        {
+            rb2d.gravityScale = _savedGravityScale;
+            ToNormalState();
+        }
+
         #region ANIMATIONS
 
         private readonly int IDLE = Animator.StringToHash("idle");
@@ -352,14 +358,16 @@ namespace Controllers
             }
         }
 
+        protected override void Awake()
+        {
+            base.Awake();
+            _savedGravityScale = rb2d.gravityScale;
+            _frameAnimator = new FrameBasedAnimator(animator);
+            _distanceToWall = 0.2f + 1 / Mathf.Sqrt(2);
+        }
+
         protected override void Start()
         {
-            base.Start();
-            _savedGravityScale = rb2d.gravityScale;
-            
-            _frameAnimator = new FrameBasedAnimator(animator);
-
-            _distanceToWall = 0.2f + 1 / Mathf.Sqrt(2);
         }
 
         protected override void Update()

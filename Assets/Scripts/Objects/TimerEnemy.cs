@@ -34,7 +34,7 @@ public class TimerEnemy : MonoBehaviour
     {
         if(_coroutine != null)
             StopCoroutine(_coroutine);
-        _coroutine = StartCoroutine(DungerZoneState());
+        _coroutine = StartCoroutine(DangerZoneState());
     }
     
     private void Deactivate()
@@ -43,14 +43,16 @@ public class TimerEnemy : MonoBehaviour
             StopCoroutine(_coroutine);
     }
 
-    private IEnumerator DungerZoneState()
+    private IEnumerator DangerZoneState()
     {
         yield return new WaitForSeconds(delayBeforeStart);
         while(_enabled)
         {
             yield return new WaitForSeconds(delayBeforeDangerous);
-            collision.SetActive(true);
             animator.SetBool(EnemyActive, true);
+            yield return new WaitForSeconds(0.8f);
+            
+            collision.SetActive(true);
             yield return new WaitForSeconds(dangerousTime);
             collision.SetActive(false);
             animator.SetBool(EnemyActive, false);

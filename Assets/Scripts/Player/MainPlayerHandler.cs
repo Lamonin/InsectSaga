@@ -39,18 +39,22 @@ namespace Player
         protected override void OnEnable()
         {
             base.OnEnable();
-            EventBus.OnPlayerRespawned += InputScheme.Enable;
+            EventBus.OnPlayerRespawned += RespawnPlayer;
             chController.OnStateChanged += UpdateUseIcon;
         }
 
         protected override void OnDisable()
         {
             base.OnDisable();
-            EventBus.OnPlayerRespawned -= InputScheme.Enable;
+            EventBus.OnPlayerRespawned -= RespawnPlayer;
             chController.OnStateChanged -= UpdateUseIcon;
         }
 
-
+        private void RespawnPlayer()
+        {
+            InputScheme.Enable();
+            chController.ResetState();
+        }
         
         private void Start()
         {
