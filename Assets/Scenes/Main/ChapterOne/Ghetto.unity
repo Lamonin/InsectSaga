@@ -1841,6 +1841,7 @@ MonoBehaviour:
   useIconOffset: {x: 0, y: 0}
   canSkipDialogs: 1
   stopPlayerInDialog: 1
+  isDialogOnTop: 0
   richText: 0
   delayToTypeSymbol: 0.02
   delayBeforeStartDialogAgain: 0.5
@@ -2372,7 +2373,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7771883, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -20047,6 +20048,7 @@ MonoBehaviour:
   useIconOffset: {x: 0, y: 0}
   canSkipDialogs: 1
   stopPlayerInDialog: 1
+  isDialogOnTop: 0
   richText: 1
   delayToTypeSymbol: 0.02
   delayBeforeStartDialogAgain: 0.5
@@ -25028,6 +25030,71 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1117029153
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 70.946
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.142
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9996103
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.027915873
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -3.199
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638231979270620922, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890364097769931084, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_Name
+      value: Svecha_9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900566609139859402, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
 --- !u!1 &1124882083
 GameObject:
   m_ObjectHideFlags: 0
@@ -25107,7 +25174,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6123178, y: -2.27058, z: -10.5}
+  m_LocalPosition: {x: 4.5000215, y: -2.27105, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25702,6 +25769,7 @@ MonoBehaviour:
   useIconOffset: {x: 0, y: 0}
   canSkipDialogs: 1
   stopPlayerInDialog: 1
+  isDialogOnTop: 0
   richText: 1
   delayToTypeSymbol: 0.02
   delayBeforeStartDialogAgain: 0.5
@@ -27668,6 +27736,67 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1516967533
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 71.169
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.074
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 632892526118227119, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3890364097769931084, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_Name
+      value: Svecha_10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3900566609139859402, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 591beab6548f6bd45921e3907797c86f, type: 3}
 --- !u!1 &1519716784
 GameObject:
   m_ObjectHideFlags: 0
@@ -33107,6 +33236,7 @@ MonoBehaviour:
   useIconOffset: {x: 0, y: 0}
   canSkipDialogs: 1
   stopPlayerInDialog: 1
+  isDialogOnTop: 0
   richText: 1
   delayToTypeSymbol: 0.02
   delayBeforeStartDialogAgain: 0.5
