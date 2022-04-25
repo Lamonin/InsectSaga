@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7603536261784038802}
   - component: {fileID: 5130686228849735538}
   - component: {fileID: 4847749899693154576}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlatformerColl
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6304598447302880537}
   - component: {fileID: 6304598447302880536}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CrawlCollision
   m_TagString: Player
   m_Icon: {fileID: 0}

@@ -151,11 +151,19 @@ namespace Player
 
         public void ActivateLift(Transform lift)
         {
+            InputScheme.Disable();
             chController.State = ChState.Lift;
             transform.SetParent(lift);
-            transform.localPosition = new Vector3(0, -2.87f, -0.5f);
-            InputScheme.Disable();
+            transform.localPosition = new Vector3(0, 0.525f, 0);
             chController.GetRigidBody2D.gravityScale = 0;
+            chController.GetRigidBody2D.velocity = Vector2.zero;
+        }
+
+        public void FreeFromEvevator()
+        {
+            InputScheme.Enable();
+            transform.SetParent(null);
+            chController.ToNormalState();
         }
 
         private void ResetPlayerStateInvoke()
