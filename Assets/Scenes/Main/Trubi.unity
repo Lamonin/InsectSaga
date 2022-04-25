@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 65
@@ -198,18 +190,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_70
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &28355842
@@ -219,14 +199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -287,18 +259,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_13
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &40932342 stripped
@@ -313,14 +273,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 44
@@ -381,18 +333,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_48
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &48978350
@@ -402,14 +342,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -470,18 +402,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_32
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &48978351 stripped
@@ -496,14 +416,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -564,18 +476,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_23
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &73045056 stripped
@@ -590,14 +490,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 47
@@ -657,18 +549,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_52
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -792,14 +672,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -860,18 +732,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_36
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &149740874 stripped
@@ -891,14 +751,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 54
@@ -958,18 +810,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_59
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -3449,14 +3289,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -3517,18 +3349,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_30
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &211381743 stripped
@@ -3543,14 +3363,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 43
@@ -3610,18 +3422,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_47
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -3726,14 +3526,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 52
@@ -3793,18 +3585,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_57
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -3904,14 +3684,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 66
@@ -3972,18 +3744,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_71
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1 &305479177
@@ -4032,7 +3792,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.1342413, y: 1}
+    m_SensorSize: {x: 2.219963, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4064,14 +3824,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 59
@@ -4132,18 +3884,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_64
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &330293148 stripped
@@ -4158,14 +3898,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 45
@@ -4226,18 +3958,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_49
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &346242276 stripped
@@ -4267,14 +3987,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -4335,18 +4047,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_33
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &367032720 stripped
@@ -4366,14 +4066,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -4434,18 +4126,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_28
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &382442932 stripped
@@ -4460,14 +4140,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 32
@@ -4528,18 +4200,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_41
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &394229135
@@ -4549,14 +4209,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 30
@@ -4617,18 +4269,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_39
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &413770201
@@ -4638,14 +4278,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 51
@@ -4705,18 +4337,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_56
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -4811,14 +4431,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -4879,18 +4491,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_18
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &446438042 stripped
@@ -4905,14 +4505,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -4973,18 +4565,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_25
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &448526190 stripped
@@ -5009,14 +4589,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 49
@@ -5076,18 +4648,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -5160,14 +4720,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -5228,18 +4780,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_24
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &590550049
@@ -5249,14 +4789,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 39
@@ -5316,18 +4848,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_43
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -5449,7 +4969,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 58
+    ModificationVersion: 60
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -5904,7 +5424,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 818
+      m_version: 842
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -5962,7 +5482,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 310
+      m_version: 320
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -5978,7 +5498,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 160
+      m_version: 166
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -6001,14 +5521,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 67
@@ -6069,18 +5581,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_72
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &660569004
@@ -6090,14 +5590,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -6158,18 +5650,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_20
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &661501574 stripped
@@ -6194,14 +5674,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 42
@@ -6261,18 +5733,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_46
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -6376,14 +5836,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 71
@@ -6444,18 +5896,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_81
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &747902972
@@ -6465,14 +5905,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -6533,18 +5965,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_27
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &747902973 stripped
@@ -6564,14 +5984,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 72
@@ -6634,23 +6046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1356974109959133065, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -6666,14 +6062,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -6734,18 +6122,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_42
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &843030227 stripped
@@ -6760,14 +6136,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 56
@@ -6828,18 +6196,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_61
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &861672095 stripped
@@ -6859,14 +6215,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 69
@@ -6927,18 +6275,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_74
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &889689992
@@ -6948,14 +6284,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 55
@@ -7015,18 +6343,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_60
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -7121,14 +6437,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 63
@@ -7189,18 +6497,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_68
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &925893702 stripped
@@ -7220,14 +6516,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 37
@@ -7288,18 +6576,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_29
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &943664575
@@ -7309,14 +6585,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -7377,18 +6645,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_22
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &945745287 stripped
@@ -7403,14 +6659,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 28
@@ -7471,18 +6719,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_37
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &958624455
@@ -7492,14 +6728,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -7560,18 +6788,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_10
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &961068468
@@ -7581,14 +6797,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 68
@@ -7649,18 +6857,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_73
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &1006637620
@@ -7670,14 +6866,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 58
@@ -7737,18 +6925,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_63
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -7843,14 +7019,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7910,18 +7078,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -15266,14 +14422,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -15334,18 +14482,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_16
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &1051137291
@@ -15355,14 +14491,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 40
@@ -15423,18 +14551,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_44
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &1081565197
@@ -15444,14 +14560,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -15512,18 +14620,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_21
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1097062758 stripped
@@ -15538,14 +14634,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 61
@@ -15606,18 +14694,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_66
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &1099743688
@@ -15627,14 +14703,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 46
@@ -15694,18 +14762,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_50
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -15962,14 +15018,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 50
@@ -16029,18 +15077,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_55
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -16132,14 +15168,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 70
@@ -16199,18 +15227,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -33653,14 +32669,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -33721,18 +32729,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_4
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &1246709492
@@ -33742,14 +32738,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -33809,18 +32797,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -34128,14 +33104,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -34195,18 +33163,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -34311,14 +33267,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -34375,18 +33323,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1288661396 stripped
@@ -34406,14 +33342,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 57
@@ -34473,18 +33401,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_62
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -34588,14 +33504,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 48
@@ -34655,18 +33563,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_53
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -34770,14 +33666,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -34838,18 +33726,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_3
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1388672448 stripped
@@ -34874,14 +33750,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -34942,18 +33810,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_2
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1443669586 stripped
@@ -34973,14 +33829,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -35041,18 +33889,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_19
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1493280985 stripped
@@ -35072,14 +33908,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -35140,18 +33968,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_7
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1542532359 stripped
@@ -35176,14 +33992,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 62
@@ -35243,18 +34051,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_67
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -35494,14 +34290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -35562,18 +34350,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_17
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &1654618313
@@ -35583,14 +34359,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -35651,18 +34419,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_15
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1668621871 stripped
@@ -35677,14 +34433,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -35745,18 +34493,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_14
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1679773484 stripped
@@ -35771,14 +34507,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 26
@@ -35838,18 +34566,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_35
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -35953,14 +34669,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -36020,18 +34728,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_31
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -36131,14 +34827,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 73
@@ -36199,18 +34887,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_1
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1790692806 stripped
@@ -36230,14 +34906,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 53
@@ -36298,18 +34966,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_58
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!1001 &1863471212
@@ -36319,14 +34975,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 60
@@ -36387,18 +35035,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_65
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1892268466 stripped
@@ -36413,14 +35049,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -36480,18 +35108,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -36606,14 +35222,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -36674,18 +35282,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_34
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1942170533 stripped
@@ -36700,14 +35296,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -36768,18 +35356,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_38
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &1976513419 stripped
@@ -36794,14 +35370,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -36862,18 +35430,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TimerEnemy_12
       objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
 --- !u!4 &2039155764 stripped
@@ -36888,14 +35444,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 41
@@ -36955,18 +35503,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
@@ -37066,14 +35602,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2146352368}
     m_Modifications:
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Size.y
-      value: 1.9766415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109277673461, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.48832065
-      objectReference: {fileID: 0}
     - target: {fileID: 1356974109924078778, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_RootOrder
       value: 64
@@ -37133,18 +35661,6 @@ PrefabInstance:
     - target: {fileID: 1356974109924078781, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
       propertyPath: m_Name
       value: TimerEnemy_69
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.28093
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1356974109959133078, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90447fc2d8fdab0458cc4b9ad9170ab5, type: 3}

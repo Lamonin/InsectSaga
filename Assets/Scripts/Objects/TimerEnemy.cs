@@ -16,15 +16,16 @@ public class TimerEnemy : MonoBehaviour
     [Tooltip("Время в нанесении урона")] private float dangerousTime;
 
     [SerializeField] private GameObject collision;
-    [SerializeField] private GameObject sprite;
+    [SerializeField] private Animator animator;
 
     private readonly bool _enabled = true;
     private Coroutine _coroutine;
-    
+    private static readonly int EnemyActive = Animator.StringToHash("active");
+
     void Start()
     {
         collision.SetActive(false);
-        sprite.SetActive(false);
+        animator.SetBool(EnemyActive, false);
         if (isEnabledOnStart)
             Activate();
     }
@@ -49,10 +50,10 @@ public class TimerEnemy : MonoBehaviour
         {
             yield return new WaitForSeconds(delayBeforeDangerous);
             collision.SetActive(true);
-            sprite.SetActive(true);
+            animator.SetBool(EnemyActive, true);
             yield return new WaitForSeconds(dangerousTime);
             collision.SetActive(false);
-            sprite.SetActive(false);
+            animator.SetBool(EnemyActive, false);
         }
     }
 
