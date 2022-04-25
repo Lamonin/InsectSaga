@@ -1,5 +1,6 @@
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using MEC;
 
 public class TimerEnemy : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class TimerEnemy : MonoBehaviour
     [SerializeField] private Animator animator;
 
     private readonly bool _enabled = true;
-    private Coroutine _coroutine;
+    private CoroutineHandle _coroutine;
     private static readonly int EnemyActive = Animator.StringToHash("active");
 
     void Start()
@@ -32,28 +33,26 @@ public class TimerEnemy : MonoBehaviour
 
     private void Activate()
     {
-        if(_coroutine != null)
-            StopCoroutine(_coroutine);
-        _coroutine = StartCoroutine(DangerZoneState());
+        Timing.KillCoroutines(_coroutine);
+        _coroutine = Timing.RunCoroutine(DangerZoneState());
     }
     
     private void Deactivate()
     {
-        if(_coroutine != null)
-            StopCoroutine(_coroutine);
+        Timing.KillCoroutines(_coroutine);
     }
 
-    private IEnumerator DangerZoneState()
+    private IEnumerator<float> DangerZoneState()
     {
-        yield return new WaitForSeconds(delayBeforeStart);
+        yield return Timing.WaitForSeconds(delayBeforeStart);
         while(_enabled)
         {
-            yield return new WaitForSeconds(delayBeforeDangerous);
+            yield return Timing.WaitForSeconds(delayBeforeDangerous);
             animator.SetBool(EnemyActive, true);
-            yield return new WaitForSeconds(0.8f);
+            yield return Timing.WaitForSeconds(0.8f);
             
             collision.SetActive(true);
-            yield return new WaitForSeconds(dangerousTime);
+            yield return Timing.WaitForSeconds(dangerousTime);
             collision.SetActive(false);
             animator.SetBool(EnemyActive, false);
         }
@@ -61,7 +60,6 @@ public class TimerEnemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        if(_coroutine != null)
-            StopCoroutine(_coroutine);
+        Timing.KillCoroutines(_coroutine);
     }
 }

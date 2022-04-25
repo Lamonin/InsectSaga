@@ -6,7 +6,7 @@ public class SelectButton : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer selectedSprite;
     [SerializeField] private UnityEvent onClick;
-    public int index;
+    [HideInInspector] public int index;
 
     void Start()
     {
