@@ -54,9 +54,23 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    private void DialogueStart(bool b)
+    private void DialogueStart(bool b, bool isOnTop = false)
     {
         dialogText.gameObject.SetActive(true);
+        var rt = dialogText.GetComponent<RectTransform>();
+        
+        if (isOnTop)
+        {
+            rt.anchorMin = new Vector2(0, 1);
+            rt.anchorMax = new Vector2(1, 1);
+            rt.anchoredPosition = new Vector2(0, -135);
+        }
+        else
+        {
+            rt.anchorMin = new Vector2(0, 0);
+            rt.anchorMax = new Vector2(1, 0);
+            rt.anchoredPosition = new Vector2(0, 135);
+        }
     }
 
     private void DialogueEnd()
