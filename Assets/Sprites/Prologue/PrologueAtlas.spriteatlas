@@ -46,11 +46,9 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: 4b6e8811bf1de14438f5019ebafe6c4b, type: 3}
     - {fileID: 2800000, guid: f87a48426972058478ebb1c8cb976779, type: 3}
-    - {fileID: 2800000, guid: 9a22e2a439dabfb44b8bc00e2c15116c, type: 3}
     - {fileID: 2800000, guid: 079653f87626ed547adf1486077e00ba, type: 3}
     - {fileID: 2800000, guid: f083a5d7333074a4088b6adf90512c3d, type: 3}
     - {fileID: 2800000, guid: 1fb6ccbfdfc90f34488de822c3a826cb, type: 3}
-    - {fileID: 2800000, guid: 1c97aeb3605970b4595797bfd5d174c3, type: 3}
     - {fileID: 2800000, guid: a89edb45fd10d8344a123794c0357367, type: 3}
     - {fileID: 2800000, guid: 1ab58ea359c229646a26c3d4ee3b8a6c, type: 3}
     - {fileID: 2800000, guid: 595dcdf312f4e5540929d045352233e5, type: 3}
@@ -58,37 +56,58 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 088bf5fb792f24b409f53b7e9772e4e3, type: 3}
     - {fileID: 2800000, guid: c3fb6075bc64b1549849da684e4a12d3, type: 3}
     - {fileID: 2800000, guid: 5231c2f8a26775b4a804d1dcd21dac9b, type: 3}
+    - {fileID: 2800000, guid: 59867c5ac829b144e9ae049d920e018a, type: 3}
+    - {fileID: 2800000, guid: 59867c5ac829b144e9ae049d920e018a, type: 3}
+    - {fileID: 2800000, guid: 5d340393de1478e499b15100756fae4f, type: 3}
+    - {fileID: 2800000, guid: c36f0000cff32414b862f536b232156b, type: 3}
+    - {fileID: 2800000, guid: c1a21d258ed549d48b225cc183d91b57, type: 3}
+    - {fileID: 2800000, guid: 6a7562a66229f954e8480a99ffdd4e79, type: 3}
+    - {fileID: 2800000, guid: 70d1b054a2bad3143b7557026cbf035b, type: 3}
+    - {fileID: 2800000, guid: 07c00c791a460e24fa135c7e2b9ea6df, type: 3}
+    - {fileID: 2800000, guid: e5e68cb6dbbc6e140a8582521bf138e0, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: c36f0000cff32414b862f536b232156b, type: 3}
   - {fileID: 21300000, guid: 4b6e8811bf1de14438f5019ebafe6c4b, type: 3}
   - {fileID: 21300000, guid: f87a48426972058478ebb1c8cb976779, type: 3}
+  - {fileID: 21300000, guid: 5d340393de1478e499b15100756fae4f, type: 3}
   - {fileID: 21300000, guid: 1ab58ea359c229646a26c3d4ee3b8a6c, type: 3}
-  - {fileID: 21300000, guid: 1c97aeb3605970b4595797bfd5d174c3, type: 3}
   - {fileID: 21300000, guid: 595dcdf312f4e5540929d045352233e5, type: 3}
-  - {fileID: 21300000, guid: 9a22e2a439dabfb44b8bc00e2c15116c, type: 3}
+  - {fileID: 21300000, guid: 70d1b054a2bad3143b7557026cbf035b, type: 3}
+  - {fileID: 21300000, guid: c1a21d258ed549d48b225cc183d91b57, type: 3}
   - {fileID: 21300000, guid: a89edb45fd10d8344a123794c0357367, type: 3}
   - {fileID: 21300000, guid: c3fb6075bc64b1549849da684e4a12d3, type: 3}
+  - {fileID: 21300000, guid: 6a7562a66229f954e8480a99ffdd4e79, type: 3}
+  - {fileID: 21300000, guid: e5e68cb6dbbc6e140a8582521bf138e0, type: 3}
   - {fileID: 21300000, guid: f083a5d7333074a4088b6adf90512c3d, type: 3}
   - {fileID: 21300000, guid: 5231c2f8a26775b4a804d1dcd21dac9b, type: 3}
   - {fileID: 21300000, guid: 079653f87626ed547adf1486077e00ba, type: 3}
+  - {fileID: 21300000, guid: 07c00c791a460e24fa135c7e2b9ea6df, type: 3}
+  - {fileID: 21300000, guid: 59867c5ac829b144e9ae049d920e018a, type: 3}
   - {fileID: 21300000, guid: 088bf5fb792f24b409f53b7e9772e4e3, type: 3}
   - {fileID: 21300000, guid: c3e041ce0f880214786b9c003cf27311, type: 3}
   - {fileID: 21300000, guid: 1fb6ccbfdfc90f34488de822c3a826cb, type: 3}
   m_PackedSpriteNamesToIndex:
+  - "\u0433\u043B\u0430\u0437\u0430 \u0442\u0438\u0442\u04303"
   - safe light
   - safe shadow
+  - "\u0433\u043B\u0430\u0437\u0430 \u0442\u0438\u0442\u04302"
   - light background
-  - titan light
   - house
-  - titan shadow
+  - "\u0442\u0438\u04423"
+  - "\u0442\u0438\u04421"
   - light bushes
   - dark bushes
+  - "\u0442\u0438\u04422"
+  - "\u0442\u0438\u04425"
   - swing
   - dark cracks
   - wooden background
+  - "\u0442\u0438\u04424"
+  - "\u0433\u043B\u0430\u0437\u0430 \u0442\u0438\u0442\u04301"
   - active swing
   - Dust
   - The yard

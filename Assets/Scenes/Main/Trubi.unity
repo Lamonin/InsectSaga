@@ -4032,7 +4032,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7768595, y: 1}
+    m_SensorSize: {x: 2.1342413, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5117,7 +5117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8509245124073546406, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.49
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 8509245124073546406, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5392,6 +5392,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422435, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422435, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_Name
       value: MainPlayer
       objectReference: {fileID: 0}
@@ -5402,6 +5406,10 @@ PrefabInstance:
     - target: {fileID: 6304598447337422447, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: crawlSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6304598447337422447, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
+      propertyPath: grabWallDistance
+      value: 0.32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
@@ -5985,7 +5993,7 @@ MonoBehaviour:
   Private_prefabId: 1529009923
   PrefabSetTime: 1650377969
   CreateInRuntime: 0
-  onLoad: 0
+  onLoad: 3
 --- !u!1001 &636350095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6301,19 +6309,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.ModificationVersion
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.HashSetFieldsEnabled.m_version
-      value: 17
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.HashSetObjectsEnabled.m_version
-      value: 15
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.HashSetComponentsEnabled.m_version
-      value: 15
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 8509245124073546406, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: m_RootOrder
@@ -15907,7 +15915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8509245124073546406, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -64.99
+      value: -64.49
       objectReference: {fileID: 0}
     - target: {fileID: 8509245124073546406, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22361,7 +22369,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 11
-      m_TileSpriteIndex: 11
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -22371,7 +22379,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 10
-      m_TileSpriteIndex: 10
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -33586,12 +33594,12 @@ Tilemap:
     m_Data: {fileID: -688281546, guid: bc48bc1a6af4aee4fbff76a21cfcc32f, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: -649216753, guid: bc48bc1a6af4aee4fbff76a21cfcc32f, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -513137779, guid: bc48bc1a6af4aee4fbff76a21cfcc32f, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -1448893933, guid: bc48bc1a6af4aee4fbff76a21cfcc32f, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1724
     m_Data:
@@ -34513,19 +34521,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.ModificationVersion
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.HashSetFieldsEnabled.m_version
-      value: 19
+      value: 27
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.HashSetObjectsEnabled.m_version
-      value: 17
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5476973625937987212, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: FieldsEnable.HashSetComponentsEnabled.m_version
-      value: 17
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8509245124073546406, guid: 86d43a88c8d0fe748b185249e1fa3b2c, type: 3}
       propertyPath: m_RootOrder
