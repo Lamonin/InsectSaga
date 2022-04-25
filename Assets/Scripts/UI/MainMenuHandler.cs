@@ -15,15 +15,27 @@ public class MainMenuHandler : MonoBehaviour
         
     }
 
+    public void ContinueGame()
+    {
+        var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
+        if (SaveIsEasyAPI.FileExists(path))
+            SaveIsEasyAPI.LoadSceneAndGame();
+        else
+            Debug.Log("Game save in not find!");
+    }
+
+    public void NewGame()
+    {
+        SceneManager.LoadScene("IntroTextScene");
+    }
+
     public void LoadGame()
     {
         var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
         if (SaveIsEasyAPI.FileExists(path))
             SaveIsEasyAPI.LoadSceneAndGame();
         else
-        {
             SceneManager.LoadScene("IntroTextScene");
-        }
     }
 
     public void LoadTestScene()
