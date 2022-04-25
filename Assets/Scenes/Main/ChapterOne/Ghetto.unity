@@ -2372,7 +2372,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7750809, y: 1}
+    m_SensorSize: {x: 1.3333334, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2389,7 +2389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305479177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135.76, y: 10.91, z: -10.5}
+  m_LocalPosition: {x: 3.21, y: -2.27, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16791,11 +16791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422432, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 135.76
+      value: 3.21
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422432, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.51
+      value: -2.67
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422432, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16891,7 +16891,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 115
+    ModificationVersion: 116
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -17346,7 +17346,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 1502
+      m_version: 1514
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -17404,7 +17404,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 595
+      m_version: 600
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -17420,7 +17420,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 331
+      m_version: 334
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -25107,7 +25107,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135.76, y: 10.91, z: -10.5}
+  m_LocalPosition: {x: 3.6123178, y: -2.27058, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
