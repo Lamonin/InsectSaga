@@ -3414,7 +3414,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783946, y: 1}
+    m_SensorSize: {x: 1.7772512, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5702,7 +5702,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 118
+    ModificationVersion: 119
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -6157,7 +6157,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 1538
+      m_version: 1550
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -6215,7 +6215,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 610
+      m_version: 615
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -6231,7 +6231,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 340
+      m_version: 343
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -27904,7 +27904,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7650175, y: -0.66274, z: -10}
+  m_LocalPosition: {x: -2.7695956, y: -0.6623, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31168,6 +31168,10 @@ PrefabInstance:
     - target: {fileID: 2244282927325101636, guid: a920911466b1102498dd02eea1884c36, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244282927325101636, guid: a920911466b1102498dd02eea1884c36, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2244282927325101639, guid: a920911466b1102498dd02eea1884c36, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
