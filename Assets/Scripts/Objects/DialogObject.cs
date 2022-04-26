@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using MEC;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,8 +24,8 @@ namespace Objects
         //VARIABLES
         private int _currentMessageNumber;
         private string _message;
-        private Coroutine _messageTypeRoutine;
-        private Coroutine _delayBeforeNextMessage;
+        private CoroutineHandle _messageTypeRoutine;
+        private CoroutineHandle _delayBeforeNextMessage;
         
         private readonly Regex _delayTagExp = new Regex(@"<delay=\""(.*?)\"">");
         private readonly Regex _delayTagValueExp = new Regex(@"\""(.*)\""");
@@ -37,10 +37,9 @@ namespace Objects
 
         protected override void OnDestroy()
         {
-            if (_messageTypeRoutine != null)
-                StopCoroutine(_messageTypeRoutine);
-            if (_delayBeforeNextMessage != null)
-                StopCoroutine(_delayBeforeNextMessage);
+            Timing.KillCoroutines(_messageTypeRoutine);
+            Timing.KillCoroutines(_delayBeforeNextMessage);
+            
             base.OnDestroy();
         }
 
@@ -55,7 +54,7 @@ namespace Objects
 
             if (_isTyping) //SKIP MESSAGE
             {
-                StopCoroutine(_messageTypeRoutine);
+                Timing.KillCoroutines(_messageTypeRoutine);
                 _isTyping = false;
                 _message = _delayTagExp.Replace(_message, "");
 
@@ -63,29 +62,28 @@ namespace Objects
             }
             else if (_currentMessageNumber < dialogMessages.Length) //NEXT MESSAGE
             {
-                GameUI.Handler.dialogText.text = String.Empty;
+                GameUI.Handler.dialogText.text = string.Empty;
                 _message = dialogMessages[_currentMessageNumber];
-                _messageTypeRoutine = StartCoroutine(MessageSymbolTyping());
+                _messageTypeRoutine = Timing.RunCoroutine(MessageSymbolTyping());
                 _currentMessageNumber++;
             }
             else //END DIALOG
             {
-                //GameUI.Handler.dialogText.gameObject.SetActive(false);
                 EventBus.OnDialogueEnd?.Invoke();
                 onDialogueEnd?.Invoke();
                 _currentMessageNumber = 0;
-                _delayBeforeNextMessage = StartCoroutine(DelayBeforeNextDialog());
+                _delayBeforeNextMessage = Timing.RunCoroutine(DelayBeforeNextDialog());
             }
         }
 
         private bool _isTyping;
         private string _tag;
-        private IEnumerator MessageSymbolTyping()
+        private IEnumerator<float> MessageSymbolTyping()
         {
-            if (String.IsNullOrEmpty(_message)) yield break;
+            if (string.IsNullOrEmpty(_message)) yield break;
             
             _isTyping = true;
-            _tag = String.Empty;
+            _tag = string.Empty;
             foreach (var ch in _message)
             {
                 if (richText)
@@ -95,12 +93,14 @@ namespace Objects
                         if (_tag.Contains("delay"))
                         {
                             var delay = int.Parse(_delayTagValueExp.Match(_tag).Groups[1].Value);
-                            _tag = String.Empty;
-                            yield return new WaitForSeconds(delay/1000f);
+                            _tag = string.Empty;
+                            yield return Timing.WaitForSeconds(delay/1000f);
                             continue;
                         }
-                        GameUI.Handler.dialogText.text += _tag;
-                        _tag = String.Empty;
+                        
+                        GameUI.Handler.dialogText.text += _tag + ch;
+                        _tag = string.Empty;
+                        continue;
                     }
                     
                     if (_tag.Length>0 || ch == '<')
@@ -109,18 +109,18 @@ namespace Objects
                         continue;
                     }
                 }
-                
+
                 GameUI.Handler.dialogText.text += ch;
-                yield return new WaitForSeconds(delayToTypeSymbol);
+                yield return Timing.WaitForSeconds(delayToTypeSymbol);
             }
             _isTyping = false;
         }
 
         private bool _isDelayed;
-        private IEnumerator DelayBeforeNextDialog()
+        private IEnumerator<float> DelayBeforeNextDialog()
         {
             _isDelayed = true;
-            yield return new WaitForSeconds(delayBeforeStartDialogAgain);
+            yield return Timing.WaitForSeconds(delayBeforeStartDialogAgain);
             _isDelayed = false;
         }
 
