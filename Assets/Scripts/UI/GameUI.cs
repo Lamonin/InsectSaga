@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
@@ -90,9 +89,14 @@ public class GameUI : MonoBehaviour
         EventBus.OnDialogueEnd -= DialogueEnd;
     }
 
-    private void Start()
+    private void Awake()
     {
         Handler ??= this;
+        QualitySettings.vSyncCount = 2;
+    }
+
+    private void Start()
+    {
         useIcon.gameObject.SetActive(false);
         dialogText.gameObject.SetActive(false);
     }
