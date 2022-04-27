@@ -6,6 +6,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Handler;
     public bool loadSaveOnStart;
+    public bool forceRestart;
 
     private void Awake()
     {
@@ -30,7 +31,7 @@ public class LevelManager : MonoBehaviour
     [ContextMenu("Restart Level")]
     private void RestartLevelFromCheckpoint()
     {
-        if (!LoadData())
+        if (!LoadData() || forceRestart)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -50,7 +51,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Загрузка сохранения!");
             SaveIsEasyAPI.LoadAll();
-            BlackSplashImage.Handler.FadeOut(1,0.8f, ()=>{ EventBus.OnPlayerRespawned?.Invoke(); });
+            BlackSplashImage.Handler.FadeOut(1, 0.8f, ()=>{ EventBus.OnPlayerRespawned?.Invoke(); });
             return true;
         }
         Debug.Log("Не найдено файла сохранения!");

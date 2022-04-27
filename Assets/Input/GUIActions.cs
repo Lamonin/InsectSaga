@@ -44,6 +44,15 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Skip"",
+                    ""type"": ""Button"",
+                    ""id"": ""42340bbe-6d3f-42cd-8e99-332359f6e70e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -288,6 +297,17 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                     ""action"": ""Accept"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a9ab02cf-e4de-48b2-a3dd-ee48fb6c8209"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": ""Hold(duration=1)"",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse;Gamepad"",
+                    ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -326,6 +346,7 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
         m_UI_Accept = m_UI.FindAction("Accept", throwIfNotFound: true);
+        m_UI_Skip = m_UI.FindAction("Skip", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -387,12 +408,14 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_Navigate;
     private readonly InputAction m_UI_Accept;
+    private readonly InputAction m_UI_Skip;
     public struct UIActions
     {
         private @GUIActions m_Wrapper;
         public UIActions(@GUIActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
         public InputAction @Accept => m_Wrapper.m_UI_Accept;
+        public InputAction @Skip => m_Wrapper.m_UI_Skip;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -408,6 +431,9 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                 @Accept.started -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
                 @Accept.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
                 @Accept.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnAccept;
+                @Skip.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSkip;
+                @Skip.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSkip;
+                @Skip.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSkip;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -418,6 +444,9 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                 @Accept.started += instance.OnAccept;
                 @Accept.performed += instance.OnAccept;
                 @Accept.canceled += instance.OnAccept;
+                @Skip.started += instance.OnSkip;
+                @Skip.performed += instance.OnSkip;
+                @Skip.canceled += instance.OnSkip;
             }
         }
     }
@@ -444,5 +473,6 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
     {
         void OnNavigate(InputAction.CallbackContext context);
         void OnAccept(InputAction.CallbackContext context);
+        void OnSkip(InputAction.CallbackContext context);
     }
 }

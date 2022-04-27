@@ -170,10 +170,9 @@ namespace Player
             chController.ToNormalState();
         }
 
-        private void ResetPlayerStateInvoke()
+        public void ResetPlayerState()
         {
             chController.ToNormalState();
-            chController.tryToCrawl = false;
         }
 
         protected override void OnTriggerEnter2D(Collider2D other)
@@ -184,7 +183,7 @@ namespace Player
                 {
                     InputScheme.Disable();
                     
-                    Invoke(nameof(ResetPlayerStateInvoke), 0.1f);
+                    Invoke(nameof(ResetPlayerState), 0.1f);
                     
                     // BlackSplashImage.Handler.FadeIn(0.2f);
                     BlackSplashImage.Handler.FlashFadeIn();

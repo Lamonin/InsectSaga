@@ -2,6 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class IntroTextAnimation : MonoBehaviour
 {
@@ -11,14 +12,42 @@ public class IntroTextAnimation : MonoBehaviour
     
     [SerializeField] private TextMeshPro textMesh;
     [SerializeField] private TextMeshProUGUI skipLabel;
+    [SerializeField] private Image fillSkipIcon;
     [SerializeField] private AudioSource audioSource;
 
+
+    private GUIActions _input;
     private bool _isEnded = true;
 
     private void Awake()
     {
+        _input = new GUIActions();
+        _input.UI.Skip.started += _ => 
+        {
+            fillSkipIcon.DOKill();
+            fillSkipIcon.DOFillAmount(1, 1).SetEase(Ease.InSine);
+        };
+
+        _input.UI.Skip.canceled += _ => 
+        {
+            fillSkipIcon.DOKill();
+            fillSkipIcon.DOFillAmount(0, 0.2f).SetEase(Ease.InSine);
+            fillSkipIcon.transform.DOShakePosition(0.2f, 2);
+        };
+
+        _input.UI.Skip.performed += _ => 
+        {
+            _input.Disable();
+            fillSkipIcon.DOFillAmount(0, 0.2f).SetEase(Ease.InSine);
+            SkipIntroScene();
+        };
+
+        _input.Disable();
+
         transform.position = startPosition;
-        QualitySettings.vSyncCount = 2;
+
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 300;
     }
 
     void Start()
@@ -35,24 +64,19 @@ public class IntroTextAnimation : MonoBehaviour
         Invoke(nameof(DelayBeforeSkip), 5f);
     }
 
-    private void Update()
-    {
-        if (!_isEnded && Input.anyKeyDown)
-        {
-            _isEnded = true;
-            SkipIntroScene();
-        }
-    }
 
     private void DelayBeforeSkip() 
     {
         _isEnded = false;
         skipLabel.gameObject.SetActive(true);
         skipLabel.DOFade(1, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+        _input.Enable();
     }
 
     private void SkipIntroScene()
     {
+        if (_isEnded) return;
+        _isEnded = true;
         transform.DOKill();
 
         transform.DOMove(endPosition, 2).SetEase(Ease.InSine).OnComplete(() =>

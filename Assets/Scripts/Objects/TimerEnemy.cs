@@ -4,6 +4,8 @@ using MEC;
 
 public class TimerEnemy : MonoBehaviour
 {
+    [SerializeField] private bool isAlwaysActive;
+
     [SerializeField]
     [Tooltip("Задержка")] private bool isEnabledOnStart;
     
@@ -15,6 +17,9 @@ public class TimerEnemy : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Время в нанесении урона")] private float dangerousTime;
+
+    [SerializeField]
+    [Tooltip("Безопасное время")] private float safeTime = 0.8f;
 
     [SerializeField] private GameObject collision;
     [SerializeField] private Animator animator;
@@ -31,15 +36,17 @@ public class TimerEnemy : MonoBehaviour
             Activate();
     }
 
-    private void Activate()
+    public void Activate()
     {
         Timing.KillCoroutines(_coroutine);
         _coroutine = Timing.RunCoroutine(DangerZoneState());
     }
     
-    private void Deactivate()
+    public void Deactivate()
     {
         Timing.KillCoroutines(_coroutine);
+        collision.SetActive(false);
+        animator.SetBool(EnemyActive, false);
     }
 
     private IEnumerator<float> DangerZoneState()
@@ -49,9 +56,10 @@ public class TimerEnemy : MonoBehaviour
         {
             yield return Timing.WaitForSeconds(delayBeforeDangerous);
             animator.SetBool(EnemyActive, true);
-            yield return Timing.WaitForSeconds(0.8f);
+            yield return Timing.WaitForSeconds(safeTime);
             
             collision.SetActive(true);
+            if (isAlwaysActive) yield break;
             yield return Timing.WaitForSeconds(dangerousTime);
             collision.SetActive(false);
             animator.SetBool(EnemyActive, false);

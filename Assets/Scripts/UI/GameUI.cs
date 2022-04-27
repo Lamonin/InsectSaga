@@ -21,7 +21,7 @@ public class GameUI : MonoBehaviour
     public static void ShowUseIcon(UsableObject useObject)
     {
         if (Handler is null) return;
-        if (!useObject.interactable) return;
+        if (useObject is null || !useObject.interactable) return;
         Handler._useIconPos = useObject.useIconOffset;
         Handler.useIcon.rectTransform.position = Handler.mainCamera.WorldToScreenPoint(Handler._useIconPos);
         Handler.useIcon.gameObject.SetActive(true);
