@@ -31,7 +31,7 @@ public class LevelManager : MonoBehaviour
     [ContextMenu("Restart Level")]
     private void RestartLevelFromCheckpoint()
     {
-        if (!LoadData() || forceRestart)
+        if (forceRestart || !LoadData(true))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -44,14 +44,14 @@ public class LevelManager : MonoBehaviour
         SaveIsEasyAPI.SaveAll();
     }
 
-    public bool LoadData()
+    public bool LoadData(bool isReload = false)
     {
         var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
         if (SaveIsEasyAPI.FileExists(path))
         {
             Debug.Log("Загрузка сохранения!");
             SaveIsEasyAPI.LoadAll();
-            BlackSplashImage.Handler.FadeOut(1, 0.8f, ()=>{ EventBus.OnPlayerRespawned?.Invoke(); });
+            if (isReload) BlackSplashImage.Handler.FadeOut(1, 0.8f, ()=>{ EventBus.OnPlayerRespawned?.Invoke(); });
             return true;
         }
         Debug.Log("Не найдено файла сохранения!");

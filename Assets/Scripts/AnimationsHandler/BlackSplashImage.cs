@@ -17,7 +17,7 @@ public class BlackSplashImage : MonoBehaviour
 
     private void Start()
     {
-        FadeOut(startDelay);
+        FadeOut(timeToFade, startDelay);
     }
 
     public void ForceFadeIn()
@@ -60,8 +60,10 @@ public class BlackSplashImage : MonoBehaviour
 
     public void FadeOut(float duration = 1, float delay = 0, Action actionAfterDelay = null)
     {
+        Debug.Log($"Unfade {duration}  {delay}");
+
         _image.DOKill();
-        _image.DOFade(0, duration).SetEase(Ease.Linear).SetDelay(delay).OnStart(() =>
+        _image.DOFade(0, duration).SetDelay(delay).SetEase(Ease.Linear).OnStart(() =>
         {
             actionAfterDelay?.Invoke();
         }).OnComplete(() =>

@@ -88,4 +88,12 @@ public class IntroTextAnimation : MonoBehaviour
         audioSource.DOKill();
         audioSource.DOFade(0, 1);
     }
+
+    private void OnDestroy() {
+        _input.Disable();
+        _input.Dispose();
+        _input = null;
+
+        
+    }
 }
