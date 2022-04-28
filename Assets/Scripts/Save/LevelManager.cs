@@ -16,11 +16,30 @@ public class LevelManager : MonoBehaviour
     private void OnEnable()
     {
         EventBus.OnBlackScreenFadeInEvent += RestartLevelFromCheckpoint;
+        SceneManager.sceneLoaded += ForceReloadScene;
     }
 
     private void OnDisable()
     {
         EventBus.OnBlackScreenFadeInEvent -= RestartLevelFromCheckpoint;
+        SceneManager.sceneLoaded -= ForceReloadScene;
+    }
+
+    void ForceReloadScene(Scene scene, LoadSceneMode mode)
+    {
+        var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
+        if (!SaveIsEasyAPI.FileExists(path)) return;
+
+        var i = SceneManager.GetActiveScene().buildIndex;
+
+
+        SceneManager.SetActiveScene(scene);
+        SceneManager.UnloadSceneAsync(i);
+
+        if (SaveIsEasyAPI.GetSceneFile(path).SceneBuildIndex != i)
+        {
+            LoadData();
+        }
     }
 
     void Start()
@@ -39,7 +58,8 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Try restart!");
         if (forceRestart || !LoadData(true) )
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
         }
         Debug.Log("Level restarted!");
     }
@@ -53,11 +73,16 @@ public class LevelManager : MonoBehaviour
     public bool LoadData(bool isReload = false)
     {
         var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";
+        
         if (SaveIsEasyAPI.FileExists(path))
         {
             Debug.Log("Загрузка сохранения!");
+
+            var i = SceneManager.GetActiveScene().buildIndex;
+            if (SaveIsEasyAPI.GetSceneFile(path).SceneBuildIndex == i)
+                SaveIsEasyAPI.LoadAll();
+
             EventBus.ClearEvents();
-            SaveIsEasyAPI.LoadAll();
             if (isReload) BlackSplashImage.Handler.FadeOut(1, 0.8f, ()=>{ EventBus.OnPlayerRespawned?.Invoke(); });
             return true;
         }
