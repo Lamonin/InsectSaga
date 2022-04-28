@@ -173,6 +173,7 @@ namespace Player
 
         public void ResetPlayerState()
         {
+            chController.tryToCrawl = false;
             chController.ToNormalState();
         }
 
@@ -186,7 +187,6 @@ namespace Player
                     
                     Invoke(nameof(ResetPlayerState), 0.1f);
                     
-                    // BlackSplashImage.Handler.FadeIn(0.2f);
                     BlackSplashImage.Handler.FlashFadeIn();
                     if (LevelManager.Handler == null)
                     {
