@@ -20,6 +20,7 @@ namespace Objects
         [TextArea] public string[] dialogMessages;
 
         public UnityEvent onDialogueEnd;
+        public UnityEvent onDialogueBreak;
 
         //VARIABLES
         private int _currentMessageNumber;
@@ -126,8 +127,13 @@ namespace Objects
 
         public override void Deactivate()
         {
+            Timing.KillCoroutines(_messageTypeRoutine);
+            Timing.KillCoroutines(_delayBeforeNextMessage);
             GameUI.Handler.dialogText.gameObject.SetActive(false);
             _currentMessageNumber = 0;
+
+            onDialogueBreak?.Invoke();
+
             base.Deactivate();
         }
     }

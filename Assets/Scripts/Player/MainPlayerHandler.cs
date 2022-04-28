@@ -58,6 +58,7 @@ namespace Player
         
         private void Start()
         {
+            InputScheme.Enable();
         }
 
         private bool CastRay(Vector2 dir, float distance)
@@ -189,12 +190,14 @@ namespace Player
                     BlackSplashImage.Handler.FlashFadeIn();
                     if (LevelManager.Handler == null)
                     {
+                        Debug.Log("LOAD ERROR!11");
                         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                     }
                     EventBus.OnPlayerDiedEvent?.Invoke();
                 }
                 else
                 {
+                    Debug.Log("LOAD ERROR!22");
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                 }
             }

@@ -34,6 +34,7 @@ public class GameUI : MonoBehaviour
         if (Handler is null) return;
         if (!Handler.useIcon.gameObject.activeSelf) return;
         Handler.useIcon.DOKill();
+        
         if (immediately)
         {
             Handler.useIcon.DOFade(0, 0);

@@ -2,10 +2,13 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+using TMPro;
 
 public class BlackSplashImage : MonoBehaviour
 {
     public static BlackSplashImage Handler;
+
+    public TextMeshProUGUI quoteLabel;
     public float timeToFade = 0.5f;
     public float startDelay = 0.5f;
     private Image _image;
@@ -18,6 +21,11 @@ public class BlackSplashImage : MonoBehaviour
     private void Start()
     {
         FadeOut(timeToFade, startDelay);
+    }
+
+    private void OnDestroy()
+    {
+        Handler = null;
     }
 
     public void ForceFadeIn()
@@ -36,7 +44,6 @@ public class BlackSplashImage : MonoBehaviour
     
     public void ForceFadeIn(float timeToFade)
     {
-        Debug.Log("ForceFadeIn");
         float temp = this.timeToFade;
         this.timeToFade = timeToFade;
         ForceFadeIn();
@@ -60,8 +67,6 @@ public class BlackSplashImage : MonoBehaviour
 
     public void FadeOut(float duration = 1, float delay = 0, Action actionAfterDelay = null)
     {
-        Debug.Log($"Unfade {duration}  {delay}");
-
         _image.DOKill();
         _image.DOFade(0, duration).SetDelay(delay).SetEase(Ease.Linear).OnStart(() =>
         {
@@ -70,5 +75,8 @@ public class BlackSplashImage : MonoBehaviour
         {
             gameObject.SetActive(false);
         });
+
+        if (quoteLabel != null)
+            quoteLabel.DOFade(0, 1).SetDelay(Mathf.Clamp(delay-1, 0, Mathf.Infinity));
     }
 }

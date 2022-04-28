@@ -28,10 +28,16 @@ public class LevelManager : MonoBehaviour
         if (loadSaveOnStart) LoadData();
     }
 
+    private void OnDestroy()
+    {
+        Handler = null;
+    }
+
     [ContextMenu("Restart Level")]
     private void RestartLevelFromCheckpoint()
     {
-        if (forceRestart || !LoadData(true))
+        Debug.Log("Try restart!");
+        if (forceRestart || !LoadData(true) )
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -50,6 +56,7 @@ public class LevelManager : MonoBehaviour
         if (SaveIsEasyAPI.FileExists(path))
         {
             Debug.Log("Загрузка сохранения!");
+            EventBus.ClearEvents();
             SaveIsEasyAPI.LoadAll();
             if (isReload) BlackSplashImage.Handler.FadeOut(1, 0.8f, ()=>{ EventBus.OnPlayerRespawned?.Invoke(); });
             return true;
