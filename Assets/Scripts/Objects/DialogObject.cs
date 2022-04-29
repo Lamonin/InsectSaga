@@ -132,9 +132,9 @@ namespace Objects
             GameUI.Handler.dialogText.gameObject.SetActive(false);
             _currentMessageNumber = 0;
 
-            onDialogueBreak?.Invoke();
             _isDelayed = false;
             _isTyping = false;
+            onDialogueBreak?.Invoke();
 
             base.Deactivate();
         }
