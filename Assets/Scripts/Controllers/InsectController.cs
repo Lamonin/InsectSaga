@@ -294,7 +294,6 @@ namespace Controllers
         #region ANIMATIONS
 
         private readonly int IDLE = Animator.StringToHash("idle");
-        private readonly int IDLE_2 = Animator.StringToHash("idle_2");
         private readonly int WALK = Animator.StringToHash("walk");
         private readonly int RUN = Animator.StringToHash("run");
         private readonly int CRAWL = Animator.StringToHash("crawl");

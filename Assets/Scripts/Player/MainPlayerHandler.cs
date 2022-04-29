@@ -185,6 +185,7 @@ namespace Player
         {
             if (other.CompareTag("Enemy"))
             {
+                chController.GetRigidBody2D.velocity = Vector2.zero;
                 if (BlackSplashImage.Handler != null)
                 {
                     InputScheme.Disable();
