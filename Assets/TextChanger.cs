@@ -30,8 +30,10 @@ public class TextChanger : MonoBehaviour
 
         for (var i = 0; i < messagesTMPro.Length; i++)
         {
-            if (i != 0) messagesTMPro[i].alpha = 0;
+            messagesTMPro[i].alpha = 0;
         }
+
+        messagesTMPro[0].DOFade(1, timeToFadeIn);
 
         _routine = Timing.RunCoroutine(ChangeMessage());
     }
