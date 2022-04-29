@@ -49618,6 +49618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LiftObject_2
       objectReference: {fileID: 0}
+    - target: {fileID: 157894427695650873, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 13.23
+      objectReference: {fileID: 0}
     - target: {fileID: 872883959515992190, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.73
@@ -49628,7 +49632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1481178461918509768, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_Size.y
-      value: 12
+      value: 26.16
       objectReference: {fileID: 0}
     - target: {fileID: 1481178461918509768, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_SortingLayer
@@ -49644,7 +49648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2153646429392785523, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_Size.y
-      value: 12
+      value: 26.16
       objectReference: {fileID: 0}
     - target: {fileID: 2153646429392785523, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_SortingOrder
@@ -49656,7 +49660,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3606983910811598946, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: height
-      value: 12
+      value: 26.16
       objectReference: {fileID: 0}
     - target: {fileID: 3606983910811598946, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: easeType
@@ -49668,7 +49672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4528568386472408572, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.5
+      value: 12.93
       objectReference: {fileID: 0}
     - target: {fileID: 5420436291159817846, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_SortingOrder
@@ -49676,7 +49680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5620863160642892899, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_Size.y
-      value: 12
+      value: 26.16
       objectReference: {fileID: 0}
     - target: {fileID: 5620863160642892899, guid: 895d147f706f33a4fbdfec96445eda90, type: 3}
       propertyPath: m_SortingOrder
