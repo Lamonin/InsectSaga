@@ -287,12 +287,14 @@ namespace Controllers
         public void ResetState()
         {
             rb2d.gravityScale = _savedGravityScale;
+            rb2d.velocity = Vector2.zero;
             ToNormalState();
         }
 
         #region ANIMATIONS
 
         private readonly int IDLE = Animator.StringToHash("idle");
+        private readonly int IDLE_2 = Animator.StringToHash("idle_2");
         private readonly int WALK = Animator.StringToHash("walk");
         private readonly int RUN = Animator.StringToHash("run");
         private readonly int CRAWL = Animator.StringToHash("crawl");
@@ -311,7 +313,9 @@ namespace Controllers
                         if (moveDir != 0 && Mathf.Abs(rb2d.velocity.x) > 0.02f)
                             _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) <= stickOffsetBeforeRun ? WALK : RUN);
                         else
+                        {
                             _frameAnimator.ChangeAnimation(IDLE);
+                        }
                     }
                     else
                     {
@@ -341,11 +345,9 @@ namespace Controllers
 
         private void GroundedAnim()
         {
-            //Debug.Log(rb2d.velocity.y);
             if (_state == ChState.Normal && _frameAnimator.CurrentState != GROUND && rb2d.velocity.y < -9)
             {
                 //PLAY_GROUNDED_ANIM
-                Debug.Log("GROUND");
                 _groundAnimRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
             }
         }
