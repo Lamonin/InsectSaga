@@ -10,7 +10,6 @@ public class IntroTextAnimation : MonoBehaviour
     [SerializeField] private Vector3 startPosition;
     [SerializeField] private Vector3 endPosition;
     [SerializeField] private TextMeshPro textMesh;
-    //[SerializeField] private TextMeshProUGUI skipLabel;
     [SerializeField] private Image fillSkipIcon;
     [SerializeField] private AudioSource audioSource;
 
@@ -58,7 +57,6 @@ public class IntroTextAnimation : MonoBehaviour
         textMesh.DOFade(0, duration*0.1f).SetDelay(duration * 0.9f);
         audioSource.DOFade(0, duration*0.1f).SetDelay(duration * 0.9f);
 
-        //skipLabel.gameObject.SetActive(false);
 
         Invoke(nameof(DelayBeforeSkip), 5f);
     }
@@ -67,8 +65,6 @@ public class IntroTextAnimation : MonoBehaviour
     private void DelayBeforeSkip() 
     {
         _isEnded = false;
-        //skipLabel.gameObject.SetActive(true);
-        //skipLabel.DOFade(1, 2f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
         _input.Enable();
     }
 

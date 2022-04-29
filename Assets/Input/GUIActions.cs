@@ -53,6 +53,15 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""c6de0b64-5958-40a6-8b8a-a13c2db6f86f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,10 +267,32 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""e279d2ef-49ba-447c-b42a-ece2788db098"",
                     ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold(duration=1)"",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Skip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4ff75679-85e9-4056-9ca3-b5f98f5cd047"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddeb4d02-f452-479b-a01d-d580bfcd1efd"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -303,6 +334,7 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
         m_UI_Accept = m_UI.FindAction("Accept", throwIfNotFound: true);
         m_UI_Skip = m_UI.FindAction("Skip", throwIfNotFound: true);
+        m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -365,6 +397,7 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Navigate;
     private readonly InputAction m_UI_Accept;
     private readonly InputAction m_UI_Skip;
+    private readonly InputAction m_UI_Escape;
     public struct UIActions
     {
         private @GUIActions m_Wrapper;
@@ -372,6 +405,7 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
         public InputAction @Navigate => m_Wrapper.m_UI_Navigate;
         public InputAction @Accept => m_Wrapper.m_UI_Accept;
         public InputAction @Skip => m_Wrapper.m_UI_Skip;
+        public InputAction @Escape => m_Wrapper.m_UI_Escape;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -390,6 +424,9 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                 @Skip.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSkip;
                 @Skip.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSkip;
                 @Skip.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSkip;
+                @Escape.started -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -403,6 +440,9 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                 @Skip.started += instance.OnSkip;
                 @Skip.performed += instance.OnSkip;
                 @Skip.canceled += instance.OnSkip;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
     }
@@ -430,5 +470,6 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
         void OnNavigate(InputAction.CallbackContext context);
         void OnAccept(InputAction.CallbackContext context);
         void OnSkip(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

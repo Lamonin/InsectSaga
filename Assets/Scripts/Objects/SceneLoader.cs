@@ -7,7 +7,6 @@ public class SceneLoader : MonoBehaviour
     
     public void LoadDefinedScene()
     {
-        EventBus.ClearEvents();
         SceneManager.LoadScene(sceneName);
     }
 

@@ -133,6 +133,8 @@ namespace Objects
             _currentMessageNumber = 0;
 
             onDialogueBreak?.Invoke();
+            _isDelayed = false;
+            _isTyping = false;
 
             base.Deactivate();
         }

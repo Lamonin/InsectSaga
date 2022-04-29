@@ -13,10 +13,12 @@ public class GameUI : MonoBehaviour
     [Header("Компоненты")]
     public Image useIcon;
     public TextMeshProUGUI dialogText;
-    public Camera mainCamera;
+    public GameObject pauseMenu;
+    private Camera mainCamera;
     
     //VARIABLES
     private Vector3 _useIconPos = Vector3.zero;
+    private GUIActions _input;
 
     public static void ShowUseIcon(UsableObject useObject)
     {
@@ -44,6 +46,25 @@ public class GameUI : MonoBehaviour
         {
             Handler.useIcon.DOFade(0, Handler.fadeUseIconTime).OnComplete(() => Handler.useIcon.gameObject.SetActive(false));
         }
+    }
+
+    public void ShowPauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+        EventBus.OnPauseMenuOpenEvent?.Invoke();
+    }
+
+    public void ClosePauseMenu()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        EventBus.OnPauseMenuCloseEvent?.Invoke();
+    }
+
+    public void ResetTimeScale()
+    {
+        Time.timeScale = 1;
     }
 
     private void UpdateUseIconPosition()
@@ -80,20 +101,33 @@ public class GameUI : MonoBehaviour
 
     private void OnEnable()
     {
+        _input.Enable();
         EventBus.OnDialogueStart += DialogueStart;
         EventBus.OnDialogueEnd += DialogueEnd;
     }
 
     private void OnDisable()
     {
+        _input.Disable();
         EventBus.OnDialogueStart -= DialogueStart;
         EventBus.OnDialogueEnd -= DialogueEnd;
     }
 
     private void Awake()
     {
+        _input = new GUIActions();
+        _input.UI.Escape.performed += _ => 
+        {
+            if (pauseMenu == null) return;
+            if (pauseMenu.activeSelf)
+                ClosePauseMenu();
+            else
+                ShowPauseMenu();
+        };
+        
         Handler ??= this;
         QualitySettings.vSyncCount = 2;
+        mainCamera = Camera.main;
     }
 
     private void Start()

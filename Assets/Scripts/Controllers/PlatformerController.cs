@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using System;
+using UnityEngine;
 
 namespace Controllers
 {
@@ -29,6 +30,9 @@ namespace Controllers
         private float _moveSpeed;
         private float _hangCounter;
         private float _jumpCounter;
+
+        //EVENTS
+        protected Action OnGroundedEvent;
 
         //COMPONENTS
         protected Rigidbody2D rb2d;
@@ -99,9 +103,18 @@ namespace Controllers
         
         protected virtual void Update()
         {
-            isGround = Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, walkGroundLayer);
             if (moveDir != 0) sprite.flipX = moveDir < 0;
             ManageHangAndJumpBufferTimer();
+        }
+
+        protected void ManageGround()
+        {
+             isGround = Physics2D.OverlapCircle((Vector2) transform.position + groundCheckPos, groundCheckRadius, walkGroundLayer);
+             bool r = Physics2D.Raycast(transform.position, Vector2.down, Mathf.Abs(rb2d.velocity.y<0?rb2d.velocity.y:0)/2, walkGroundLayer);
+             if (r)
+             {
+                 OnGroundedEvent?.Invoke();
+             }
         }
 
         protected virtual void OnDrawGizmosSelected()
@@ -112,6 +125,7 @@ namespace Controllers
 
         protected virtual void FixedUpdate()
         {
+            ManageGround();
             Move();
         }
     }

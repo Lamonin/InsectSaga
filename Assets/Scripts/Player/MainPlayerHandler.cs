@@ -40,6 +40,8 @@ namespace Player
         {
             base.OnEnable();
             EventBus.OnPlayerRespawned += RespawnPlayer;
+            EventBus.OnPauseMenuOpenEvent += InputScheme.Disable;
+            EventBus.OnPauseMenuCloseEvent += InputScheme.Enable;
             chController.OnStateChanged += UpdateUseIcon;
         }
 
@@ -47,6 +49,8 @@ namespace Player
         {
             base.OnDisable();
             EventBus.OnPlayerRespawned -= RespawnPlayer;
+            EventBus.OnPauseMenuOpenEvent -= InputScheme.Disable;
+            EventBus.OnPauseMenuCloseEvent -= InputScheme.Enable;
             chController.OnStateChanged -= UpdateUseIcon;
         }
 

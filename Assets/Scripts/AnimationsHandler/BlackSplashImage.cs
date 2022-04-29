@@ -11,7 +11,9 @@ public class BlackSplashImage : MonoBehaviour
     public TextMeshProUGUI quoteLabel;
     public float timeToFade = 0.5f;
     public float startDelay = 0.5f;
+    public float timeToQuote = 4f;
     private Image _image;
+    private bool isQuoteShowed;
     private void Awake()
     {
         Handler ??= this;
@@ -68,7 +70,7 @@ public class BlackSplashImage : MonoBehaviour
     public void FadeOut(float duration = 1, float delay = 0, Action actionAfterDelay = null)
     {
         _image.DOKill();
-        _image.DOFade(0, duration).SetDelay(delay).SetEase(Ease.Linear).OnStart(() =>
+        _image.DOFade(0, duration).SetDelay(isQuoteShowed||(quoteLabel==null) ? delay:timeToQuote).SetEase(Ease.Linear).OnStart(() =>
         {
             actionAfterDelay?.Invoke();
         }).OnComplete(() =>
@@ -77,6 +79,13 @@ public class BlackSplashImage : MonoBehaviour
         });
 
         if (quoteLabel != null)
-            quoteLabel.DOFade(0, 1).SetDelay(Mathf.Clamp(delay-1, 0, Mathf.Infinity));
+        {
+            if (isQuoteShowed)
+            {
+                quoteLabel.color*= new Vector4(1,1,1,0);
+            }
+            quoteLabel.DOFade(0, 1).SetDelay(Mathf.Clamp(timeToQuote-1, 0, Mathf.Infinity));
+            isQuoteShowed = true;
+        }
     }
 }

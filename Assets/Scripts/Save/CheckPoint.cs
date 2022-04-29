@@ -24,8 +24,6 @@ public class CheckPoint : MonoBehaviour
             Debug.Log("Задействовал чекпоинт!");
             if (LevelManager.Handler != null)
                 LevelManager.Handler.SaveData();
-            else
-                Debug.Log("НЕТ ЛЕВЕЛ МЕНЕДЖЕРА!");
         }
     }
 }

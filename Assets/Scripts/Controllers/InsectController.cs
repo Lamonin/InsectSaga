@@ -308,9 +308,7 @@ namespace Controllers
                 case ChState.Normal:
                     if (isGround)
                     {
-                        if (_frameAnimator.CurrentState == JUMP || _frameAnimator.CurrentState == FALL)
-                            _groundAnimRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
-                        else if (moveDir != 0 && Mathf.Abs(rb2d.velocity.x) > 0.02f)
+                        if (moveDir != 0 && Mathf.Abs(rb2d.velocity.x) > 0.02f)
                             _frameAnimator.ChangeAnimation(Mathf.Abs(moveDir) <= stickOffsetBeforeRun ? WALK : RUN);
                         else
                             _frameAnimator.ChangeAnimation(IDLE);
@@ -341,6 +339,17 @@ namespace Controllers
             }
         }
 
+        private void GroundedAnim()
+        {
+            //Debug.Log(rb2d.velocity.y);
+            if (_state == ChState.Normal && _frameAnimator.CurrentState != GROUND && rb2d.velocity.y < -9)
+            {
+                //PLAY_GROUNDED_ANIM
+                Debug.Log("GROUND");
+                _groundAnimRoutine = StartCoroutine(_frameAnimator.ChangeAnimationToEnd(GROUND));
+            }
+        }
+
         #endregion
 
         private void UpdatePlayerDirection()
@@ -368,6 +377,12 @@ namespace Controllers
 
         protected override void Start()
         {
+            base.Start();
+            OnGroundedEvent += GroundedAnim;
+        }
+
+        private void OnDestroy() {
+            OnGroundedEvent -= GroundedAnim;
         }
 
         protected override void Update()
@@ -384,6 +399,7 @@ namespace Controllers
 
         protected override void FixedUpdate()
         {
+            ManageGround();
             Move();
         }
 

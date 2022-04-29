@@ -71,6 +71,15 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""a84a536c-a955-4072-adf4-f4950fd24e75"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -348,6 +357,28 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                     ""action"": ""Using"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bd05b2d-8e99-4b55-b09e-010f48a0fa03"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1d3ec99-0d48-4ee2-9971-902bc035b0a8"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -394,6 +425,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         m_Player_RunModeOn = m_Player.FindAction("RunModeOn", throwIfNotFound: true);
         m_Player_RunModeOff = m_Player.FindAction("RunModeOff", throwIfNotFound: true);
         m_Player_Using = m_Player.FindAction("Using", throwIfNotFound: true);
+        m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -458,6 +490,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RunModeOn;
     private readonly InputAction m_Player_RunModeOff;
     private readonly InputAction m_Player_Using;
+    private readonly InputAction m_Player_Escape;
     public struct PlayerActions
     {
         private @InputScheme m_Wrapper;
@@ -467,6 +500,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         public InputAction @RunModeOn => m_Wrapper.m_Player_RunModeOn;
         public InputAction @RunModeOff => m_Wrapper.m_Player_RunModeOff;
         public InputAction @Using => m_Wrapper.m_Player_Using;
+        public InputAction @Escape => m_Wrapper.m_Player_Escape;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -491,6 +525,9 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 @Using.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUsing;
                 @Using.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUsing;
                 @Using.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnUsing;
+                @Escape.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -510,6 +547,9 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 @Using.started += instance.OnUsing;
                 @Using.performed += instance.OnUsing;
                 @Using.canceled += instance.OnUsing;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
     }
@@ -539,5 +579,6 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         void OnRunModeOn(InputAction.CallbackContext context);
         void OnRunModeOff(InputAction.CallbackContext context);
         void OnUsing(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

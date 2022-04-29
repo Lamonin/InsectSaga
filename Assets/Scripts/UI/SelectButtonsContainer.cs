@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SelectButtonsContainer : MonoBehaviour
 {
-    [SerializeField] private SelectButton[] buttons;
+    [SerializeField] private SelectButtonBase[] buttons;
     public static SelectButtonsContainer Container;
 
     private GUIActions _input;
