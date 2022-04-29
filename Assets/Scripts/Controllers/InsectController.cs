@@ -400,6 +400,7 @@ namespace Controllers
 
         protected override void FixedUpdate()
         {
+            if (rb2d.velocity.y<-18) rb2d.velocity = new Vector2(rb2d.velocity.x, -18);
             ManageGround();
             Move();
         }

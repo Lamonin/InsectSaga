@@ -2427,7 +2427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &305479178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,7 +2474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305479177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.5, y: -1.0999999, z: -10.5}
+  m_LocalPosition: {x: 3.4050002, y: -2.3439999, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2513,7 +2513,7 @@ MonoBehaviour:
     Version: 2
     PathsEnabled:
     - GameObject/activeSelf
-    ModificationVersion: 23
+    ModificationVersion: 24
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -2558,7 +2558,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 48
+      m_version: 50
     HashSetObjectsEnabled:
       m_buckets: 000000000100000000000000
       m_slots:
@@ -2574,7 +2574,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 46
+      m_version: 48
     HashSetComponentsEnabled:
       m_buckets: 000000000000000000000000
       m_slots:
@@ -2590,7 +2590,7 @@ MonoBehaviour:
       m_count: 0
       m_lastIndex: 0
       m_freeList: -1
-      m_version: 24
+      m_version: 25
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -16929,7 +16929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: <isCanJump>k__BackingField
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6304598447337422446, guid: 46ca0d4e4aa2f204d93876fe612bfcda, type: 3}
       propertyPath: <isCanCrawl>k__BackingField
@@ -16981,7 +16981,7 @@ MonoBehaviour:
     - MainPlayerHandler/isCanRun
     - MainPlayerHandler/isCanJump
     - MainPlayerHandler/isCanCrawl
-    ModificationVersion: 135
+    ModificationVersion: 136
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -17436,7 +17436,7 @@ MonoBehaviour:
       m_count: 11
       m_lastIndex: 11
       m_freeList: -1
-      m_version: 1742
+      m_version: 1754
     HashSetObjectsEnabled:
       m_buckets: 0000000004000000000000000000000000000000000000000000000000000000030000000000000000000000000000000200000001000000000000000000000000000000
       m_slots:
@@ -17494,7 +17494,7 @@ MonoBehaviour:
       m_count: 4
       m_lastIndex: 4
       m_freeList: -1
-      m_version: 695
+      m_version: 700
     HashSetComponentsEnabled:
       m_buckets: 020000000000000000000000
       m_slots:
@@ -17510,7 +17510,7 @@ MonoBehaviour:
       m_count: 2
       m_lastIndex: 2
       m_freeList: -1
-      m_version: 391
+      m_version: 394
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0
@@ -25380,7 +25380,7 @@ Camera:
   far clip plane: 100
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -25404,7 +25404,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2908044, y: -1.299083, z: -10.5}
+  m_LocalPosition: {x: 4.5010843, y: -2.32014, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32637,7 +32637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1790384103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32679,7 +32679,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.778297, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -32720,7 +32720,7 @@ MonoBehaviour:
     Version: 2
     PathsEnabled:
     - GameObject/activeSelf
-    ModificationVersion: 25
+    ModificationVersion: 26
     ComponentsEnabled: []
     HashFieldsEnabled: []
     ObjectsEnabled: 
@@ -32745,7 +32745,7 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 49
+      m_version: 51
     HashSetObjectsEnabled:
       m_buckets: 000000000100000000000000
       m_slots:
@@ -32761,14 +32761,14 @@ MonoBehaviour:
       m_count: 1
       m_lastIndex: 1
       m_freeList: -1
-      m_version: 49
+      m_version: 51
     HashSetComponentsEnabled:
       m_buckets: 
       m_slots: []
       m_count: 0
       m_lastIndex: 0
       m_freeList: -1
-      m_version: 25
+      m_version: 26
     AreValidSavedHashs: 1
   Position: 0
   Rotation: 0

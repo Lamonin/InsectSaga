@@ -11,6 +11,7 @@ public class EventTrigger : MonoBehaviour
     public UnityEvent triggerEvent;
 
     private bool _isTriggered;
+    private CoroutineHandle _routine;
 
     public void ResetTrigger()
     {
@@ -20,7 +21,11 @@ public class EventTrigger : MonoBehaviour
     private void Awake()
     {
         gameObject.SetActive(false);
-        Timing.RunCoroutine(TriggerDelay());
+        _routine = Timing.RunCoroutine(TriggerDelay());
+    }
+
+    private void OnDestroy() {
+        Timing.KillCoroutines(_routine);
     }
 
     private IEnumerator<float> TriggerDelay()
