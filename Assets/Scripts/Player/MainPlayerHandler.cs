@@ -36,12 +36,18 @@ namespace Player
             InputScheme.Player.Using.performed += _ => { InteractWithUsableObject(); };
         }
 
+        private void GoInPause()
+        {
+            if (chController.State == ChState.Lift) return;
+            InputScheme.Enable();
+        }
+
         protected override void OnEnable()
         {
             base.OnEnable();
             EventBus.OnPlayerRespawned += RespawnPlayer;
             EventBus.OnPauseMenuOpenEvent += InputScheme.Disable;
-            EventBus.OnPauseMenuCloseEvent += InputScheme.Enable;
+            EventBus.OnPauseMenuCloseEvent += GoInPause;
             chController.OnStateChanged += UpdateUseIcon;
         }
 
@@ -50,7 +56,7 @@ namespace Player
             base.OnDisable();
             EventBus.OnPlayerRespawned -= RespawnPlayer;
             EventBus.OnPauseMenuOpenEvent -= InputScheme.Disable;
-            EventBus.OnPauseMenuCloseEvent -= InputScheme.Enable;
+            EventBus.OnPauseMenuCloseEvent -= GoInPause;
             chController.OnStateChanged -= UpdateUseIcon;
         }
 

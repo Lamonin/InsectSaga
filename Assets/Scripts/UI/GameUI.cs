@@ -126,7 +126,6 @@ public class GameUI : MonoBehaviour
         };
         
         Handler ??= this;
-        QualitySettings.vSyncCount = 2;
         mainCamera = Camera.main;
     }
 
