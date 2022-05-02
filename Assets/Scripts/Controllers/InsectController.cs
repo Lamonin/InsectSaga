@@ -76,6 +76,7 @@ namespace Controllers
             rb2d.freezeRotation = false;
             rb2d.angularVelocity = 0;
             rb2d.gravityScale = 0;
+            rb2d.velocity = Vector2.zero; //Reset velocity, otherwise it accumulates
             
             Quaternion angleRot = Quaternion.Euler(0, 0, 0);
 
@@ -101,7 +102,6 @@ namespace Controllers
             }
 
             State = ChState.Crawl;
-            rb2d.velocity = Vector2.zero; //Reset velocity, otherwise it accumulates
         }
 
         private void FlipAndRotateCharacter(float rotAngle)
@@ -367,6 +367,33 @@ namespace Controllers
                 _crawlDir = 1;
             }
         }
+        private void PrecalculateRotation()
+        {
+            var dir = rb2d.velocity.normalized;
+            if (dir.y > 0)
+            {
+                dir.y = 0;
+                dir = dir.normalized;
+            }
+
+            var ray = Physics2D.Raycast(transform.position, dir, 3, groundLayer);
+            var rayFloor = Physics2D.Raycast(transform.position, Vector2.down, 3, groundLayer);
+
+            if (ray || rayFloor)
+            {
+                Quaternion rot;
+                if (Vector2.Distance(transform.position, ray.point) < Vector2.Distance(transform.position, rayFloor.point))
+                {
+                    rot = Quaternion.LookRotation(transform.forward, ray.normal);
+                }
+                else
+                {
+                    rot = Quaternion.LookRotation(transform.forward, rayFloor.normal);
+                }
+
+                transform.rotation = Quaternion.Slerp(transform.rotation, rot, 5*Time.fixedDeltaTime);
+            }
+        }
 
         protected override void Awake()
         {
@@ -398,9 +425,11 @@ namespace Controllers
             }
         }
 
+
         protected override void FixedUpdate()
         {
             if (rb2d.velocity.y<-18) rb2d.velocity = new Vector2(rb2d.velocity.x, -18);
+            if (_state == ChState.CrawlJump) PrecalculateRotation();
             ManageGround();
             Move();
         }
@@ -423,6 +452,12 @@ namespace Controllers
             Gizmos.color = Color.red;
             //Physics2D.Raycast(tPos + tRight * 0.5f, -tUp, moveDir != 0 ? rayGroundLength:rayGroundLength*2, groundLayer);
             Gizmos.DrawRay(transform.position+transform.right*_crawlDir*0.3f, -transform.up*rayGroundLength);
+
+            if (_state == ChState.CrawlJump)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawRay(transform.position, rb2d.velocity.normalized*3);
+            }
 
             base.OnDrawGizmosSelected();
         }
