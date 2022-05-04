@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Player;
 using TMPro;
@@ -14,8 +14,8 @@ namespace Misc
         private bool _cheatMode;
         
         [SerializeField] private TextMeshProUGUI fieldPlayerPos;
-
-        public MainPlayerHandler player;
+        
+        [HideInInspector] public bool consoleState;
         
         private void Awake()
         {
@@ -144,13 +144,15 @@ namespace Misc
             if (args.Length > 1)
                 throw new Exception("A lot of arguments for this command!");
 
-            var scenes = string.Empty;
-            var num = 0;
-            foreach(var scene in EditorBuildSettings.scenes)
-            {
-                if (scene.enabled)
-                    scenes += $"[{num++}] {scene.path}\n";
-            }
+            var scenes = "[0] Main Menu\n";
+            scenes += "[1] Prologue\n";
+            scenes += "[2] Ghetto\n";
+            scenes += "[3] IntroTextScene\n";
+            scenes += "[4] Nachalo Puti\n";
+            scenes += "[5] Trubi\n";
+            scenes += "[6] Pobeg\n";
+            scenes += "[7] Test Room\n";
+            scenes += "[8] TitlesScene";
 
             throw new Exception(scenes);
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Misc;
 using TMPro;
@@ -37,6 +38,12 @@ public class InGameConsole : MonoBehaviour
         }
 
         _consoleState = consoleMain.activeSelf;
+        commandList.consoleState = _consoleState;
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()
@@ -44,6 +51,7 @@ public class InGameConsole : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.BackQuote))
         {
             _consoleState = !_consoleState;
+            commandList.consoleState = _consoleState;
             consoleMain.SetActive(_consoleState);
             if (!_consoleState)
             {
