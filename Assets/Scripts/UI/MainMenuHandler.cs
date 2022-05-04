@@ -1,12 +1,15 @@
 using SaveIsEasy;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuHandler : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI gameVersionText;
+
     void Start()
     {
-        
+        gameVersionText.text = $"ver. {Application.version}";
     }
 
     // Update is called once per frame

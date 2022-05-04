@@ -16,7 +16,7 @@ public class DORotateTransform : MonoBehaviour
         if (_activated) return;
         _activated = true;
         transform.DOKill();
-        transform.DORotate(new Vector3(0,0,degree), duration, RotateMode.WorldAxisAdd).OnComplete(()=>
+        transform.DORotate(new Vector3(0,0,degree), duration, RotateMode.WorldAxisAdd).SetEase(easeType).OnComplete(()=>
         {
             onEnd?.Invoke();
         });
