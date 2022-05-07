@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "WalkMode",
+                    "type": "Button",
+                    "id": "9f3b610b-6089-4cf4-9b1b-0cbb934d118e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -108,7 +117,7 @@
                 {
                     "name": "",
                     "id": "f5d85b49-4974-41ab-b798-c903fc3e207b",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
@@ -141,7 +150,7 @@
                 {
                     "name": "",
                     "id": "f9e70315-07f5-47b7-a032-73bb0c00fd19",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse and Keyboard",
@@ -300,6 +309,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f96cede8-f5bb-45d3-931b-6c30e13fe78f",
+                    "path": "<Keyboard>/leftAlt",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse and Keyboard",
+                    "action": "WalkMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

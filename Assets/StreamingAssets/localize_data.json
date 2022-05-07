@@ -1,0 +1,153 @@
+{
+	"eng":{
+		"dialogs":
+		{
+			"prologue_mum_dialog_1":
+			[
+				"Sunshine, you're finally awake!",
+				"I'll finish in a moment and join you.",
+				"Go shake your father, or we'll never get out for a walk!"
+			],
+			"prologue_mum_dialog_2":
+			[
+				"Um...?"
+			],
+
+			"prologue_dad_dialog_1":
+			[
+				"Good morning, little one!",
+				"Go say hello to your mum!"
+			],
+			"prologue_dad_dialog_2":
+			[
+				"Look, there's our sleeper...",
+				"..Mum said..",
+				"I completely forgot we were going for a walk...",
+				"Ehhhhh... I was already hoping to finish the book...",
+				"I think... I can feel your mother's gaze...",
+				"Let's go for a walk, baby...",
+				"Sweetheart! <delay=\"1000\">\nLet's go air our moustaches out, the weather's really nice!",
+				"Baby, don't forget to close the door."
+			],
+			"prologue_dad_dialog_3":
+			[
+				"Um...?"
+			],
+			"ghetto_bum_dialog_1":
+			[
+				"Ohh... You crawled out of your can after all, eh-heh-heh...",
+				"...I thought you were long dead.",
+				"Today is a feast in the cursed settlement - the new meat\n are off to test the scouts...",
+				"Don't tell me you want to die too...?<delay=\"500\">",
+				"..No one will thank you, my ugly friend...",
+				"You don't really care anymore, do you...?"
+			],
+			"ghetto_bum_dialog_2":
+			[
+				"*is silent at the drop of a hat.*"
+			],
+			"ghetto_bum_dialog_3":
+			[
+				"*silent*"
+			],
+			"ghetto_bum_dialog_4":
+			[
+				"*coughs*"
+			],
+			"ghetto_jump_tip":
+			[
+				"Use X to jump"
+			],
+			"nachalo_puti_crawl_tip":
+			[
+				"Use R2 to move around walls and ceilings"
+			],
+			"nachalo_puti_crawljump_tip":
+			[
+				"How about trying a jump with R2 clamped?"
+			],
+			"test_dialog":
+			[
+				"<color=\"red\">Good</color> morning <delay=\"1000\">baby!",
+				"It's JONNY!",
+				"Dead!"
+			]
+		}
+	},
+	"ru":{
+		"dialogs":
+		{
+			"prologue_mum_dialog_1":
+			[
+				"Солнце, наконец-то ты проснулся!",
+				"Я сейчас закончу и присоединюсь к вам.",
+				"Иди растолкай своего отца, иначе мы никогда не выйдем погулять!"
+			],
+			"prologue_mum_dialog_2":
+			[
+				"Мм..?"
+			],
+
+			"prologue_dad_dialog_1":
+			[
+				"Доброе утро, малыш!",
+				"Иди поздоровайся с мамой!"
+			],
+			"prologue_dad_dialog_2":
+			[
+				"Глядите, а вот и наш соня…",
+				"..Мама сказала?..",
+				"Я совсем забыл, что мы идем гулять…",
+				"Эхххх... А я уже надеялся дочитать книгу...",
+				"Мне кажется... я чувствую взгляд твоей матери...",
+				"Пойдем гулять, малыш..",
+				"Любимая! <delay=\"1000\">\nПойдем проветрим усики, погода и правда отличная!",
+				"Малыш, не забудь закрыть дверь."
+			],
+			"prologue_dad_dialog_3":
+			[
+				"Мм..?"
+			],
+			"ghetto_bum_dialog_1":
+			[
+				"Ооо.. Ты все-таки выполз из своей банки, эх-хе-х..",
+				"...Я было подумал, что ты уже давно сдох.",
+				"Сегодня в проклятом поселении праздник - новое мясо\n отправляется на испытание разведчиков...",
+				"Не говори, что и ты хочешь умереть..?<delay=\"500\">",
+				"..Тебе никто не скажет спасибо, мой уродливый друг..",
+				"Тебе ведь уже все равно, да..?"
+			],
+			"ghetto_bum_dialog_2":
+			[
+				"*молчит по-мертвому*"
+			],
+			"ghetto_bum_dialog_3":
+			[
+				"*молчит*"
+			],
+			"ghetto_bum_dialog_4":
+			[
+				"*кашляет*"
+			],
+			"ghetto_jump_tip":
+			[
+				"Используй X, чтобы прыгать"
+			],
+			"nachalo_puti_crawl_tip":
+			[
+				"Используй R2, чтобы передвигаться по стенам и потолкам"
+			],
+			"nachalo_puti_crawljump_tip":
+			[
+				"Как насчет попробовать прыжок с зажатым R2?"
+			],
+
+			"test_dialog":
+			[
+				"<color=\"red\">Доброе</color> утро <delay=\"1000\">малыш!",
+				"Это ДЖОННИ!",
+				"Сдох!"
+			]
+		}
+	}
+}

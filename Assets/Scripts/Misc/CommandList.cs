@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Player;
+using InsectCharacter;
+using Localize;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -30,15 +30,22 @@ namespace Misc
 
         private void Update()
         {
-            if (fieldPlayerPos != null && player != null && fieldPlayerPos.gameObject.activeSelf)
+            if (!consoleState) return;
+            
+            if (InsectPlayerMediator.Mediator != null)
             {
-                fieldPlayerPos.text = "Player Pos: " + player.transform.position;
+                if (fieldPlayerPos != null)
+                {
+                    fieldPlayerPos.text = "Player Pos: " + InsectPlayerMediator.Mediator.transform.position;
+                }
             }
         }
 
         private void LoadCommands()
         {
-            ConsoleCommand temp = new ConsoleCommand("set_scene", C_LoadScene, "Succesfully load scene!", "Error when loading!");
+            ConsoleCommand temp;
+            
+            temp = new ConsoleCommand("set_scene", C_LoadScene, "Succesfully load scene!", "Error when loading!");
             _commands.Add(temp.Command, temp);
             
             temp = new ConsoleCommand("debug_command", C_DebugCommand);
@@ -59,7 +66,7 @@ namespace Misc
             temp = new ConsoleCommand("move_on_vector", C_MovePlayerOnVector);
             _commands.Add(temp.Command, temp);
             
-            temp = new ConsoleCommand("get_player", C_GetPlayer);
+            temp = new ConsoleCommand("set_lang", C_SetLanguage, "Successfully change language!");
             _commands.Add(temp.Command, temp);
         }
 
@@ -111,14 +118,14 @@ namespace Misc
             if (args.Length < 3)
                 throw new Exception("Not enough arguments for this command!");
 
-            if (player is null)
+            var mediator = InsectPlayerMediator.Mediator;
+            if (mediator is null)
             {
                 throw new Exception("Player invalid!");
             }
 
-            Debug.Log(args[1]);
-            Debug.Log(args[2]);
-            player.transform.position = new Vector3(int.Parse(args[1]), int.Parse(args[2]), player.transform.position.z);
+            if (mediator != null)
+                mediator.transform.position = new Vector3(int.Parse(args[1].Trim()), int.Parse(args[2].Trim()), mediator.transform.position.z);
         }
         
         private void C_MovePlayerOnVector(string[] args)
@@ -130,12 +137,27 @@ namespace Misc
             if (args.Length < 3)
                 throw new Exception("Not enough arguments for this command!");
 
-            if (player is null)
+            var mediator = InsectPlayerMediator.Mediator;
+            if (mediator is null)
             {
                 throw new Exception("Player invalid!");
             }
+            
+            if (mediator != null)
+                mediator.transform.position += new Vector3(int.Parse(args[1].Trim()), int.Parse(args[2].Trim()), 0);
+        }
+        
+        private void C_SetLanguage(string[] args)
+        {
+            if (!_cheatMode) return;
+            
+            if (args.Length < 2)
+                throw new Exception("Not enough arguments for this command!");
 
-            player.transform.position += new Vector3(int.Parse(args[1]), int.Parse(args[2]), 0);
+            if (args.Length > 2)
+                throw new Exception("A lot of arguments for this command!");
+            
+            LocalizeManager.Manager.ChangeLanguage(int.Parse(args[1].Trim()) == 0 ? LanguageEnum.ENG : LanguageEnum.RU);
         }
 
         private void C_GetAllScenes(string[] args)
@@ -157,16 +179,6 @@ namespace Misc
             throw new Exception(scenes);
         }
 
-        private void C_GetPlayer(string[] args)
-        {
-            if (args.Length > 1)
-                throw new Exception("A lot of arguments for this command!");
-            
-            var p = FindObjectOfType<MainPlayerHandler>();
-            if (p != null) player = p;
-            Debug.Log(p);
-        }
-        
         private void C_CheatMode(string[] args)
         {
             if (args.Length < 2)

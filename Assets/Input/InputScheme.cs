@@ -80,6 +80,15 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""WalkMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""9f3b610b-6089-4cf4-9b1b-0cbb934d118e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -130,7 +139,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f5d85b49-4974-41ab-b798-c903fc3e207b"",
-                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
@@ -163,7 +172,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f9e70315-07f5-47b7-a032-73bb0c00fd19"",
-                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse and Keyboard"",
@@ -324,6 +333,17 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f96cede8-f5bb-45d3-931b-6c30e13fe78f"",
+                    ""path"": ""<Keyboard>/leftAlt"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""WalkMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -371,6 +391,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         m_Player_RunModeOff = m_Player.FindAction("RunModeOff", throwIfNotFound: true);
         m_Player_Using = m_Player.FindAction("Using", throwIfNotFound: true);
         m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
+        m_Player_WalkMode = m_Player.FindAction("WalkMode", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -436,6 +457,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_RunModeOff;
     private readonly InputAction m_Player_Using;
     private readonly InputAction m_Player_Escape;
+    private readonly InputAction m_Player_WalkMode;
     public struct PlayerActions
     {
         private @InputScheme m_Wrapper;
@@ -446,6 +468,7 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         public InputAction @RunModeOff => m_Wrapper.m_Player_RunModeOff;
         public InputAction @Using => m_Wrapper.m_Player_Using;
         public InputAction @Escape => m_Wrapper.m_Player_Escape;
+        public InputAction @WalkMode => m_Wrapper.m_Player_WalkMode;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -473,6 +496,9 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 @Escape.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
                 @Escape.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
                 @Escape.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                @WalkMode.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalkMode;
+                @WalkMode.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalkMode;
+                @WalkMode.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalkMode;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -495,6 +521,9 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
                 @Escape.started += instance.OnEscape;
                 @Escape.performed += instance.OnEscape;
                 @Escape.canceled += instance.OnEscape;
+                @WalkMode.started += instance.OnWalkMode;
+                @WalkMode.performed += instance.OnWalkMode;
+                @WalkMode.canceled += instance.OnWalkMode;
             }
         }
     }
@@ -525,5 +554,6 @@ public partial class @InputScheme : IInputActionCollection2, IDisposable
         void OnRunModeOff(InputAction.CallbackContext context);
         void OnUsing(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
+        void OnWalkMode(InputAction.CallbackContext context);
     }
 }

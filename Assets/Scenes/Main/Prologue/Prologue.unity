@@ -855,6 +855,7 @@ GameObject:
   m_Component:
   - component: {fileID: 305829703}
   - component: {fileID: 305829704}
+  - component: {fileID: 305829705}
   m_Layer: 0
   m_Name: Dialog_1
   m_TagString: Untagged
@@ -936,6 +937,20 @@ MonoBehaviour:
   onDialogueBreak:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &305829705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305829702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44631ecf4f5c4eb68b133400657e297a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogId: prologue_mum_dialog_1
+  localizeDialog: {fileID: 305829704}
 --- !u!1 &321085174
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,6 +1277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 542585221}
   - component: {fileID: 542585222}
+  - component: {fileID: 542585223}
   m_Layer: 0
   m_Name: Dialog_3
   m_TagString: Untagged
@@ -1312,6 +1328,20 @@ MonoBehaviour:
   onDialogueBreak:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &542585223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542585220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44631ecf4f5c4eb68b133400657e297a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogId: prologue_dad_dialog_3
+  localizeDialog: {fileID: 542585222}
 --- !u!1 &568442219
 GameObject:
   m_ObjectHideFlags: 0
@@ -7943,6 +7973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331229815}
   - component: {fileID: 1331229816}
+  - component: {fileID: 1331229817}
   m_Layer: 0
   m_Name: Dialog_2
   m_TagString: Untagged
@@ -8056,6 +8087,20 @@ MonoBehaviour:
   onDialogueBreak:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1331229817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331229814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44631ecf4f5c4eb68b133400657e297a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogId: prologue_dad_dialog_2
+  localizeDialog: {fileID: 1331229816}
 --- !u!1 &1346868272
 GameObject:
   m_ObjectHideFlags: 0
@@ -8754,6 +8799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1414238688}
   - component: {fileID: 1414238689}
+  - component: {fileID: 1414238690}
   m_Layer: 0
   m_Name: Dialog_2
   m_TagString: Untagged
@@ -8804,6 +8850,20 @@ MonoBehaviour:
   onDialogueBreak:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1414238690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414238687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44631ecf4f5c4eb68b133400657e297a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogId: prologue_mum_dialog_2
+  localizeDialog: {fileID: 1414238689}
 --- !u!1 &1417343462
 GameObject:
   m_ObjectHideFlags: 0
@@ -9192,6 +9252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1611322978}
   - component: {fileID: 1611322979}
+  - component: {fileID: 1611322980}
   m_Layer: 0
   m_Name: Dialog_1
   m_TagString: Untagged
@@ -9256,6 +9317,20 @@ MonoBehaviour:
   onDialogueBreak:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1611322980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611322977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44631ecf4f5c4eb68b133400657e297a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogId: prologue_dad_dialog_1
+  localizeDialog: {fileID: 1611322979}
 --- !u!1 &1654369556
 GameObject:
   m_ObjectHideFlags: 0
