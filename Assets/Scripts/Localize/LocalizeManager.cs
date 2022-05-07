@@ -1,16 +1,27 @@
 using System.Collections;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
 using UnityEngine.Networking;
+using MEC;
 
 namespace Localize
 {
     public enum LanguageEnum { ENG, RU }
-    public class LocalizeManager : MonoBehaviour
+    public class LocalizeManager
     {
-        public static LocalizeManager Manager;
-        [field: SerializeField] public LanguageEnum language { get; private set; } = LanguageEnum.ENG;
+        public static LocalizeManager Manager
+        {
+            get
+            {
+                _manager ??= new LocalizeManager();
+                return _manager;
+            }
+        }
+
+        private static LocalizeManager _manager;
+        public LanguageEnum language { get; private set; } = LanguageEnum.ENG;
         public bool isLocalizeDataLoaded { get; private set; }
 
         public delegate void ChangeLanguageDelegate();
@@ -19,41 +30,25 @@ namespace Localize
 
         private const string LOCALIZE_FILE_NAME = "localize_data.json";
 
-        private void Awake()
+        private LocalizeManager()
         {
-            if (Manager is null)
-            {
-                LoadLocalizeFile();
-            }
-            
-            if (Manager != null && Manager != this)
-            {
-                _localizeData = Manager._localizeData;
-                Destroy(Manager.gameObject);
-                
-                Manager = null;
-            }
-
-            if (Manager is null)
-            {
-                Manager ??= this;
-                DontDestroyOnLoad(gameObject);
-            }
+            Debug.Log("LOAD LOCALIZE FILE!");
+            LoadLocalizeFile();
         }
 
         private JObject _localizeData;
         private void LoadLocalizeFile()
         {
             var path = Path.Combine(Application.streamingAssetsPath, LOCALIZE_FILE_NAME);
-            StartCoroutine(LoadLocalizeRoutine(path));
+            Timing.RunCoroutine(LoadLocalizeRoutine(path));
         }
 
-        private IEnumerator LoadLocalizeRoutine(string path)
+        private IEnumerator<float> LoadLocalizeRoutine(string path)
         {
             isLocalizeDataLoaded = false;
             
             var readerNet = UnityWebRequest.Get(path);
-            yield return readerNet.SendWebRequest();
+            yield return Timing.WaitUntilDone(readerNet.SendWebRequest());
         
             if (readerNet.result is UnityWebRequest.Result.ConnectionError or UnityWebRequest.Result.ProtocolError)
             {

@@ -3389,7 +3389,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.3333334, y: 1}
+    m_SensorSize: {x: 1.7777778, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -45902,6 +45902,7 @@ GameObject:
   - component: {fileID: 1039853627}
   - component: {fileID: 1039853628}
   - component: {fileID: 1039853629}
+  - component: {fileID: 1039853630}
   m_Layer: 0
   m_Name: Dialog_1
   m_TagString: Usable
@@ -46004,6 +46005,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.562293, y: 1.1259589}
   m_EdgeRadius: 0
+--- !u!114 &1039853630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039853626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44631ecf4f5c4eb68b133400657e297a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogId: nachalo_puti_crawl_tip
+  localizeDialog: {fileID: 1039853628}
 --- !u!1 &1051741641
 GameObject:
   m_ObjectHideFlags: 0
@@ -47600,7 +47615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1124882083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4067445, y: -0.5032401, z: -10}
+  m_LocalPosition: {x: -2.767504, y: -0.6624999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52526,6 +52541,7 @@ GameObject:
   - component: {fileID: 1678767330}
   - component: {fileID: 1678767328}
   - component: {fileID: 1678767329}
+  - component: {fileID: 1678767331}
   m_Layer: 0
   m_Name: Dialog_1
   m_TagString: Usable
@@ -52628,6 +52644,20 @@ Transform:
   m_Father: {fileID: 1431044378}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678767331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678767327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44631ecf4f5c4eb68b133400657e297a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogId: nachalo_puti_crawljump_tip
+  localizeDialog: {fileID: 1678767328}
 --- !u!1 &1684056319
 GameObject:
   m_ObjectHideFlags: 0
