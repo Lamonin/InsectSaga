@@ -21,7 +21,7 @@ namespace Localize
         }
 
         private static LocalizeManager _manager;
-        public LanguageEnum language { get; private set; } = LanguageEnum.ENG;
+        public LanguageEnum language { get; private set; } = LanguageEnum.RU;
         public bool isLocalizeDataLoaded { get; private set; }
 
         public delegate void ChangeLanguageDelegate();
@@ -66,7 +66,7 @@ namespace Localize
             onLanguageChanged?.Invoke();
         }
 
-        public string[] GetDialogMessages(string id)
+        public string[] GetLocalizedDialogMessages(string id)
         {
             var languageId = language == LanguageEnum.ENG ? "eng" : "ru";
             var token = _localizeData.SelectToken($"$.{languageId}.dialogs.{id}");
@@ -75,6 +75,17 @@ namespace Localize
             
             Debug.LogError($"Token by id: {id} in dialogs was not found!");
             return new string[] { };
+        }
+
+        public string GetLocalizedText(string id)
+        {
+            var languageId = language == LanguageEnum.ENG ? "eng" : "ru";
+            var token = _localizeData.SelectToken($"$.{languageId}.text.{id}");
+
+            if (token != null) return token.ToObject<string>();
+            
+            Debug.LogError($"Token by id: {id} in text was not found!");
+            return string.Empty;
         }
     }
 }

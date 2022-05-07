@@ -17,7 +17,7 @@ namespace Localize
 
         private void GetMessages()
         {
-            localizeDialog.dialogMessages = LocalizeManager.Manager.GetDialogMessages(dialogId);
+            localizeDialog.dialogMessages = LocalizeManager.Manager.GetLocalizedDialogMessages(dialogId);
             LocalizeManager.Manager.onLanguageDataLoaded -= GetMessages;
         }
     }

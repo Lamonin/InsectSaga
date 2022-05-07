@@ -72,6 +72,13 @@
 				"It's JONNY!",
 				"Dead!"
 			]
+		},
+		"text":
+		{
+			"demo_end_text_1": "<align=\"center\"> <size=\"50%\">The journey to date has come to an end</size> </align>\nThe protagonist has only just stepped onto the path of adversity and he doesn't know what's waiting for him any minute... Neither do you...",
+			"demo_end_text_2": "But if you liked it and want to know what happens next, be sure to tell us in the comments on itch.io",
+			"demo_end_text_3": "Your feedback will determine whether the adventure continues :)",
+			"intro_text": "In one of the many worlds - perhaps even yours - live a nation of cockroaches - they have settled inside the Great Temple of God in the flesh, built their settlement and elected a queen to rule them wisely, to keep them safe from harm and to enforce the laws. They vowed never to see God again, lest they incur his wrath.\nAs the years passed, generations passed, most of the cockroaches had never seen God at all and doubted his existence, but the law was respected and the settlement grew.\nGod's temple in the flesh is full of food, but its extraction is full of dangers - for this purpose, a scout squad made up of the strongest and biggest cockroaches has been created to search for food.\nScouts are selected by going through an initiation trial, where the one stepping onto this path must return with food and be given a new name, or die ignominiously."
 		}
 	},
 	"ru":{
@@ -148,6 +155,13 @@
 				"Это ДЖОННИ!",
 				"Сдох!"
 			]
+		},
+		"text":
+		{
+			"demo_end_text_1": "<align=\"center\"> <size=\"50%\"> Путешествие на сегодня подошло к концу </size> </align>\nГлавный герой пока лишь ступил на тропу испытаний и он еще не знает, что ждет его с минуты на минуту.. Впрочем как и ты...",
+			"demo_end_text_2": "Но если тебе понравилось и ты хочешь узнать, что будет дальше, то обязательно скажи нам об этом в комментариях на itch.io",
+			"demo_end_text_3": "От твоей обратной связи будет зависеть - продолжится ли приключение :)",
+			"intro_text": "В одном из множества миров - возможно даже вашем, живет народ тараканов - они поселились внутри Великого Храма Бога во плоти, построили свое поселение и избрали во главу королеву, что должна мудро править ими, оберегать от напастей и следить за соблюдением законов. Они дали обет никогда не попадаться Богу на глаза, чтобы не навлечь на себя его гнев.\nШли годы, сменялись поколения, большинство тараканов и вовсе никогда не видело Бога и сомневалось в его существовании, но закон соблюдался, а поселение росло.\nХрам Бога во плоти полон пищи, но ее добыча полна опасностей – для этих целей был создан отряд разведчиков, состоящий из самых сильных и крупных тараканов, который должен заниматься поиском еды.\nРазведчики отбираются путем прохождения испытания-инициации, где ступивший на этот путь должен вернуться с пищей и получить новое имя, или погибнуть бесславно."
 		}
 	}
 }
