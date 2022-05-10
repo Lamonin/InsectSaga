@@ -55,7 +55,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _FogAlpha: 0.3
+    - _FogAlpha: 0.401
     - _MaxPixelate: 200
     - _Pixelate_Amount: 0
     m_Colors:
