@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using InsectCharacter;
 using Localize;
+using Player;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,6 +17,8 @@ namespace Misc
         [SerializeField] private TextMeshProUGUI fieldPlayerPos;
         
         [HideInInspector] public bool consoleState;
+
+        private PlayerInputHandler _player;
         
         private void Awake()
         {
@@ -47,10 +50,7 @@ namespace Misc
             
             temp = new ConsoleCommand("set_scene", C_LoadScene, "Succesfully load scene!", "Error when loading!");
             _commands.Add(temp.Command, temp);
-            
-            temp = new ConsoleCommand("debug_command", C_DebugCommand);
-            _commands.Add(temp.Command, temp);
-                
+
             temp = new ConsoleCommand("restart_scene", C_RestartScene, "Scene restarted!");
             _commands.Add(temp.Command, temp);
             
@@ -68,6 +68,17 @@ namespace Misc
             
             temp = new ConsoleCommand("set_lang", C_SetLanguage, "Successfully change language!");
             _commands.Add(temp.Command, temp);
+            
+            temp = new ConsoleCommand("exit", C_ExitFromGame);
+            _commands.Add(temp.Command, temp);
+        }
+
+        private void C_ExitFromGame(string[] args)
+        {
+            if (args.Length > 1)
+                throw new Exception("A lot of arguments for this command!");
+            
+            Application.Quit();
         }
 
         private void C_LoadScene(string[] args)
@@ -78,8 +89,7 @@ namespace Misc
 
             if (args.Length > 2)
                 throw new Exception("A lot of arguments for this command!");
-            
-            
+
             var argType = int.TryParse(args[1], out var sceneIndex);
             if (argType)
             {
@@ -89,15 +99,6 @@ namespace Misc
             {
                 SceneManager.LoadScene(args[1]);
             }
-        }
-
-        private void C_DebugCommand(string[] args)
-        {
-            if (!_cheatMode) return;
-            if (args.Length > 1)
-                throw new Exception("A lot of arguments for this command!");
-
-            Debug.Log("DEBUG COMMAND SUCCESS!");
         }
 
         private void C_RestartScene(string[] args)
@@ -149,8 +150,6 @@ namespace Misc
         
         private void C_SetLanguage(string[] args)
         {
-            if (!_cheatMode) return;
-            
             if (args.Length < 2)
                 throw new Exception("Not enough arguments for this command!");
 
@@ -199,6 +198,14 @@ namespace Misc
             {
                 throw new Exception("Not correct second argument!");
             }
+        }
+
+        private bool TryToGetPlayer()
+        {
+            if (_player != null) return true;
+
+            _player = FindObjectOfType<PlayerInputHandler>();
+            return _player != null;
         }
 
         public string ProcessConsoleInput(string input)

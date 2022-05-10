@@ -65,7 +65,7 @@ public class InGameConsole : MonoBehaviour
 
         if (!_consoleState) return;
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Home))
         {
             AcceptCommand();
         }

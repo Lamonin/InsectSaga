@@ -62,6 +62,15 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AcceptConsole"",
+                    ""type"": ""Button"",
+                    ""id"": ""c468ff14-7dfe-48c1-b639-dcdb02f3b296"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -350,6 +359,28 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5dc70e3a-e534-450d-9478-91c49db9c0fc"",
+                    ""path"": ""<Keyboard>/numpadEnter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""AcceptConsole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""756fd58d-71dc-4d37-9e03-208edfd62a1a"",
+                    ""path"": ""<Keyboard>/home"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardAndMouse"",
+                    ""action"": ""AcceptConsole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -390,6 +421,7 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
         m_UI_Accept = m_UI.FindAction("Accept", throwIfNotFound: true);
         m_UI_Skip = m_UI.FindAction("Skip", throwIfNotFound: true);
         m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
+        m_UI_AcceptConsole = m_UI.FindAction("AcceptConsole", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -453,6 +485,7 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_Accept;
     private readonly InputAction m_UI_Skip;
     private readonly InputAction m_UI_Escape;
+    private readonly InputAction m_UI_AcceptConsole;
     public struct UIActions
     {
         private @GUIActions m_Wrapper;
@@ -461,6 +494,7 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
         public InputAction @Accept => m_Wrapper.m_UI_Accept;
         public InputAction @Skip => m_Wrapper.m_UI_Skip;
         public InputAction @Escape => m_Wrapper.m_UI_Escape;
+        public InputAction @AcceptConsole => m_Wrapper.m_UI_AcceptConsole;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -482,6 +516,9 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                 @Escape.started -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
                 @Escape.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
                 @Escape.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnEscape;
+                @AcceptConsole.started -= m_Wrapper.m_UIActionsCallbackInterface.OnAcceptConsole;
+                @AcceptConsole.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnAcceptConsole;
+                @AcceptConsole.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnAcceptConsole;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -498,6 +535,9 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
                 @Escape.started += instance.OnEscape;
                 @Escape.performed += instance.OnEscape;
                 @Escape.canceled += instance.OnEscape;
+                @AcceptConsole.started += instance.OnAcceptConsole;
+                @AcceptConsole.performed += instance.OnAcceptConsole;
+                @AcceptConsole.canceled += instance.OnAcceptConsole;
             }
         }
     }
@@ -526,5 +566,6 @@ public partial class @GUIActions : IInputActionCollection2, IDisposable
         void OnAccept(InputAction.CallbackContext context);
         void OnSkip(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
+        void OnAcceptConsole(InputAction.CallbackContext context);
     }
 }

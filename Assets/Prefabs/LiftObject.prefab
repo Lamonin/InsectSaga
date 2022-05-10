@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 1345003423413920271}
   - component: {fileID: 3339697650812302032}
   - component: {fileID: 1937492988986565773}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: elevator_platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
