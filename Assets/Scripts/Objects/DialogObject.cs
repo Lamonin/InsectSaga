@@ -67,6 +67,11 @@ namespace Objects
                 _message = dialogMessages[_currentMessageNumber];
                 _messageTypeRoutine = Timing.RunCoroutine(MessageSymbolTyping());
                 _currentMessageNumber++;
+                
+                //Calculate prefered text width
+                Debug.Log(GameUI.Handler.dialogText.GetPreferredValues(_message));
+                var r = GameUI.Handler.dialogText.rectTransform;
+                r.sizeDelta = new Vector2(GameUI.Handler.dialogText.GetPreferredValues(_delayTagExp.Replace(_message, "")).x, r.sizeDelta.y);
             }
             else //END DIALOG
             {

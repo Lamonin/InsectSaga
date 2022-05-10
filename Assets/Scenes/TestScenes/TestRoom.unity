@@ -3105,7 +3105,7 @@ MonoBehaviour:
   - "<color=\"red\">\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435</color> <b>\u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435</b>
     1"
   - "<color=\"blue\">\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435
-    2"
+    2\nLerum ipsum riba pipsum"
   - "<i>\u0422\u0435\u0441\u0442\u043E\u0432\u043E\u0435 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435
     3"
   onDialogueEnd:
@@ -3560,6 +3560,14 @@ PrefabInstance:
     - target: {fileID: 2244282927325101639, guid: a920911466b1102498dd02eea1884c36, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244282927712740265, guid: a920911466b1102498dd02eea1884c36, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2244282927712740265, guid: a920911466b1102498dd02eea1884c36, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a920911466b1102498dd02eea1884c36, type: 3}

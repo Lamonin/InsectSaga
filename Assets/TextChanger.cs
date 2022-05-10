@@ -18,7 +18,17 @@ public class TextChanger : MonoBehaviour
     private void Awake()
     {
         _input = new GUIActions();
+        
+    }
+
+    private void OnEnable()
+    {
         _input.UI.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _input.UI.Disable();
     }
 
     private void Start()
@@ -28,9 +38,9 @@ public class TextChanger : MonoBehaviour
             if( !_isCycled) GoToMainMenu();
         };
 
-        for (var i = 0; i < messagesTMPro.Length; i++)
+        foreach (var t in messagesTMPro)
         {
-            messagesTMPro[i].alpha = 0;
+            t.alpha = 0;
         }
 
         messagesTMPro[0].DOFade(1, timeToFadeIn);

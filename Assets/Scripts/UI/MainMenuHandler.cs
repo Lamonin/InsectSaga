@@ -12,12 +12,6 @@ public class MainMenuHandler : MonoBehaviour
         gameVersionText.text = $"ver. {Application.version}";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ContinueGame()
     {
         var path = SaveIsEasyAPI.SaveFolderPath + SaveIsEasyAPI.SceneConfig.SceneFileName + ".game";

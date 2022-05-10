@@ -82,15 +82,15 @@ public class GameUI : MonoBehaviour
         
         if (isOnTop)
         {
-            rt.anchorMin = new Vector2(0, 1);
-            rt.anchorMax = new Vector2(1, 1);
-            rt.anchoredPosition = new Vector2(0, -75);
+            rt.anchorMin = new Vector2(0.5f, 1);
+            rt.anchorMax = new Vector2(0.5f, 1);
+            rt.anchoredPosition = new Vector2(0, -270);
         }
         else
         {
-            rt.anchorMin = new Vector2(0, 0);
-            rt.anchorMax = new Vector2(1, 0);
-            rt.anchoredPosition = new Vector2(0, 75);
+            rt.anchorMin = new Vector2(0.5f, 0);
+            rt.anchorMax = new Vector2(0.5f, 0);
+            rt.anchoredPosition = new Vector2(0, 0);
         }
     }
 
