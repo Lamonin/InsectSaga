@@ -82,14 +82,12 @@ public class GameUI : MonoBehaviour
         
         if (isOnTop)
         {
-            rt.anchorMin = new Vector2(0.5f, 1);
-            rt.anchorMax = new Vector2(0.5f, 1);
-            rt.anchoredPosition = new Vector2(0, -270);
+            rt.anchorMax = rt.anchorMin = new Vector2(0.5f, 1);
+            rt.anchoredPosition = new Vector2(0, -160);
         }
-        else
+        else //MOVE DIALOG TO SCREEN BOTTOM
         {
-            rt.anchorMin = new Vector2(0.5f, 0);
-            rt.anchorMax = new Vector2(0.5f, 0);
+            rt.anchorMax = rt.anchorMin = new Vector2(0.5f, 0);
             rt.anchoredPosition = new Vector2(0, 0);
         }
     }
