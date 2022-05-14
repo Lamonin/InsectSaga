@@ -8,10 +8,7 @@
 				"I'll finish in a moment and join you.",
 				"Go shake your father, or we'll never get out for a walk!"
 			],
-			"prologue_mum_dialog_2":
-			[
-				"Um...?"
-			],
+			"prologue_mum_dialog_2": ["Um...?"],
 
 			"prologue_dad_dialog_1":
 			[
@@ -29,10 +26,7 @@
 				"Sweetheart! <delay=\"1000\">\nLet's go air our moustaches out, the weather's really nice!",
 				"Baby, don't forget to close the door."
 			],
-			"prologue_dad_dialog_3":
-			[
-				"Um...?"
-			],
+			"prologue_dad_dialog_3": ["Um...?"],
 			"ghetto_bum_dialog_1":
 			[
 				"Ohh... You crawled out of your can after all, eh-heh-heh...",
@@ -42,30 +36,12 @@
 				"..No one will thank you, my ugly friend...",
 				"You don't really care anymore, do you...?"
 			],
-			"ghetto_bum_dialog_2":
-			[
-				"*is silent at the drop of a hat.*"
-			],
-			"ghetto_bum_dialog_3":
-			[
-				"*silent*"
-			],
-			"ghetto_bum_dialog_4":
-			[
-				"*coughs*"
-			],
-			"ghetto_jump_tip":
-			[
-				"Use X to jump"
-			],
-			"nachalo_puti_crawl_tip":
-			[
-				"Use R2 to move around walls and ceilings"
-			],
-			"nachalo_puti_crawljump_tip":
-			[
-				"How about trying a jump with R2 clamped?"
-			],
+			"ghetto_bum_dialog_2": ["*is silent at the drop of a hat.*"],
+			"ghetto_bum_dialog_3": ["*silent*"],
+			"ghetto_bum_dialog_4": ["*coughs*"],
+			"ghetto_jump_tip": ["Use X to jump"],
+			"nachalo_puti_crawl_tip": ["Use R2 to move around walls and ceilings"],
+			"nachalo_puti_crawljump_tip": ["How about trying a jump with R2 clamped?"],
 			"test_dialog":
 			[
 				"<color=\"red\">Good</color> morning <delay=\"1000\">baby!",
@@ -90,10 +66,7 @@
 				"Я сейчас закончу и присоединюсь к вам.",
 				"Иди растолкай своего отца, иначе мы никогда не выйдем погулять!"
 			],
-			"prologue_mum_dialog_2":
-			[
-				"Мм..?"
-			],
+			"prologue_mum_dialog_2": ["Мм..?"],
 
 			"prologue_dad_dialog_1":
 			[
@@ -111,10 +84,7 @@
 				"Любимая! <delay=\"1000\">\nПойдем проветрим усики, погода и правда отличная!",
 				"Малыш, не забудь закрыть дверь."
 			],
-			"prologue_dad_dialog_3":
-			[
-				"Мм..?"
-			],
+			"prologue_dad_dialog_3": ["Мм..?"],
 			"ghetto_bum_dialog_1":
 			[
 				"Ооо.. Ты все-таки выполз из своей банки, эх-хе-х..",
@@ -124,30 +94,12 @@
 				"..Тебе никто не скажет спасибо, мой уродливый друг..",
 				"Тебе ведь уже все равно, да..?"
 			],
-			"ghetto_bum_dialog_2":
-			[
-				"*молчит по-мертвому*"
-			],
-			"ghetto_bum_dialog_3":
-			[
-				"*молчит*"
-			],
-			"ghetto_bum_dialog_4":
-			[
-				"*кашляет*"
-			],
-			"ghetto_jump_tip":
-			[
-				"Используй X, чтобы прыгать"
-			],
-			"nachalo_puti_crawl_tip":
-			[
-				"Используй R2, чтобы передвигаться по стенам и потолкам"
-			],
-			"nachalo_puti_crawljump_tip":
-			[
-				"Как насчет попробовать прыжок с зажатым R2?"
-			],
+			"ghetto_bum_dialog_2": ["*молчит по-мертвому*"],
+			"ghetto_bum_dialog_3": ["*молчит*"],
+			"ghetto_bum_dialog_4": ["*кашляет*"],
+			"ghetto_jump_tip": ["Используй X, чтобы прыгать"],
+			"nachalo_puti_crawl_tip": ["Используй R2, чтобы передвигаться по стенам и потолкам"],
+			"nachalo_puti_crawljump_tip": ["Как насчет попробовать прыжок с зажатым R2?"],
 
 			"test_dialog":
 			[
