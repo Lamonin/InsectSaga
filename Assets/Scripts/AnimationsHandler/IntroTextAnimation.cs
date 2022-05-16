@@ -43,9 +43,6 @@ public class IntroTextAnimation : MonoBehaviour
         _input.Disable();
 
         transform.position = startPosition;
-
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 300;
     }
 
     void Start()
@@ -56,8 +53,7 @@ public class IntroTextAnimation : MonoBehaviour
         });
         textMesh.DOFade(0, duration*0.1f).SetDelay(duration * 0.9f);
         audioSource.DOFade(0, duration*0.1f).SetDelay(duration * 0.9f);
-
-
+        
         Invoke(nameof(DelayBeforeSkip), 5f);
     }
 

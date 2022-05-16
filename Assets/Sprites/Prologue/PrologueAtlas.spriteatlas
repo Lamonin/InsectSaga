@@ -52,7 +52,6 @@ SpriteAtlas:
     - {fileID: 2800000, guid: a89edb45fd10d8344a123794c0357367, type: 3}
     - {fileID: 2800000, guid: 1ab58ea359c229646a26c3d4ee3b8a6c, type: 3}
     - {fileID: 2800000, guid: 595dcdf312f4e5540929d045352233e5, type: 3}
-    - {fileID: 2800000, guid: c3e041ce0f880214786b9c003cf27311, type: 3}
     - {fileID: 2800000, guid: 088bf5fb792f24b409f53b7e9772e4e3, type: 3}
     - {fileID: 2800000, guid: c3fb6075bc64b1549849da684e4a12d3, type: 3}
     - {fileID: 2800000, guid: 5231c2f8a26775b4a804d1dcd21dac9b, type: 3}
@@ -88,7 +87,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 07c00c791a460e24fa135c7e2b9ea6df, type: 3}
   - {fileID: 21300000, guid: 59867c5ac829b144e9ae049d920e018a, type: 3}
   - {fileID: 21300000, guid: 088bf5fb792f24b409f53b7e9772e4e3, type: 3}
-  - {fileID: 21300000, guid: c3e041ce0f880214786b9c003cf27311, type: 3}
   - {fileID: 21300000, guid: 1fb6ccbfdfc90f34488de822c3a826cb, type: 3}
   m_PackedSpriteNamesToIndex:
   - "\u0433\u043B\u0430\u0437\u0430 \u0442\u0438\u0442\u04303"
@@ -109,7 +107,6 @@ SpriteAtlas:
   - "\u0442\u0438\u04424"
   - "\u0433\u043B\u0430\u0437\u0430 \u0442\u0438\u0442\u04301"
   - active swing
-  - Dust
   - The yard
   m_RenderDataMap: {}
   m_Tag: PrologueAtlas
