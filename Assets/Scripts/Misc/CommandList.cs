@@ -51,7 +51,7 @@ namespace Misc
             temp = new ConsoleCommand("set_scene", C_LoadScene, "Succesfully load scene!", "Error when loading!");
             _commands.Add(temp.Command, temp);
 
-            temp = new ConsoleCommand("restart_scene", C_RestartScene, "Scene restarted!");
+            temp = new ConsoleCommand("restart", C_RestartScene, "Scene restarted!");
             _commands.Add(temp.Command, temp);
             
             temp = new ConsoleCommand("cockroach_mode", C_CheatMode, "Cheats state changed!");
@@ -103,7 +103,6 @@ namespace Misc
 
         private void C_RestartScene(string[] args)
         {
-            if (!_cheatMode) return;
             if (args.Length > 1)
                 throw new Exception("A lot of arguments for this command!");
 

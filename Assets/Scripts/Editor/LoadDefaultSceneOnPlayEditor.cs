@@ -1,4 +1,4 @@
-#define ENABLED
+//#define ENABLED
 
 #if ENABLED
 #if UNITY_EDITOR

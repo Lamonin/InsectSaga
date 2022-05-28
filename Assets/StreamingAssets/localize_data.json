@@ -23,7 +23,7 @@
 				"Ehhhhh... I was already hoping to finish the book...",
 				"I think... I can feel your mother's gaze...",
 				"Let's go for a walk, baby...",
-				"Sweetheart! <delay=\"1000\">\nLet's go air our moustaches out, the weather's really nice!",
+				"Sweetheart! <delay=\"1000\">Let's go air our moustaches out, the weather's really nice!",
 				"Baby, don't forget to close the door."
 			],
 			"prologue_dad_dialog_3": ["Um...?"],
@@ -81,7 +81,7 @@
 				"Эхххх... А я уже надеялся дочитать книгу...",
 				"Мне кажется... я чувствую взгляд твоей матери...",
 				"Пойдем гулять, малыш..",
-				"Любимая! <delay=\"1000\">\nПойдем проветрим усики, погода и правда отличная!",
+				"Любимая! <delay=\"1000\">Пойдем проветрим усики, погода и правда отличная!",
 				"Малыш, не забудь закрыть дверь."
 			],
 			"prologue_dad_dialog_3": ["Мм..?"],
